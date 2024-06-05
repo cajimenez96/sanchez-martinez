@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --color-oscuro: #401714;
+  --color-marron: #59271A; 
+  --color-carmesi: #73241D;
+  --color-mandarina: #99402C;
+  --color-naranja: #BF4F36;
+  --color-crema: #F2CFC2;
+  --color-mapuche : #D98C5F;
+  --color-blanco: #FFFFFF;
+}
