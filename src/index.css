@@ -12,3 +12,47 @@
   --color-mapuche : #D98C5F;
   --color-blanco: #FFFFFF;
 }
+
+@layer base {
+  @font-face {
+    font-family: 'Surt Normal';
+    font-style: normal;
+    font-display: swap;
+    src: url(/src/fonts/Surt-Normal-Regular-TRIAL.woff) format('woff');
+  }
+
+  @font-face {
+    font-family: 'Surt light';
+    font-style: normal;
+    font-display: swap;
+    src: url(/src/fonts/Surt-Normal-Light-TRIAL.woff) format('woff');
+  }
+
+  @font-face {
+    font-family: 'Surt semibold';
+    font-style: normal;
+    font-display: swap;
+    src: url(/src/fonts/Surt-Normal-Semibold-TRIAL.woff) format('woff');
+  }
+
+  @font-face {
+    font-family: 'Surt bold';
+    font-style: normal;
+    font-display: swap;
+    src: url(/src/fonts/Surt-Normal-Bold-TRIAL.woff) format('woff');
+  }
+
+  @font-face {
+    font-family: 'Surt expanded normal';
+    font-style: normal;
+    font-display: swap;
+    src: url(/src/fonts/Surt-Expanded-Medium-TRIAL.woff) format('woff');
+  }
+
+  @font-face {
+    font-family: 'Surt expanded bold';
+    font-style: normal;
+    font-display: swap;
+    src: url(/src/fonts/Surt-Expanded-Extrabold-TRIAL.woff) format('woff');
+  }
+}
