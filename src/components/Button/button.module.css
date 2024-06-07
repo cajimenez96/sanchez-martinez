@@ -1,6 +1,18 @@
-.disabled {
+.switch {
+  background-color: var(--color-naranja);
+  color: var(--color-crema);
+  font-family: 'Surt expanded medium';
+}
 
+.switch:hover {
+  background-color: var(--color-oscuro);
+}
+
+.link {
+  color: var(--color-oscuro);
+  font-family: 'Surt expanded regular';
 }
 
 .link:hover {
+  color: var(--color-naranja);
 }
