@@ -43,7 +43,14 @@
   }
 
   @font-face {
-    font-family: 'Surt expanded normal';
+    font-family: 'Surt expanded regular';
+    font-style: normal;
+    font-display: swap;
+    src: url(/src/fonts/Surt-Expanded-Regular-TRIAL.woff) format('woff');
+  }
+
+  @font-face {
+    font-family: 'Surt expanded medium';
     font-style: normal;
     font-display: swap;
     src: url(/src/fonts/Surt-Expanded-Medium-TRIAL.woff) format('woff');
@@ -55,4 +62,9 @@
     font-display: swap;
     src: url(/src/fonts/Surt-Expanded-Extrabold-TRIAL.woff) format('woff');
   }
+}
+
+body {
+  font-family: 'Surt Normal';
+  font-size: 16px;
 }

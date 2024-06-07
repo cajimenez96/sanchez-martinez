@@ -9,7 +9,8 @@ export default {
       'surt-light': ['Surt light'],
       'surt-semibold': ['Surt semibold'],
       'surt-bold': ['Surt bold'],
-      'surt-ex-normal': ['Surt expanded normal'],
+      'surt-ex-regular': ['Surt expanded regular'],
+      'surt-ex-medium': ['Surt expanded medium'],
       'surt-ex-bold': ['Surt expanded bold']
 
 
