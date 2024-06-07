@@ -2,7 +2,6 @@
 export default {
   content: [
     "./src/**/*.{js,ts,jsx,tsx}",
-    'node_modules/flowbite-react/lib/esm/**/*.js'
   ],
   theme: {
     fontFamily: {
@@ -28,8 +27,6 @@ export default {
     },
     extend: {},
   },
-  plugins: [
-    require('flowbite/plugin')
-  ],
+  plugins: [],
 }
 
