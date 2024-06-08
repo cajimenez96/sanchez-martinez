@@ -16,3 +16,13 @@
 .link:hover {
   color: var(--color-naranja);
 }
+
+.outline {
+  color: var(--color-crema);
+  border: 1px solid var(--color-crema);
+}
+
+.outline:hover {
+  color: var(--color-oscuro);
+  background-color: var(--color-blanco);
+}
