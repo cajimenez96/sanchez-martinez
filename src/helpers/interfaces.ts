@@ -10,3 +10,17 @@ export interface NavbarItemMenu {
   name: string;
   path: string;
 }
+
+export interface Hero {
+  title: string;
+  title2: string;
+  subtitle: string;
+}
+
+export interface HeroCarousel {
+  id: number
+  title: string;
+  description: string;
+  button: string;
+  path: string;
+}
