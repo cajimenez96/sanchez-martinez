@@ -1,3 +1,7 @@
+export interface SectionTitles {
+  [key: string]: string;
+}
+
 export interface NavbarItem {
   id: number;
   name: string;
