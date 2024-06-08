@@ -36,7 +36,7 @@ const ButtonContent = ({children}: buttonComponentProps) => {
   )
 }
 
-const Button = ({link, href, children, handleClick, className, disabled = false, buttonStyle = 'outline'}: ButtonProps) => {
+const Button = ({link, href, children, handleClick, className, disabled = false, buttonStyle = 'link'}: ButtonProps) => {
   if (link) {
     return (
       <Link to={(href as never) as string} className={`w-full hover:underline className ${handleStyle(buttonStyle, disabled)} duration-200`}>
