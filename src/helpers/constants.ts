@@ -1,5 +1,6 @@
-import { Hero, HeroCarousel, NavbarItem } from "./interfaces";
+import { Hero, HeroCarousel, NavbarItem, Service } from "./interfaces";
 
+//NAVBAR
 export const navbar: NavbarItem[] = [
   {
     id: 0,
@@ -23,14 +24,15 @@ export const navbar: NavbarItem[] = [
       {name: 'Penal', path: ''}
     ]
   }
-]
+];
 
 export const hero: Hero = {
   title: "Sánchez",
   title2: "Matínez",
   subtitle: "& Asociados"
-}
+};
 
+//HERO
 export const heroCarousel: HeroCarousel[] = [
   {
     id: 1,
@@ -45,5 +47,34 @@ export const heroCarousel: HeroCarousel[] = [
     description: "Magna es un grupo de abogados asociados conformado por profesionales especializados en diferentes ramas del derecho, brindamos asesoramiento en materia Penal, civil: (Familia - Sucesiones - Daños - Acciones de consumo, laboral, etc.).",
     button: "Leer más de nosotros",
     path: "",
+  },
+];
+
+//NUESTROS SERVICIOS
+export const servicesCards: Service[] = [
+  {
+    name: "Penal",
+    description: "Defensa de personas imputadas y querellas...",
+    path: ""
+  },
+  {
+    name: "Laboral",
+    description: "Despidos, ART, asesoramiento a empresas...",
+    path: ""
+  },
+  {
+    name: "Daños",
+    description: "Accidentes de tránsito, mala praxis...",
+    path: ""
+  },
+  {
+    name: "Acciones de consumo",
+    description: "Planes de ahorros, estafas virtuales, tarjetas de créditos, operaciones bancarias...",
+    path: ""
+  },
+  {
+    name: "Familia y sucesiones",
+    description: "Divorcios, Alimentos, régimen comunicacional, sucesiones por causa de muerte, testamentos...",
+    path: ""
   },
 ]

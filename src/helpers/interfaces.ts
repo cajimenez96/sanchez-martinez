@@ -24,3 +24,9 @@ export interface HeroCarousel {
   button: string;
   path: string;
 }
+
+export interface Service {
+  name: string;
+  description: string;
+  path: string;
+}
