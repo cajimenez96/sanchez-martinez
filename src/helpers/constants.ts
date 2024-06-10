@@ -1,4 +1,10 @@
-import { Hero, HeroCarousel, NavbarItem, Service } from "./interfaces";
+import { Hero, HeroCarousel, NavbarItem, NoticeResponse, SectionTitles, Service } from "./interfaces";
+
+//SECTIONS
+export const sectionTitles: SectionTitles = {
+  service: "Nuestros servicios",
+  notice: "Últimas noticias"
+}
 
 //NAVBAR
 export const navbar: NavbarItem[] = [
@@ -77,4 +83,85 @@ export const servicesCards: Service[] = [
     description: "Divorcios, Alimentos, régimen comunicacional, sucesiones por causa de muerte, testamentos...",
     path: ""
   },
+]
+
+
+
+
+
+
+//RESPUESTA BACKEND A NOTICIAS
+export const response: NoticeResponse[] = [
+  {
+    "id": 1,
+    "title": "Nuevo descubrimiento en Marte",
+    "subtitle": "Rover encuentra señales de agua",
+    "description": "El rover de la NASA ha encontrado nuevas señales de agua en Marte, lo que podría cambiar el rumbo de la exploración espacial.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEBPSUW7FAHHSi85hDsV_R3SwscJC4l4ArsQ&s",
+    "url": "https://example.com/nuevo-descubrimiento-en-marte",
+    "creationDate": "2024-05-28T09:00:00Z"
+  },
+  {
+    "id": 2,
+    "title": "Innovación en energías renovables",
+    "subtitle": "Nueva tecnología solar",
+    "description": "Una startup ha desarrollado una nueva tecnología de paneles solares que promete aumentar la eficiencia en un 50%.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEBPSUW7FAHHSi85hDsV_R3SwscJC4l4ArsQ&s",
+    "url": "https://example.com/innovacion-energias-renovables",
+    "creationDate": "2024-05-29T10:30:00Z"
+  },
+  {
+    "id": 3,
+    "title": "Avances en la inteligencia artificial",
+    "subtitle": "IA supera el test de Turing",
+    "description": "Un nuevo sistema de inteligencia artificial ha superado el test de Turing, planteando preguntas sobre el futuro de la IA.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEBPSUW7FAHHSi85hDsV_R3SwscJC4l4ArsQ&s",
+    "url": "https://example.com/avances-inteligencia-artificial",
+    "creationDate": "2024-06-01T14:45:00Z"
+  },
+  {
+    "id": 4,
+    "title": "Descubrimiento de un nuevo planeta",
+    "subtitle": "Planeta habitable descubierto en un sistema solar cercano",
+    "description": "Astrónomos han descubierto un nuevo planeta que podría ser habitable en un sistema solar cercano.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEBPSUW7FAHHSi85hDsV_R3SwscJC4l4ArsQ&s",
+    "url": "https://example.com/descubrimiento-nuevo-planeta",
+    "creationDate": "2024-06-02T12:00:00Z"
+  },
+  {
+    "title": "Titulo de prueba actualizado",
+    "subtitle": "Subtitulo de prueba",
+    "description": "Descripcion de prueba",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEBPSUW7FAHHSi85hDsV_R3SwscJC4l4ArsQ&s",
+    "url": "https://example.com/avances-inteligencia-artificial",
+    "creationDate": "2024-06-02T12:00:00Z",
+    "id": 5
+  },
+  {
+    "title": "Titulo de prueba actualizado",
+    "subtitle": "Subtitulo de prueba",
+    "description": "Descripcion de prueba",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEBPSUW7FAHHSi85hDsV_R3SwscJC4l4ArsQ&s",
+    "url": "https://example.com/avances-inteligencia-artificial",
+    "creationDate": "2024-06-02T12:00:00Z",
+    "id": 6
+  },
+  {
+    "title": "Titulo de prueba actualizado",
+    "subtitle": "Subtitulo de prueba",
+    "description": "Descripcion de prueba",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEBPSUW7FAHHSi85hDsV_R3SwscJC4l4ArsQ&s",
+    "url": "https://example.com/avances-inteligencia-artificial",
+    "creationDate": "2024-06-02T12:00:00Z",
+    "id": 7
+  },
+  {
+    "title": "Titulo de prueba actualizado",
+    "subtitle": "Subtitulo de prueba",
+    "description": "Descripcion de prueba",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEBPSUW7FAHHSi85hDsV_R3SwscJC4l4ArsQ&s",
+    "url": "https://example.com/avances-inteligencia-artificial",
+    "creationDate": "2024-06-02T12:00:00Z",
+    "id": 8
+  }
 ]

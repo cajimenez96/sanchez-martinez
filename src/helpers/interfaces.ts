@@ -1,3 +1,7 @@
+export interface SectionTitles {
+  [key: string]: string;
+}
+
 export interface NavbarItem {
   id: number;
   name: string;
@@ -29,4 +33,14 @@ export interface Service {
   name: string;
   description: string;
   path: string;
+}
+
+export interface NoticeResponse {
+  id: number;
+  title: string;
+  subtitle: string;
+  description: string;
+  image: string;
+  url: string;
+  creationDate: string;
 }

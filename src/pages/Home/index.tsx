@@ -1,12 +1,15 @@
 import { useState } from "react";
 import Button from "../../components/Button";
 import Heading from "../../components/Heading";
-import Hero from "../../components/Hero";
-import { hero, heroCarousel, servicesCards } from "../../helpers/constants";
+import Container from "../../components/Container";
+import { hero, heroCarousel, response, sectionTitles, servicesCards } from "../../helpers/constants";
 import { HeroCarousel, Service } from "../../helpers/interfaces";
 import Switch from "../../components/Switch";
 import ServiceCard from "../../components/ServiceCard";
 import { images } from "../../utils/images";
+import Section from "../../components/Section";
+import NoticeCard from "../../components/NoticeCard";
+import Carousel from "../../components/Carousel";
 
 const Home = () => {
   const [selectedValue, setSelectedValue] = useState<number>(1);
@@ -38,26 +41,26 @@ const Home = () => {
 
   return (
     <>
-      <Hero className="p-3 py-10 md:py-0 flex flex-col md:flex-row justify-evenly items-center md:items-start gap-y-10 md:gap-0">
+      <Container className="p-3 py-10 md:py-0 flex flex-col md:flex-row justify-evenly items-center md:items-start gap-y-10 md:gap-0 min-h-[70vh]">
 
-        <section className="my-auto flex flex-col">
+        <Section className="my-auto flex flex-col">
           <Heading level={1} className="whitespace-break-spaces text-[4rem] font-surt-ex-bold leading-none">
             {hero.title +"\n" + hero.title2}
           </Heading>
           <Heading level={2} className="text-mapuche text-[2.5rem] font-surt-ex-bold">
             {hero.subtitle}
           </Heading>
-        </section>
+        </Section>
 
-        <section className="max-w-[500px] mx-10 my-auto flex flex-col items-center md:items-start">
+        <Section className="max-w-[500px] mx-10 my-auto flex flex-col items-center md:items-start">
           <Switch selectedValue={selectedValue} handleClick={handleCheckboxChange} />
           {handleSelect()}
-        </section>
-      </Hero>
+        </Section>
+      </Container>
 
-      <section className="my-10 px-20">
+      <Section>
         <Heading level={4} className="text-oscuro text-[36px] font-surt-bold">
-          Nuestros Servicios
+          {sectionTitles.service}
         </Heading>
 
         <article className="flex gap-20 mt-14">
@@ -73,7 +76,30 @@ const Home = () => {
           </div>
 
         </article>
-      </section>
+      </Section>
+
+      <>
+        <Section className="flex flex-col items-center mt-20">
+          <Heading level={4} className="text-oscuro text-[36px] font-surt-bold">
+            {sectionTitles.notice}
+          </Heading>
+        </Section>
+          <Container className="py-12 flex flex-col items-center">
+            <div className="w-64">
+              <Button buttonStyle="outline">
+                Ver todas las noticias
+              </Button>
+            </div>
+
+            <div className="w-full" >
+              <Carousel>
+                {response.map((notice) => (
+                  <NoticeCard element={notice} />
+                ))}
+              </Carousel>
+            </div>
+          </Container>
+      </>
     </>
   )
 }
