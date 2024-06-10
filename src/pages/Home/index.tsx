@@ -2,12 +2,14 @@ import { useState } from "react";
 import Button from "../../components/Button";
 import Heading from "../../components/Heading";
 import Container from "../../components/Container";
-import { hero, heroCarousel, sectionTitles, servicesCards } from "../../helpers/constants";
+import { hero, heroCarousel, response, sectionTitles, servicesCards } from "../../helpers/constants";
 import { HeroCarousel, Service } from "../../helpers/interfaces";
 import Switch from "../../components/Switch";
 import ServiceCard from "../../components/ServiceCard";
 import { images } from "../../utils/images";
 import Section from "../../components/Section";
+import NoticeCard from "../../components/NoticeCard";
+import Carousel from "../../components/Carousel";
 
 const Home = () => {
   const [selectedValue, setSelectedValue] = useState<number>(1);
@@ -88,8 +90,13 @@ const Home = () => {
                 Ver todas las noticias
               </Button>
             </div>
-            <div>
 
+            <div className="w-full" >
+              <Carousel>
+                {response.map((notice) => (
+                  <NoticeCard element={notice} />
+                ))}
+              </Carousel>
             </div>
           </Container>
       </>
