@@ -23,10 +23,10 @@ const Home = () => {
     return (
       <div className="min-h-[300px] flex flex-col h-full justify-between items-center md:items-start">
         <div>
-          <Heading level={4} className="whitespace-break-spaces text-[1.5rem] font-surt-semibold text-base mb-5">
+          <Heading level={4} className="whitespace-break-spaces text-[1.5rem] text-base mb-5">
             {data?.title}
             </Heading>
-            <Heading level={4} className="whitespace-break-spaces font-surt-regular text-[.8em] leading-7">
+            <Heading level={4} className="whitespace-break-spaces text-[.8em] leading-7">
               {data?.description}
             </Heading>
         </div>
@@ -44,10 +44,10 @@ const Home = () => {
       <Container className="p-3 py-10 md:py-0 flex flex-col md:flex-row justify-evenly items-center md:items-start gap-y-10 md:gap-0 min-h-[70vh]">
 
         <Section className="my-auto flex flex-col">
-          <Heading level={1} className="whitespace-break-spaces text-[4rem] font-surt-ex-bold leading-none">
+          <Heading level={1} className="whitespace-break-spaces text-[4rem] leading-none">
             {hero.title +"\n" + hero.title2}
           </Heading>
-          <Heading level={2} className="text-mapuche text-[2.5rem] font-surt-ex-bold">
+          <Heading level={2} className="text-mapuche text-[2.5rem]">
             {hero.subtitle}
           </Heading>
         </Section>
@@ -59,7 +59,7 @@ const Home = () => {
       </Container>
 
       <Section>
-        <Heading level={4} className="text-oscuro text-[36px] font-surt-bold">
+        <Heading level={4} className="text-oscuro text-[36px]">
           {sectionTitles.service}
         </Heading>
 
@@ -80,7 +80,7 @@ const Home = () => {
 
       <>
         <Section className="flex flex-col items-center mt-20">
-          <Heading level={4} className="text-oscuro text-[36px] font-surt-bold">
+          <Heading level={4} className="text-oscuro text-[36px]">
             {sectionTitles.notice}
           </Heading>
         </Section>

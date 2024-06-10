@@ -11,10 +11,10 @@ const ServiceCard = ({service}: ServiceCardProps) => {
   return (
     <div className="h-36 p-4 border border-naranja rounded-xl flex justify-between items-center">
       <div className="max-w-[75%]">
-        <Heading className="uppercase text-oscuro font-surt-bold text-xl mb-5">
+        <Heading className="uppercase text-oscuro text-xl mb-5">
           {service.name}
         </Heading>
-        <p className="text-oscuro font-surt-normal text-base">{service.description}</p>
+        <p className="text-oscuro text-base">{service.description}</p>
       </div>
       <div>
         <Button className="underline">

@@ -30,7 +30,7 @@ const handleStyle = (type: Styles, disabled: boolean) => {
 
 const ButtonContent = ({children}: buttonComponentProps) => {
   return (
-    <div className={`w-full h-10 px-4 py-1 flex justify-center items-center gap-2`}>
+    <div className={`w-full h-10 px-4 py-1 flex justify-center items-center gap-2 font-lexend`}>
       {children}
     </div>
   )
