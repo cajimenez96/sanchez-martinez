@@ -71,7 +71,7 @@ const Home = () => {
             ))}
           </div>
 
-          <div className="max-w-md max-h-[850px]">
+          <div className="max-w-md max-h-[850px] md:hidden">
             <img src={images.service} alt="Servicios" />
           </div>
 

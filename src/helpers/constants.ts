@@ -165,3 +165,35 @@ export const response: NoticeResponse[] = [
     "id": 8
   }
 ]
+
+export const footer = {
+  recursos: [
+    {name: "Contacto", path: '/'},
+    {name: "Noticias", path: '/'},
+    {name: "Nosotros", path: '/'},
+    {name: "Inicio", path: '/'}
+  ],
+  servicios: [
+    {name: "Familia y sucesiones", path: '/'},
+    {name: "Acciones de consumo", path: '/'},
+    {name: "Daños y perjuicios", path: '/'},
+    {name: "Laboral", path: '/'},
+    {name: "Penal", path: '/'}
+  ],
+  magna: {
+    descripcion: "Magna es un grupo de abogados asociados conformado por profesionales especializados en diferentes áreas del derecho, brindamos asesoramiento en materia Penal, civil: (Familia - Sucesiones - Daños - Acciones de consumo, laboral, etc.)"
+  },
+  contacto: {
+    correo: "hola@magnastudio.com.ar",
+    telefono: "+54 9 3815 79-6741",
+    direccion: {
+      ciudad: "Tucumán",
+      localidad: "San Miguel de Tucumán",
+      calle: "Congreso de Tucumán 566"
+    },
+    ubicacion: "Ver ubicación exacta"
+  },
+  footer: {
+    texto: "© 2024 Magna abogados asociados. Todos los derechos reservados."
+  }
+};
