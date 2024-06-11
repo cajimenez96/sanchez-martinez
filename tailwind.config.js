@@ -16,7 +16,8 @@ export default {
       'naranja': 'var(--color-naranja)',
       'crema': 'var(--color-crema)',
       'mapuche': 'var(--color-mapuche)',
-      'blanco': '--color-blanco'
+      'blanco': '--color-blanco',
+      'oscuro-blur': 'var(--color-oscuro-blur)'
     },
     extend: {},
   },

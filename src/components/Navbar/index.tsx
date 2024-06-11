@@ -45,14 +45,14 @@ const Navbar = () => {
       <ul
         className={
           nav
-            ? "fixed md:hidden left-0 top-0 w-[60%] pt-8 h-full border-r bg-oscuro ease-in-out duration-500"
+            ? "fixed md:hidden left-0 top-0 w-[60%] pt-8 h-full bg-oscuro ease-in-out duration-500 z-50"
             : "ease-in-out w-[60%] duration-500 fixed top-0 bottom-0 left-[-100%]"
         }
       >
         {navbar.map(item => (
           <li
             key={item.id}
-            className="p-4 hover:bg-crema duration-300 hover:text-oscuro cursor-pointer border-gray-600 text-crema"
+            className="p-4 hover:bg-crema duration-300 hover:text-oscuro cursor-pointer text-crema"
           >
             {item.name}
           </li>

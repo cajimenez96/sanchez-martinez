@@ -10,6 +10,7 @@ import { images } from "../../utils/images";
 import Section from "../../components/Section";
 import NoticeCard from "../../components/NoticeCard";
 import Carousel from "../../components/Carousel";
+import Modal from "../../components/Modal";
 
 const Home = () => {
   const [selectedValue, setSelectedValue] = useState<number>(1);
@@ -71,7 +72,7 @@ const Home = () => {
             ))}
           </div>
 
-          <div className="max-w-md max-h-[850px] md:hidden">
+          <div className="max-w-md max-h-[850px] hidden md:block">
             <img src={images.service} alt="Servicios" />
           </div>
 
@@ -100,6 +101,8 @@ const Home = () => {
             </div>
           </Container>
       </>
+
+      <Modal />
     </>
   )
 }
