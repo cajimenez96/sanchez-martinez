@@ -1,3 +1,4 @@
+import { Navigation } from "../utils/navigation";
 import { Hero, HeroCarousel, NavbarItem, NoticeResponse, SectionTitles, Service } from "./interfaces";
 
 //SECTIONS
@@ -11,7 +12,7 @@ export const navbar: NavbarItem[] = [
   {
     id: 0,
     name: 'Contacto',
-    path: '/contacto',
+    path: Navigation.contact,
     dropdown: false
   },
   {
@@ -51,7 +52,7 @@ export const heroCarousel: HeroCarousel[] = [
     title: "Abogados Asociados",
     description: "Asesoramos en diferentes áreas, el servicio en beneficio de nuestros clientes se extiende al derecho penal, laboral, daños, acciones de consumo, familia y sucesiones.",
     button: "Consultar ahora",
-    path: "",
+    path: Navigation.contact,
   },
   {
     id: 2,
