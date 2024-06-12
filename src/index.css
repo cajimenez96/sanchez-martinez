@@ -22,4 +22,5 @@ html {
 body {
   font-family: 'Lexend';
   font-size: 16px;
+  background-color: var(--color-blanco);
 }
