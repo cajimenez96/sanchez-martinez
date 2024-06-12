@@ -17,7 +17,7 @@ const Button = ({ text, isSelected, onClick }: ButtonProps) => {
   return (
     <span
       onClick={onClick}
-      className={`flex ${height} items-center justify-center bg-crema border-crema hover:bg-naranja text-naranja hover:text-crema ${isSelected ? widthSelected : widthUnSelected} duration-200`}
+      className={`flex ${height} items-center justify-center bg-crema border-crema hover:bg-naranja text-naranja hover:text-crema ${isSelected ? widthSelected : widthUnSelected} duration-200 z-0`}
     >
       {text}
     </span>

@@ -13,6 +13,7 @@ export interface NavbarItem {
 export interface NavbarItemMenu {
   name: string;
   path: string;
+  options: SectionTitles[];
 }
 
 export interface Hero {

@@ -26,8 +26,14 @@ export const navbar: NavbarItem[] = [
     path: '',
     dropdown: true,
     dropdownMenu: [
-      {name: 'Servicios', path: ''},
-      {name: 'Penal', path: ''}
+      {name: 'Servicios', path: '', options: [
+        {name: 'Penal', path: ''},
+        {name: 'Daños', path: ''},
+        {name: 'Laboral', path: ''},
+        {name: 'Familia y sucesiones', path: ''},
+        {name: 'Acciones de consumo', path: ''},
+      ]},
+      {name: 'Preguntas', path: '', options: []}
     ]
   }
 ];

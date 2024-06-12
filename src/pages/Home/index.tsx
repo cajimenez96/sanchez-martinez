@@ -42,7 +42,7 @@ const Home = () => {
 
   return (
     <>
-      <Container className="p-3 py-10 md:py-0 flex flex-col md:flex-row justify-evenly items-center md:items-start gap-y-10 md:gap-0 min-h-[70vh]">
+      <Container className="p-3 py-10 md:py-0 mt-0 flex flex-col md:flex-row justify-evenly items-center md:items-start gap-y-10 md:gap-0 min-h-[70vh]">
 
         <Section className="my-auto flex flex-col">
           <Heading level={1} className="whitespace-break-spaces text-[4rem] leading-none">
