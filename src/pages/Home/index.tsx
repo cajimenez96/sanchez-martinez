@@ -32,7 +32,7 @@ const Home = () => {
             </Heading>
         </div>
         <div className="w-[250px]">
-          <Button buttonStyle="outline">
+          <Button link href={data?.path} buttonStyle="outline">
             {data?.button}
           </Button>
         </div>

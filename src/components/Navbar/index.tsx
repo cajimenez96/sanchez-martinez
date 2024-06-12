@@ -6,6 +6,8 @@ import { navbar } from "../../helpers/constants";
 import Button from "../Button";
 import Dropdown from "../Dropdown";
 import { NavbarItemMenu } from "../../helpers/interfaces";
+import { Link } from "react-router-dom";
+import { Navigation } from "../../utils/navigation";
 
 interface MenuProps {
   children: ReactNode;
@@ -35,7 +37,9 @@ const Navbar = () => {
 
   return (
     <div className="flex justify-between md:justify-around items-center h-24 px-4 mt-4">
-      <LogoNav />
+      <Link to={Navigation.home}>
+        <LogoNav />
+      </Link>
 
       <ul className="hidden md:flex">
         {navbar.map(item => (
@@ -46,7 +50,7 @@ const Navbar = () => {
             {item.dropdown && item.dropdownMenu ?
                 <Dropdown options={item.dropdownMenu} placeholder={item.name} onSelect={handleSelect} />
               : (
-                <Button buttonStyle="link">{item.name}</Button>
+                <Button link href={item.path} buttonStyle="link">{item.name}</Button>
             )}
           </li>
         ))}
