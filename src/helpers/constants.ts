@@ -204,3 +204,38 @@ export const footer = {
     texto: "© 2024 Magna abogados asociados. Todos los derechos reservados."
   }
 };
+
+export const contact = {
+  nombre: { 
+    label: "Nombre",
+    inputType: "text",
+    placeholder: "Tú nombre",
+  },
+  apellido: {
+    label: "Apellido",
+    inputType: "text",
+    placeholder: "Tú apellido",
+  },
+  asunto: {
+    placeholder: "Seleccione un asunto",
+    options: [
+      {label: "Penal", value: "Penal"},
+      {label: "Laboral", value: "Laboral"},
+      {label: "Daños", value: "Daños"},
+      {label: "Acciones de consumo", value: "Acciones de consumo"},
+      {label: "Familia y sucesiones", value: "Familia y sucesiones"},
+      {label: "Acciones de consumo", value: "Acciones de consumo"},
+      {label: "Otras consultas", value: "Otras consultas"},  
+    ]
+  },
+  correo: {
+    label: "Correo electrónico",
+    inputType: "email",
+    placeholder: "Tú correo electrónico",
+  },
+  mensaje: {
+    label: "Mensaje",
+    inputType: "textarea",
+    placeholder: "",
+  }
+}
