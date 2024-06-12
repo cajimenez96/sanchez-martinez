@@ -17,7 +17,7 @@ const Modal = () => {
             <div className="w-full">
               <div className="md:flex items-center">
                 <div className="w-full mb-5">
-                  <Heading level={5} className="font-black text-center text-crema text-lg md:text-[1.5rem] mb-3">
+                  <Heading level={5} className="font-black text-center text-crema text-lg md:text-4xl mb-3">
                     ¿Necesitas asesoramiento?
                   </Heading>
                   <p className=" text-sm md:text-base text-crema mt-1 text-center">
