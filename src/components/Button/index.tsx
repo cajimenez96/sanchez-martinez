@@ -37,21 +37,23 @@ const ButtonContent = ({children}: buttonComponentProps) => {
 }
 
 const Button = ({link, href, children, handleClick, className, disabled = false, buttonStyle = 'link'}: ButtonProps) => {
-  if (link) {
-    return (
-      <Link to={(href as never) as string} className={`w-full hover:underline className ${handleStyle(buttonStyle, disabled)} duration-200`}>
+
+  return (
+    <button
+      className={`w-full rounded-xl ${className} ${handleStyle(buttonStyle, disabled)} duration-200`}
+      onClick={handleClick}
+    >
+      {link ? (
+        <Link to={(href as never) as string}>
+          <ButtonContent>
+            {children}
+          </ButtonContent>
+        </Link>
+      ) : (
         <ButtonContent>
           {children}
         </ButtonContent>
-      </Link>
-    );
-  }
-
-  return (
-    <button className={`w-full rounded-xl ${className} ${handleStyle(buttonStyle, disabled)} duration-200`} onClick={handleClick}>
-      <ButtonContent>
-        {children}
-      </ButtonContent>
+      )}
     </button>
   );
 }

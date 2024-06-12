@@ -2,6 +2,7 @@ import { useState } from "react";
 import Heading from "../Heading";
 import Button from "../Button";
 import { MdOutlineClose } from "react-icons/md";
+import { Navigation } from "../../utils/navigation";
 
 const Modal = () => {
   const [open, setOpen] = useState(true);
@@ -27,7 +28,11 @@ const Modal = () => {
 
               <div className="flex justify-center gap-10">
                 <div>
-                  <Button buttonStyle="outline" className="text-sm">
+                  <Button
+                    buttonStyle="outline"
+                    link
+                    href={Navigation.contact}
+                    className="text-sm">
                     Consultar ahora
                   </Button>
                 </div>
