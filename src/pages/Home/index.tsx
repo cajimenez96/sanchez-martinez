@@ -11,6 +11,7 @@ import Section from "../../components/Section";
 import NoticeCard from "../../components/NoticeCard";
 import Carousel from "../../components/Carousel";
 import Modal from "../../components/Modal";
+import Text from "../../components/Text";
 
 const Home = () => {
   const [selectedValue, setSelectedValue] = useState<number>(1);
@@ -24,12 +25,12 @@ const Home = () => {
     return (
       <div className="min-h-[300px] flex flex-col h-full justify-between items-center md:items-start">
         <div>
-          <Heading level={4} className="whitespace-break-spaces text-[1.5rem] text-base mb-5">
+          <Heading level={4} className="mb-5 whitespace-break-spaces font-bold text-lg md:text-4xl">
             {data?.title}
             </Heading>
-            <Heading level={4} className="whitespace-break-spaces text-[.8em] leading-7">
+            <Text className="font-normal text-base leading-7">
               {data?.description}
-            </Heading>
+            </Text>
         </div>
         <div className="w-[250px]">
           <Button link href={data?.path} buttonStyle="outline">
@@ -44,17 +45,26 @@ const Home = () => {
     <>
       <Container className="p-3 py-10 md:py-0 mt-0 flex flex-col md:flex-row justify-evenly items-center md:items-start gap-y-10 md:gap-0 min-h-[70vh]">
 
-        <Section className="my-auto flex flex-col">
-          <Heading level={1} className="whitespace-break-spaces text-[4rem] leading-none">
-            {hero.title +"\n" + hero.title2}
+        <Section className="my-auto flex flex-col items-start leading-[2.8rem] md:leading-none">
+          
+          <Heading level={1} className="font-black text-[40px] md:text-[82px] md:tracking-[8px]">
+            {hero.title}
           </Heading>
-          <Heading level={2} className="text-mapuche text-[2.5rem]">
+
+          <Heading level={1} className="font-black text-[40px] md:text-[82px] md:tracking-[8px]">
+            {hero.title2}
+          </Heading>
+          
+          <Heading level={3} className="text-mapuche font-medium text-3xl md:text-7xl">
             {hero.subtitle}
           </Heading>
+
         </Section>
 
-        <Section className="max-w-[500px] mx-10 my-auto flex flex-col items-center md:items-start">
-          <Switch selectedValue={selectedValue} handleClick={handleCheckboxChange} />
+        <Section className="w-3/4 md:max-w-[500px] mx-10 my-auto flex flex-col items-center md:items-start">
+          <div className="w-full">
+            <Switch selectedValue={selectedValue} handleClick={handleCheckboxChange} />
+          </div>
           {handleSelect()}
         </Section>
       </Container>
