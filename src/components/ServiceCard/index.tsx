@@ -26,7 +26,7 @@ const ServiceCard = ({service}: ServiceCardProps) => {
         <div>
           <Button className="underline group-hover:text-crema text-xs md:text-base whitespace-nowrap">
             Leer más
-            <FaAngleDoubleRight className="hidden group-hover:block" />
+            <FaAngleDoubleRight className="text-transparent group-hover:text-crema" />
           </Button>
         </div>
       </div>
