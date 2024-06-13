@@ -62,31 +62,33 @@ const Home = () => {
         </Section>
 
         <Section className="w-3/4 md:max-w-[500px] mx-10 my-auto flex flex-col items-center md:items-start">
-          <div className="w-full">
+          <div className="w-full mt-5">
             <Switch selectedValue={selectedValue} handleClick={handleCheckboxChange} />
           </div>
           {handleSelect()}
         </Section>
       </Container>
 
-      <Section>
-        <Heading level={4} className="text-oscuro text-[36px]">
-          {sectionTitles.service}
-        </Heading>
+      <Section className="flex justify-center mx-5 md:mx-0">
+        <div className="md:mt-10">
+          <Heading level={4} className="font-semibold md:font-black text-oscuro text-xl md:text-[36px]">
+            {sectionTitles.service}
+          </Heading>
 
-        <article className="flex gap-20 mt-14">
-          
-          <div className="flex flex-col justify-between">
-            {servicesCards.map((element: Service, index: number) => (
-              <ServiceCard service={element} key={index}/>
-            ))}
-          </div>
+          <article className="flex gap-20 mt-10 md:mt-14">
+            
+            <div className="flex flex-col justify-between gap-5 md:gap-0">
+              {servicesCards.map((element: Service, index: number) => (
+                <ServiceCard service={element} key={index}/>
+                ))}
+            </div>
 
-          <div className="max-w-md max-h-[850px] hidden md:block">
-            <img src={images.service} alt="Servicios" />
-          </div>
+            <div className="max-w-md max-h-[850px] hidden md:block">
+              <img src={images.service} alt="Servicios" />
+            </div>
 
-        </article>
+          </article>
+        </div>
       </Section>
 
       <>
