@@ -62,7 +62,7 @@ const Home = () => {
         </Section>
 
         <Section className="w-3/4 md:max-w-[500px] mx-10 my-auto flex flex-col items-center md:items-start">
-          <div className="w-full">
+          <div className="w-full mt-5">
             <Switch selectedValue={selectedValue} handleClick={handleCheckboxChange} />
           </div>
           {handleSelect()}
