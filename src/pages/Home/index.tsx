@@ -91,28 +91,28 @@ const Home = () => {
         </div>
       </Section>
 
-      <>
-        <Section className="flex flex-col items-center mt-20">
-          <Heading level={4} className="text-oscuro text-[36px]">
+      <section>
+        <Container className="py-10 flex flex-col items-center">
+
+          <Heading level={4} className="font-semibold md:font-black text-crema text-xl md:text-4xl">
             {sectionTitles.notice}
           </Heading>
-        </Section>
-          <Container className="py-12 flex flex-col items-center">
-            <div className="w-64">
-              <Button buttonStyle="outline">
-                Ver todas las noticias
-              </Button>
-            </div>
 
-            <div className="w-full" >
-              <Carousel>
-                {response.map((notice) => (
-                  <NoticeCard element={notice} />
-                ))}
-              </Carousel>
-            </div>
-          </Container>
-      </>
+          <div className="w-64 my-8">
+            <Button buttonStyle="outline">
+              Ver todas las noticias
+            </Button>
+          </div>
+
+          <div className="w-[90%]">
+            <Carousel>
+              {response.map((notice) => (
+                <NoticeCard element={notice} />
+              ))}
+            </Carousel>
+          </div>
+        </Container>
+      </section>
 
       <Modal />
     </>

@@ -24,3 +24,8 @@ body {
   font-size: 16px;
   background-color: var(--color-blanco);
 }
+
+li.slick-active > li {
+  width: 30px !important;
+  background-color: var(--color-mapuche) !important;
+}
