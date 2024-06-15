@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { BiSolidDownArrow } from "react-icons/bi";
-import { SectionTitles } from "../../helpers/interfaces";
+import { LinkType, SectionTitles } from "../../helpers/interfaces";
+import { Link } from "react-router-dom";
 
 interface AccordionProps {
   title: string;
-  elements: SectionTitles[];
+  elements: LinkType[];
   handleSelect: (value: SectionTitles) => void;
 }
 
@@ -34,7 +35,9 @@ const Accordion = ({ elements, title, handleSelect }: AccordionProps) => {
           {open ? (
             elements.map((element, index) => (
               <li key={index} onClick={() => select(element)} className="mb-2 ps-3 hover:text-naranja text-base font-light">
-                {element.name}
+                <Link to={`${element.path}/${element.id}`}>
+                  {element.name} 
+                </Link>
               </li>
             ))
           ) : null}

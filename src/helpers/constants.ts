@@ -27,13 +27,17 @@ export const navbar: NavbarItem[] = [
     path: '',
     dropdown: true,
     dropdownMenu: [
-      {name: 'Servicios', path: '', options: [
-        {name: 'Penal', path: ''},
-        {name: 'Daños', path: ''},
-        {name: 'Laboral', path: ''},
-        {name: 'Familia y sucesiones', path: ''},
-        {name: 'Acciones de consumo', path: ''},
-      ]},
+      {
+        name: 'Servicios',
+        path: '',
+        options: [
+          {name: "Familia y sucesiones", path: '/servicio', id: 4},
+          {name: "Acciones de consumo", path: '/servicio', id: 0},
+          {name: "Daños y perjuicios", path: '/servicio', id: 3},
+          {name: "Laboral", path: '/servicio', id: 2},
+          {name: "Penal", path: '/servicio', id: 1}
+        ]
+      },
       {name: 'Preguntas', path: '', options: []}
     ]
   }
@@ -44,6 +48,7 @@ export const hero: Hero = {
   title2: "Matínez",
   subtitle: "& Asociados"
 };
+
 
 //HERO
 export const heroCarousel: HeroCarousel[] = [
@@ -62,6 +67,7 @@ export const heroCarousel: HeroCarousel[] = [
     path: "",
   },
 ];
+
 
 //NUESTROS SERVICIOS
 export const servicesCards: Service[] = [
@@ -83,14 +89,225 @@ export const servicesCards: Service[] = [
   {
     name: "Acciones de consumo",
     description: "Planes de ahorros, estafas virtuales, tarjetas de créditos, operaciones bancarias...",
-    path: ""
+    path: "/servicio/1"
   },
   {
     name: "Familia y sucesiones",
     description: "Divorcios, Alimentos, régimen comunicacional, sucesiones por causa de muerte, testamentos...",
     path: ""
   },
+];
+
+export const services = [
+  {
+    id: 0,
+    title: "Abogados de consumo",
+    description: [
+      {
+        title: "Consultas",
+        description: "Evacuamos consultas respecto de todo tipo de perjuicios relacionados con contratos de consumo; Tarjeta de crédito, planes de ahorro, operaciones Bancarias, etc."
+      },
+      {
+        title: "Asesoramiento preventivo y defensivo",
+        description: "Brindamos asesoramiento preventivo y defensivo en todos los temas referidos a los derechos del consumidor. En el marco legal de protección al consumidor, la preparación de contratos y otros instrumentos empresariales que prevean posibles reclamos es de gran importancia para prevenir o minimizar potenciales controversias con consumidores y usuarios o asociaciones de consumidores."
+      },
+      {
+        title: "Experiencia",
+        description: "Tenemos experiencia en la defensa administrativa y judicial en distintos organismos y tribunales, de las empresas que enfrentan reclamos de consumidores. El estudio tiene servicio de consulta en cuestiones de publicidad, (publicidad comparativa, publicidad engañosa, promociones y ofertas de productos, etc.), trato al cliente, etc., tanto desde la óptica del derecho del consumidor como en relación con las normas de lealtad comercial y de defensa de la competencia."
+      },
+      {
+        title: "Profesionalismo",
+        description: "La actuación profesional del estudio también incluye la defensa en casos de acciones colectivas y el asesoramiento en materia de responsabilidad por productos elaborados."
+      }
+    ],
+    items: [
+      { id: 1, description: "Planes de ahorro" },
+      { id: 2, description: "Estafas virtuales" },
+      { id: 3, description: "Tarjetas de créditos" },
+      { id: 4, description: "Operaciones bancarias" },
+      { id: 5, description: "Solicitud de baja de servicios" },
+      { id: 6, description: "Sobreendeudamiento del consumidor" },
+      { id: 7, description: "Robos sufridos en supermercados, shoppings" },
+      { id: 8, description: "Reclamos ante obra social, seguros" },
+      { id: 9, description: "Incumplimiento de contrato por parte del proveedor" }
+    ],
+    button: {
+      text: "Consultar ahora",
+      path: "/contacto/"
+    }
+  },
+  {
+    id: 1,
+    title: "Abogados penalistas",
+    description: [
+      {
+        title: "Derechos y garantías",
+        description: "Abogamos por los derechos y garantías de las personas involucradas en causas penales, sean víctimas del delito o imputados. Procuramos en cada caso una gestión seria, comprometida y eficaz. Custodiar la plena vigencia del Estado de Derecho frente al ejercicio del poder punitivo por parte de los órganos estatales predispuestos."
+      },
+      {
+        title: "Defensa",
+        description: "Estamos en condición de asumir su defensa, cualquiera sea la acusación en su contra o el delito que lo ha damnificado, como tus abogados de confianza."
+      }
+    ],
+    items: [
+      { id: 1, description: "Defensa de personas imputadas" },
+      { id: 2, description: "Querellas" }
+    ],
+    button: {
+      text: "Consultar ahora",
+      path: "/contacto/"
+    }
+  },
+  {
+    id: 2,
+    title: "Abogados laborales",
+    description: [
+      {
+        title: "Derecho laboral",
+        description: "Nos especializamos en Derecho Laboral, además de contar con amplia experiencia en la materia y con muchos casos de éxito que nos diferencian."
+      },
+      {
+        title: "Asesoramiento y asistencia",
+        description: "Brindamos asesoramiento y asistencia legal para trabajadores, representándolos y defendiendo sus derechos en todas las instancias administrativas o judiciales."
+      }
+    ],
+    items: [
+      { id: 1, description: "Entrevistas y asesoramientos virtuales y presenciales." },
+      { id: 2, description: "Asesoramiento y representación judicial y extrajudicial a trabajadores y pymes en el área del derecho laboral." },
+      { id: 3, description: "Abonos mensuales para empresas y/o emprendedores." },
+      { id: 4, description: "Asesoramiento y representación de trabajadores en el área de: sanciones disciplinarias, trabajo no registrado ('en negro')." },
+      { id: 5, description: "Pago de diferencias salariales. Despidos c/o sin causa. Indemnizaciones." },
+      { id: 6, description: "Asesoramiento y representación en el área de Riesgos de trabajo. Accidentes de trabajo." },
+      { id: 7, description: "Enfermedad profesional." },
+      { id: 8, description: "Trámites administrativos en la Superintendencia de Riesgos del Trabajo." }
+    ],
+    button: {
+      text: "Consultar ahora",
+      path: "/contacto/"
+    }
+  },
+  {
+    id: 3,
+    title: "Abogados de daños y perjuicios",
+    description: [
+      {
+        title: "Asesoramiento",
+        description: "Te asesoramos para que puedas cobrar la mejor indemnización posible por daños materiales y/o lesiones en siniestros que sufriste en el menor tiempo posible. No importa si sos peatón, ciclista, pasajero, motociclista o conductor. Si sufriste un accidente, tienes derecho a una compensación económica por parte del causante del daño y de su compañía de seguro. Contamos con un equipo de especialistas en accidentes de tránsito con años de experiencia, listos para ayudarte."
+      }
+    ],
+    items: [
+      { id: 1, description: "Asesoramiento en daños por accidentes de tránsito." },
+      { id: 2, description: "Mala praxis profesional." },
+      { id: 3, description: "Daños derivados de incumplimiento contractual." }
+    ],
+    button: {
+      text: "Consultar ahora",
+      path: "/contacto"
+    }
+  },
+  {
+    id: 4,
+    title: "Abogados de Familia y sucesiones",
+    description: [
+      {
+        title: "Pasión y vocación",
+        description: "Los abogados y abogadas que ejercemos el derecho de familia en el estudio, los hacemos con pasión y con vocación, podemos y debemos ayudar a rescatar y reparar vínculos, donde lo primordial sean los niños niñas y adolescentes, atrapados en una familia en conflicto, los que serán personas del mañana."
+      },
+      {
+        title: "Simple y asequible",
+        description: "Tambien ofrecemos la posibilidad de Tramitar tu sucesión, de forma sencilla, económica, profesional y con todas las garantías legales."
+      }
+    ],
+    items: [
+      { id: 1, description: "Divorcios" },
+      { id: 2, description: "División de Sociedad Conyugal" },
+      { id: 3, description: "Cese de Alimentos" },
+      { id: 4, description: "Alimentos" },
+      { id: 5, description: "Régimen comunicacional" },
+      { id: 6, description: "Sucesiones" },
+      { id: 7, description: "Testamientos" },
+      { id: 8, description: "Cesión de Derechos hereditarios" },
+      { id: 9, description: "Adquisición y venta de bienes en sucesiones en trámite" }
+
+    ],
+    button: {
+      text: "Consultar ahora",
+      path: "/contacto/"
+    }
+  }
 ]
+
+
+
+//FOOTER
+export const footer = {
+  recursos: [
+    {name: "Contacto", path: '/contacto'},
+    {name: "Noticias", path: '/'},
+    {name: "Nosotros", path: '/'},
+    {name: "Inicio", path: '/'}
+  ],
+  servicios: [
+    {name: "Familia y sucesiones", path: '/servicio', id: 4},
+    {name: "Acciones de consumo", path: '/servicio', id: 0},
+    {name: "Daños y perjuicios", path: '/servicio', id: 3},
+    {name: "Laboral", path: '/servicio', id: 2},
+    {name: "Penal", path: '/servicio', id: 1}
+  ],
+  magna: {
+    descripcion: "Magna es un grupo de abogados asociados conformado por profesionales especializados en diferentes áreas del derecho, brindamos asesoramiento en materia Penal, civil: (Familia - Sucesiones - Daños - Acciones de consumo, laboral, etc.)"
+  },
+  contacto: {
+    correo: "hola@magnastudio.com.ar",
+    telefono: "+54 9 3815 79-6741",
+    direccion: {
+      ciudad: "Tucumán",
+      localidad: "San Miguel de Tucumán",
+      calle: "Congreso de Tucumán 566"
+    },
+    ubicacion: "Ver ubicación exacta"
+  },
+  footer: {
+    texto: "© 2024 Magna abogados asociados. Todos los derechos reservados."
+  }
+};
+
+//CONTACT
+export const contact = {
+  nombre: { 
+    label: "Nombre",
+    inputType: "text",
+    placeholder: "Tú nombre",
+  },
+  apellido: {
+    label: "Apellido",
+    inputType: "text",
+    placeholder: "Tú apellido",
+  },
+  asunto: {
+    placeholder: "Seleccione un asunto",
+    options: [
+      {label: "Penal", value: "Penal"},
+      {label: "Laboral", value: "Laboral"},
+      {label: "Daños", value: "Daños"},
+      {label: "Acciones de consumo", value: "Acciones de consumo"},
+      {label: "Familia y sucesiones", value: "Familia y sucesiones"},
+      {label: "Acciones de consumo", value: "Acciones de consumo"},
+      {label: "Otras consultas", value: "Otras consultas"},  
+    ]
+  },
+  correo: {
+    label: "Correo electrónico",
+    inputType: "email",
+    placeholder: "Tú correo electrónico",
+  },
+  mensaje: {
+    label: "Mensaje",
+    inputType: "textarea",
+    placeholder: "",
+  }
+}
+
 
 
 
@@ -172,70 +389,3 @@ export const response: NoticeResponse[] = [
     "id": 8
   }
 ]
-
-export const footer = {
-  recursos: [
-    {name: "Contacto", path: '/'},
-    {name: "Noticias", path: '/'},
-    {name: "Nosotros", path: '/'},
-    {name: "Inicio", path: '/'}
-  ],
-  servicios: [
-    {name: "Familia y sucesiones", path: '/'},
-    {name: "Acciones de consumo", path: '/'},
-    {name: "Daños y perjuicios", path: '/'},
-    {name: "Laboral", path: '/'},
-    {name: "Penal", path: '/'}
-  ],
-  magna: {
-    descripcion: "Magna es un grupo de abogados asociados conformado por profesionales especializados en diferentes áreas del derecho, brindamos asesoramiento en materia Penal, civil: (Familia - Sucesiones - Daños - Acciones de consumo, laboral, etc.)"
-  },
-  contacto: {
-    correo: "hola@magnastudio.com.ar",
-    telefono: "+54 9 3815 79-6741",
-    direccion: {
-      ciudad: "Tucumán",
-      localidad: "San Miguel de Tucumán",
-      calle: "Congreso de Tucumán 566"
-    },
-    ubicacion: "Ver ubicación exacta"
-  },
-  footer: {
-    texto: "© 2024 Magna abogados asociados. Todos los derechos reservados."
-  }
-};
-
-export const contact = {
-  nombre: { 
-    label: "Nombre",
-    inputType: "text",
-    placeholder: "Tú nombre",
-  },
-  apellido: {
-    label: "Apellido",
-    inputType: "text",
-    placeholder: "Tú apellido",
-  },
-  asunto: {
-    placeholder: "Seleccione un asunto",
-    options: [
-      {label: "Penal", value: "Penal"},
-      {label: "Laboral", value: "Laboral"},
-      {label: "Daños", value: "Daños"},
-      {label: "Acciones de consumo", value: "Acciones de consumo"},
-      {label: "Familia y sucesiones", value: "Familia y sucesiones"},
-      {label: "Acciones de consumo", value: "Acciones de consumo"},
-      {label: "Otras consultas", value: "Otras consultas"},  
-    ]
-  },
-  correo: {
-    label: "Correo electrónico",
-    inputType: "email",
-    placeholder: "Tú correo electrónico",
-  },
-  mensaje: {
-    label: "Mensaje",
-    inputType: "textarea",
-    placeholder: "",
-  }
-}

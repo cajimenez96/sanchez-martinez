@@ -41,7 +41,7 @@ const Dropdown: React.FC<DropdownProps> = ({ options, onSelect, placeholder }) =
       </div>
       {isOpen && (
         <div
-          className="origin-top-right absolute left-0 mt-2 w-56 rounded-md bg-blanco z-50"
+          className="origin-top-right absolute left-0 mt-2 w-56 rounded-md bg-blanco shadow-lg z-50"
           role="menu"
           aria-orientation="vertical"
           aria-labelledby="menu-button"
