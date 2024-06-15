@@ -2,6 +2,12 @@ export interface SectionTitles {
   [key: string]: string;
 }
 
+export interface LinkType {
+  name: string;
+  path: string;
+  id?: number;
+}
+
 export interface NavbarItem {
   id: number;
   name: string;
@@ -10,10 +16,8 @@ export interface NavbarItem {
   dropdownMenu?: NavbarItemMenu[];
 }
 
-export interface NavbarItemMenu {
-  name: string;
-  path: string;
-  options: SectionTitles[];
+export interface NavbarItemMenu extends LinkType {
+  options: LinkType[];
 }
 
 export interface Hero {

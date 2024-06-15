@@ -1,3 +1,5 @@
+import { services } from "./constants";
+
 export const standarDate = (fechaISO: string): string  => {
   // Parsear la fecha en formato ISO 8601
   const fecha = new Date(fechaISO);
@@ -27,4 +29,8 @@ export const standarDate = (fechaISO: string): string  => {
   const fechaFormateada = `${dia} ${meses[mes]}, ${año}`;
 
   return fechaFormateada;
+};
+
+export const getService = (id: number) => {
+  return services.find(service => service.id === id);
 }

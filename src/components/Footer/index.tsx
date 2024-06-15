@@ -1,13 +1,15 @@
 import { ReactNode } from "react";
 import { footer } from "../../helpers/constants";
-import { NavbarItemMenu } from "../../helpers/interfaces";
+import { LinkType } from "../../helpers/interfaces";
 import Heading from "../Heading";
 import Section from "../Section";
 import { LogoNav } from "../SvgIcons";
+import { Link } from "react-router-dom";
 
 interface ListProps {
   title: string;
-  elements: NavbarItemMenu[];
+  items: LinkType[];
+  linkPath: (value: LinkType) => string;
 }
 
 interface ContactProps {
@@ -15,18 +17,20 @@ interface ContactProps {
   children: ReactNode;
 }
 
-const List = ({title, elements}: ListProps) => {
-  return (
-    <div className="flex flex-col w-full">
-      <Heading level={6} className="mb-4 uppercase text-oscuro font-medium">{title}</Heading>
-      <ul>
-        {elements.map((recurso) => (
-          <li className="mb-3 font-medium">{recurso.name}</li>
-        ))}
-      </ul>
-    </div>
-  );
-};
+const ListSection = ({ title, items, linkPath }: ListProps) => (
+  <div className="flex flex-col w-full">
+    <Heading level={6} className="mb-4 uppercase text-oscuro font-medium">{title}</Heading>
+    <ul>
+      {items.map((element, index) => (
+        <li className="mb-3 font-medium" key={index}>
+          <Link to={linkPath(element)}>
+            {element.name}
+          </Link>
+        </li>
+      ))}
+    </ul>
+  </div>
+);
 
 const Contact = ({children, title}: ContactProps) => {
   return (
@@ -44,8 +48,16 @@ const Footer = () => {
         <div className="flex flex-wrap md:flex-nowrap justify-between">
 
           <div className="flex w-[2048px]">
-            <List title={'Recursos'} elements={footer.recursos} />           
-            <List title={'Servicios'} elements={footer.servicios} />
+            <ListSection
+              title="Recursos"
+              items={footer.recursos}
+              linkPath={(element) => element.path}
+            />
+            <ListSection
+              title="Servicios"
+              items={footer.servicios}
+              linkPath={(element) => `${element.path}/${element.id}`}
+            />
           </div>
 
 
@@ -92,7 +104,7 @@ const Footer = () => {
 
         </div>
       </Section>
-      <Section className="my-3 flex flex-wrap justify-center md:justify-between items-center gap-5">
+      <Section className="mt-3 mb-5 flex flex-wrap justify-center md:justify-between items-center gap-5">
         <div className="order-2 md:order-1">
           <LogoNav />
         </div>
