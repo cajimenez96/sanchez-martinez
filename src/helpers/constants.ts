@@ -70,31 +70,36 @@ export const heroCarousel: HeroCarousel[] = [
 
 
 //NUESTROS SERVICIOS
-export const servicesCards: Service[] = [
+export const servicesCards = [
   {
     name: "Penal",
     description: "Defensa de personas imputadas y querellas...",
-    path: ""
+    path: "/servicio",
+    id: 1
   },
   {
     name: "Laboral",
     description: "Despidos, ART, asesoramiento a empresas...",
-    path: ""
+    path: "/servicio",
+    id: 2
   },
   {
     name: "Daños",
     description: "Accidentes de tránsito, mala praxis...",
-    path: ""
+    path: "/servicio",
+    id: 3
   },
   {
     name: "Acciones de consumo",
     description: "Planes de ahorros, estafas virtuales, tarjetas de créditos, operaciones bancarias...",
-    path: "/servicio/1"
+    path: "/servicio",
+    id: 0
   },
   {
     name: "Familia y sucesiones",
     description: "Divorcios, Alimentos, régimen comunicacional, sucesiones por causa de muerte, testamentos...",
-    path: ""
+    path: "/servicio",
+    id: 4
   },
 ];
 
@@ -244,7 +249,7 @@ export const footer = {
   recursos: [
     {name: "Contacto", path: '/contacto'},
     {name: "Noticias", path: '/'},
-    {name: "Nosotros", path: '/'},
+    {name: "Nosotros", path: '/nosotros'},
     {name: "Inicio", path: '/'}
   ],
   servicios: [
@@ -306,6 +311,14 @@ export const contact = {
     inputType: "textarea",
     placeholder: "",
   }
+}
+
+//NOSOTROS
+export const about = {
+  title: "Acerca de nuestra firma",
+  description: "Magna es un grupo de abogados asociados conformado por profesionales especializados en diferentes ramas del derecho, brindamos asesoramiento en materia Penal, civil: (Familia - Sucesiones - Daños - Acciones de consumo, laboral, etc.).",
+  firms: "Nuestras firmas",
+  text: "Nuestro equipo está conformado con profesionales especializados en diferentes áreas."
 }
 
 
