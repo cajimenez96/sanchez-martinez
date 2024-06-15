@@ -6,6 +6,7 @@ import Contact from './pages/Contact';
 import { Navigation } from './utils/navigation';
 import Service from './pages/Service';
 import { useEffect } from 'react';
+import About from './pages/About';
 
 function App() {
   const { pathname } = useLocation();
@@ -20,6 +21,7 @@ function App() {
       <Router>
         <Route path={Navigation.home} element={<Home />}/>
         <Route path={Navigation.contact} element={<Contact />}/>
+        <Route path={Navigation.about} element={<About />} />
         <Route path={`${Navigation.service}/:id`} element={<Service />} />
       </Router>
       <Footer />

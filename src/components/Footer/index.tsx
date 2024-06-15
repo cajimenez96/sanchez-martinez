@@ -19,10 +19,10 @@ interface ContactProps {
 
 const ListSection = ({ title, items, linkPath }: ListProps) => (
   <div className="flex flex-col w-full">
-    <Heading level={6} className="mb-4 uppercase text-oscuro font-medium">{title}</Heading>
+    <Heading level={6} className="mb-4 uppercase text-sm text-oscuro font-medium">{title}</Heading>
     <ul>
       {items.map((element, index) => (
-        <li className="mb-3 font-medium" key={index}>
+        <li className="mb-3 font-medium text-sm" key={index}>
           <Link to={linkPath(element)}>
             {element.name}
           </Link>

@@ -5,5 +5,6 @@ interface Navvigation {
 export const Navigation: Navvigation = {
   home: '/',
   contact: '/contacto',
-  service: '/servicio'
+  service: '/servicio',
+  about: '/nosotros'
 }
