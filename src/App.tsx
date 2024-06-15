@@ -1,12 +1,18 @@
-import {Routes as Router, Route} from 'react-router-dom'
+import {Routes as Router, Route, useLocation} from 'react-router-dom'
 import Navbar from "./components/Navbar";
 import Home from './pages/Home';
 import Footer from './components/Footer';
 import Contact from './pages/Contact';
 import { Navigation } from './utils/navigation';
 import Service from './pages/Service';
+import { useEffect } from 'react';
 
 function App() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   return (
     <>
@@ -21,4 +27,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
