@@ -54,13 +54,10 @@ const Dropdown: React.FC<DropdownProps> = ({ options, onSelect, placeholder }) =
               <button
                 key={index}
                 onClick={() => onSelect(option)}
-                className="flex items-center gap-2 px-4 py-2 text-base w-full text-left hover:text-naranja"
+                className="flex items-center gap-2 px-3 py-2 text-base w-full text-left hover:text-naranja"
                 role="menuitem"
               >
                 {option.name}
-                {option.options.length > 0 && (
-                  <BiSolidDownArrow />
-                )}
               </button>
               )
             ))}

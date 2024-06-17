@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BiSolidDownArrow } from "react-icons/bi";
+import { BiSolidDownArrow, BiSolidRightArrow } from "react-icons/bi";
 import { LinkType, SectionTitles } from "../../helpers/interfaces";
 import { Link } from "react-router-dom";
 
@@ -14,20 +14,18 @@ const Accordion = ({ elements, title, handleSelect }: AccordionProps) => {
 
 
   const toggleSelf = () => {
-    console.log('ausilioo');
     setOpen(!open);
   };
 
   const select = (data) => {
-    console.log(data);
     handleSelect(data);
   }
 
   return (
     <>
-      <span className="flex items-center gap-2 px-4 py-2 text-base w-full text-left hover:text-naranja cursor-pointer" onClick={toggleSelf}>
+      <span className="flex items-center gap-2 px-3 py-2 text-base w-full text-left hover:text-naranja cursor-pointer" onClick={toggleSelf}>
         {title}
-        <BiSolidDownArrow />
+        {open ? <BiSolidDownArrow /> : <BiSolidRightArrow /> }
       </span>
       
       <div className={`cursor-pointer z-50`}>
