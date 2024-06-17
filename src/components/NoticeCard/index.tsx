@@ -9,12 +9,12 @@ interface NoticeCardProps {
 
 const NoticeCard = ({element}: NoticeCardProps) => {
   return (
-    <div className="w-[350px]">
+    <div className="w-[350px] md:w-[450px] md:mx-10 group cursor-pointer">
       <div className="mx-5 flex flex-col gap-5">
         <img src={element.image} alt={element.title} />
 
         <div className="flex justify-between">
-          <div className="flex items-center gap-2 cursor-pointer font-light text-sm text-naranja border-b border-transparent hover:border-naranja">
+          <div className="flex items-center gap-2 cursor-pointer font-light text-sm text-blanco border-b border-transparent group-hover:text-naranja hover:border-naranja">
             Leer más
             <FaAngleDoubleRight />
           </div>
