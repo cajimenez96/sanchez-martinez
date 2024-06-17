@@ -5,6 +5,7 @@ import Heading from "../Heading";
 import Section from "../Section";
 import { LogoNav } from "../SvgIcons";
 import { Link } from "react-router-dom";
+import { normalizeLink } from "../../helpers/helper";
 
 interface ListProps {
   title: string;
@@ -51,12 +52,12 @@ const Footer = () => {
             <ListSection
               title="Recursos"
               items={footer.recursos}
-              linkPath={(element) => element.path}
+              linkPath={(element) => normalizeLink(element.path)}
             />
             <ListSection
               title="Servicios"
               items={footer.servicios}
-              linkPath={(element) => `${element.path}/${element.id}`}
+              linkPath={(element) => normalizeLink(element.path, element.id)}
             />
           </div>
 

@@ -34,3 +34,8 @@ export const standarDate = (fechaISO: string): string  => {
 export const getService = (id: number) => {
   return services.find(service => service.id === id);
 }
+
+export const normalizeLink = (path: string, id?: number) => {
+  if (!id) return path;
+  return `${path}/${id}`;
+}
