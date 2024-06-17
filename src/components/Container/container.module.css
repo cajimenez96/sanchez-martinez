@@ -1,4 +1,4 @@
 .background {
   background: var(--color-mapuche);
-  background: linear-gradient(250deg, var(--color-mapuche) 0%, var(--color-naranja) 20%, var(--color-oscuro) 100%);
+  background: linear-gradient(280deg, var(--color-mapuche) 0%, var(--color-naranja) 19%, var(--color-carmesi) 48%, var(--color-oscuro) 88%);
 }
