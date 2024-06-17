@@ -36,6 +36,6 @@ export const getService = (id: number) => {
 }
 
 export const normalizeLink = (path: string, id?: number) => {
-  if (!id) return path;
-  return `${path}/${id}`;
+  if (id || id >= 0) return `${path}/${id}`;
+  return path;
 }

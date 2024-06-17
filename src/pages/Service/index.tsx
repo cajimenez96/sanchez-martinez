@@ -46,6 +46,14 @@ const Service = () => {
                   </Text>
                 </div>
               ))}
+            <div className="mt-10 hidden md:flex justify-start">
+              <div>
+                <Button link href={service?.button.path} buttonStyle="outline" className="border-naranja font-medium text-naranja hover:text-crema hover:bg-naranja">
+                  {service?.button.text}
+                </Button>
+              </div>
+            </div>
+
             </article>
 
             <article className="mt-5 max-w-[500px]">
@@ -63,7 +71,7 @@ const Service = () => {
 
           </section>
 
-          <div className="mt-10 flex justify-start">
+          <div className="mt-10 flex md:hidden justify-start">
             <div>
               <Button link href={service?.button.path} buttonStyle="outline" className="border-naranja font-medium text-naranja hover:text-crema hover:bg-naranja">
                 {service?.button.text}
