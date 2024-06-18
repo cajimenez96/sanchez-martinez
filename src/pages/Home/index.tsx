@@ -107,7 +107,7 @@ const Home = () => {
           <div className="w-[90%]">
             <Carousel>
               {response.map((notice) => (
-                <NoticeCard element={notice} />
+                <NoticeCard element={notice} key={notice.id} />
               ))}
             </Carousel>
           </div>
