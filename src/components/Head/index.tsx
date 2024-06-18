@@ -16,7 +16,7 @@ const Head: React.FC<HeadProps> = ({children}) => {
     <>
       <HeadProvider>
         <Title>{import.meta.env.VITE_SEO_TITLE}</Title>
-        <Meta name="description" content={import.meta.env.DESCRIPTION} />
+        <Meta name="description" content={import.meta.env.VITE_SEO_DESCRIPTON} />
         <Meta name="keywords" content={import.meta.env.VITE_SEO_KEYWORDS} />
       </HeadProvider>
       {children}
