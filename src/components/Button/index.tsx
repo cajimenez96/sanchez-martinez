@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import React, { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import styles from './button.module.css';
 
@@ -10,6 +10,7 @@ interface ButtonProps {
   disabled?: boolean;
   className?: string;
   buttonStyle?: Styles;
+  type?: "submit" | "button";
 }
 
 type buttonComponentProps = Pick<ButtonProps, "children">
@@ -36,12 +37,22 @@ const ButtonContent = ({children}: buttonComponentProps) => {
   )
 }
 
-const Button = ({link, href, children, handleClick, className, disabled = false, buttonStyle = 'link'}: ButtonProps) => {
+const Button: React.FC<ButtonProps> = ({
+  link,
+  href,
+  children,
+  className,
+  disabled = false,
+  buttonStyle = 'link',
+  type = "button",
+  handleClick
+}) => {
 
   return (
     <button
       className={`w-full rounded-xl ${className} ${handleStyle(buttonStyle, disabled)} duration-200`}
       onClick={handleClick}
+      type={type}
     >
       {link ? (
         <Link to={(href as never) as string}>

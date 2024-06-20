@@ -1,11 +1,10 @@
-import { ReactNode, useState } from "react"
+import React, { ReactNode, useState } from "react"
 import { LogoNav } from "../SvgIcons";
 import { FiArrowRight, FiMenu } from "react-icons/fi";
 import { LuX } from "react-icons/lu";
 import { navbar } from "../../helpers/constants";
 import Button from "../Button";
 import Dropdown from "../Dropdown";
-import { NavbarItemMenu } from "../../helpers/interfaces";
 import { Link } from "react-router-dom";
 import { Navigation } from "../../utils/navigation";
 
@@ -15,7 +14,7 @@ interface MenuProps {
   handleClick: () => void;
 }
 
-const Menu = ({children, handleClick, className}: MenuProps) => {
+const Menu: React.FC<MenuProps> = ({children, handleClick, className}) => {
   return (
     <div onClick={handleClick} className={`block md:hidden w-9 h-9 cursor-pointer ${className}`}>
       {children}
@@ -30,11 +29,6 @@ const Navbar = () => {
     setNav(!nav);
   };
 
-  const handleSelect = (option: NavbarItemMenu) => {
-    console.log(option);
-    
-  }
-
   return (
     <div className="flex justify-between md:justify-around items-center h-24 px-4 mt-4">
       <Link to={Navigation.home}>
@@ -48,7 +42,7 @@ const Navbar = () => {
             className="mx-4 m-2 duration-300 text-oscuro"
           >
             {item.dropdown && item.dropdownMenu ?
-                <Dropdown options={item.dropdownMenu} placeholder={item.name} onSelect={handleSelect} />
+                <Dropdown options={item.dropdownMenu} placeholder={item.name} />
               : (
                 <Button link href={item.path} buttonStyle="link">{item.name}</Button>
             )}
@@ -64,7 +58,7 @@ const Navbar = () => {
       </div>
 
       <Menu handleClick={handleNav} className="text-oscuro">
-        <FiMenu size={"auto"} />
+        <FiMenu size={24} />
       </Menu>
 
       <>
@@ -77,7 +71,7 @@ const Navbar = () => {
         >
           <div className="w-full flex justify-end">
             <Menu handleClick={handleNav} className="text-crema">
-              <LuX size={"auto"} />
+              <LuX  size={24} />
             </Menu>
           </div>
 
