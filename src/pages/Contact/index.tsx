@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import Container from "../../components/Container";
 import Input from "../../components/Input";
 import CustomSelect from "../../components/CustomSelect";
@@ -6,43 +6,121 @@ import Button from "../../components/Button";
 import styles from './contact.module.css';
 import Heading from "../../components/Heading";
 import { contact } from "../../helpers/constants";
+import { useParams } from "react-router-dom";
+//form
+import { useFormik } from 'formik';
+import { contactSchema } from "../../helpers/helper";
+
+interface Option {
+  value: string;
+  label: string;
+  id: number;
+}
+
+interface FormData {
+  name: string;
+  lastName: string;
+  email: string;
+  subject: string;
+  message: string;
+}
+
+const INITIAL_STATE: FormData = {
+  name: '',
+  lastName: '',
+  email: '',
+  subject: '',
+  message: ''
+}
 
 const Contact = () => {
-  const [selectedOption, setSelectedOption] = useState<string>('');
+  const { id } = useParams<{ id: string }>();
 
-  const handleSelectChange = (value: string) => {
-    setSelectedOption(value);
-  };
+  const numericId = id ? parseInt(id, 10) : null;
+
+  const handleChangeSelect = (e?: Option) => {
+    formik.setFieldValue('subject', e? e.value : '')
+  }
+
+  const formik = useFormik<FormData>({
+    initialValues: INITIAL_STATE,
+    validationSchema: contactSchema,
+    onSubmit: (values) => {
+      console.log(values);
+    }
+  })
+  
   
   return (
     <div className="md:mt-10">
       <div className={`flex justify-center items-center min-h-[70vh] py-10 ${styles.bgContact}`}>
         <Container className="mx-5 md:mx-0 md:w-2/5 rounded-xl py-10 px-5">
-          <div className="text-center">
-            <Heading level={5} className="font-semibold text-2xl md:text-4xl">Formulario de contacto</Heading>
-            <p className="text-crema mt-5 mb-10">Deja tu consulta, nos comunicaremos a la brevedad.</p>
-          </div>
-          <div className="flex flex-col gap-5">
-            <div className="flex flex-col md:flex-row gap-5">
-              <Input label={contact.nombre.label} type={contact.nombre.inputType} placeholder={contact.nombre.placeholder} />
-              <Input label={contact.apellido.label} type={contact.apellido.inputType} placeholder={contact.apellido.placeholder} />
+          <form onSubmit={formik.handleSubmit}>
+            <div className="text-center">
+              <Heading level={5} className="font-semibold text-2xl md:text-4xl">Formulario de contacto</Heading>
+              <p className="text-crema mt-5 mb-10">Deja tu consulta, nos comunicaremos a la brevedad.</p>
             </div>
-            <Input label={contact.correo.label} type={contact.correo.inputType} placeholder={contact.correo.placeholder} />
-            
-            <CustomSelect
-              options={contact.asunto.options}
-              placeholder={contact.asunto.placeholder}
-              onChange={handleSelectChange}
-            />
+            <div className="flex flex-col gap-5">
+              <div className="flex flex-wrap xl:flex-nowrap flex-col md:flex-row gap-5">
+                <Input
+                  label={contact.nombre.label}
+                  id={contact.nombre.id}
+                  name={contact.nombre.name}
+                  type={contact.nombre.inputType}
+                  handleChange={formik.handleChange}
+                  error={formik.errors.name}
+                  hasError={formik.touched.name}
+                  placeholder={contact.nombre.placeholder}
+                />
 
-            <Input label={contact.mensaje.label} type={contact.mensaje.inputType} placeholder="" />
+                <Input
+                  label={contact.apellido.label}
+                  id={contact.apellido.id}
+                  name={contact.apellido.name}
+                  type={contact.apellido.inputType}
+                  handleChange={formik.handleChange}
+                  error={formik.errors.lastName}
+                  hasError={formik.touched.lastName}
+                  placeholder={contact.apellido.placeholder}
+                />
+              </div>
+              <Input
+                label={contact.correo.label}
+                id={contact.correo.id}
+                name={contact.correo.name}
+                type={contact.correo.inputType}
+                handleChange={formik.handleChange}
+                error={formik.errors.email}
+                hasError={formik.touched.email}
+                placeholder={contact.correo.placeholder}
+              />
+              
+              <CustomSelect
+                value={numericId}
+                options={contact.asunto.options}
+                placeholder={contact.asunto.placeholder}
+                handleChange={handleChangeSelect}
+                error={formik.errors.subject}
+                hasError={formik.touched.subject}
+              />
 
-            <div className="flex justify-center items-center">
-              <Button buttonStyle="outline" className="w-2/5">
-                Enviar
-              </Button>
+              <Input
+                label={contact.mensaje.label}
+                id={contact.mensaje.id}
+                name={contact.mensaje.name}
+                type={contact.mensaje.inputType}
+                handleChange={formik.handleChange}
+                error={formik.errors.message}
+                hasError={formik.touched.message}
+              />
+
+              <div className="flex justify-center items-center">
+                <Button buttonStyle="outline" className="w-2/5" type="submit">
+                  Enviar
+                </Button>
+              </div>
             </div>
-          </div>
+          </form>
         </Container>
       </div>
     </div>
