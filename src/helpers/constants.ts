@@ -285,7 +285,7 @@ export const contact = {
     name: "name",
     inputType: "text",
     placeholder: "Tú nombre",
-    pattern:"^[A-Za-z0-9]{3,20}$",
+    pattern:"^[A-Za-z0-9 ]{3,20}$",
     required:true,
     error:"Debe ingresar un nombre entre 3 y 20 caracteres"
   },
@@ -295,7 +295,7 @@ export const contact = {
     name: "lastName",
     inputType: "text",
     placeholder: "Tú apellido",
-    pattern:"^[A-Za-z0-9]{3,20}$",
+    pattern:"^[A-Za-z0-9 ]{3,20}$",
     required:true,
     error:"Debe ingresar un apellido entre 3 y 20 caracteres"
   },
@@ -329,7 +329,7 @@ export const contact = {
     name: "message",
     inputType: "textarea",
     placeholder: "",
-    pattern:"^[A-Za-z0-9]{3,300}$",
+    pattern:"^[A-Za-z0-9 ,.\-_!¡?¿]{3,300}$",
     required:true,
     error:"Debe ingresar un mensaje válido entre 3 y 300 caracteres."
   }
