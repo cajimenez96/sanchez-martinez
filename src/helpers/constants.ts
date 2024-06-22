@@ -43,7 +43,7 @@ export const navbar: NavbarItem[] = [
           {name: "Penal", path: '/servicio', id: 1}
         ]
       },
-      {name: 'Preguntas', path: '', options: []}
+      {name: 'Preguntas', path: '/preguntas', options: []}
     ]
   }
 ];
@@ -347,6 +347,13 @@ export const about = {
   firms: "Nuestras firmas",
   text: "Nuestro equipo está conformado con profesionales especializados en diferentes áreas."
 }
+
+export const faqs = [
+  {title: "¿Debo pagar consulta antes del asesoramiento?", description: "Magna es un grupo de abogados asociados conformado por profesionales especializados en diferentes ramas del derecho, brindamos asesoramiento en materia Penal, civil: (Familia - Sucesiones - Daños - Acciones de consumo, laboral, etc.)."},
+  {title: "¿Existen formas de pago?", description: "Magna es un grupo de abogados asociados conformado por profesionales especializados en diferentes ramas del derecho, brindamos asesoramiento en materia Penal, civil: (Familia - Sucesiones - Daños - Acciones de consumo, laboral, etc.)."},
+  {title: "¿El estudio asesorara todo tipo de consultas?", description: "Magna es un grupo de abogados asociados conformado por profesionales especializados en diferentes ramas del derecho, brindamos asesoramiento en materia Penal, civil: (Familia - Sucesiones - Daños - Acciones de consumo, laboral, etc.)."},
+  {title: "¿Cuáles Son Los horarios de atención?", description: "Magna es un grupo de abogados asociados conformado por profesionales especializados en diferentes ramas del derecho, brindamos asesoramiento en materia Penal, civil: (Familia - Sucesiones - Daños - Acciones de consumo, laboral, etc.)."}
+]
 
 
 

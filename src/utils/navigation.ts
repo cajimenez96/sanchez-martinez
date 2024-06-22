@@ -6,5 +6,6 @@ export const Navigation: Navvigation = {
   home: '/',
   contact: '/contacto',
   service: '/servicio',
-  about: '/nosotros'
+  about: '/nosotros',
+  faq: '/preguntas'
 }

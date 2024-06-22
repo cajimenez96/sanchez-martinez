@@ -7,6 +7,7 @@ import { Navigation } from './utils/navigation';
 import Service from './pages/Service';
 import About from './pages/About';
 import Head from './components/Head';
+import Faqs from './pages/Faqs';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path={`${Navigation.contact}/:id?`} element={<Contact />}/>
         <Route path={Navigation.about} element={<About />} />
         <Route path={`${Navigation.service}/:id`} element={<Service />} />
+        <Route path={Navigation.faq} element={<Faqs />} />
       </Router>
       <Footer />
     </Head>

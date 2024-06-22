@@ -5,13 +5,19 @@ import { LuX } from "react-icons/lu";
 import { navbar } from "../../helpers/constants";
 import Button from "../Button";
 import Dropdown from "../Dropdown";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Navigation } from "../../utils/navigation";
+import Accordion from "../Accordion";
 
 interface MenuProps {
   children: ReactNode;
   className?: string;
   handleClick: () => void;
+}
+
+interface ItemOptionProps {
+  options: any;
+  title: string;
 }
 
 const Menu: React.FC<MenuProps> = ({children, handleClick, className}) => {
@@ -22,7 +28,40 @@ const Menu: React.FC<MenuProps> = ({children, handleClick, className}) => {
   )
 }
 
-const Navbar = () => {
+const ItemOption: React.FC<ItemOptionProps> = ({options, title}) => {
+  const navigation = useNavigate();
+
+  return (
+    <Dropdown placeholder={title}>
+      {options.map((option, index) => (
+        option.options.length > 0 ? (
+          <Accordion key={index} title={option.name} classNameTitle="ps-3">
+            <ul>
+              {option.options.map((e) => (
+                <li className="mt-1 ps-3 hover:text-naranja text-base font-light">
+                  <Link to={`${e.path}/${e.id}`}>
+                    {e.name} 
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </Accordion>
+        ) : (
+        <button
+          key={index}
+          onClick={() => navigation(option.path)}
+          className="flex items-center gap-2 px-3 pb-2 mt-1 text-base w-full text-left hover:text-naranja"
+          role="menuitem"
+        >
+          {option.name}
+        </button>
+        )
+      ))}
+    </Dropdown>
+  )
+}
+
+const Navbar: React.FC = () => {
   const [nav, setNav] = useState(false);
   
   const handleNav = () => {
@@ -42,7 +81,7 @@ const Navbar = () => {
             className="mx-4 m-2 duration-300 text-oscuro"
           >
             {item.dropdown && item.dropdownMenu ?
-                <Dropdown options={item.dropdownMenu} placeholder={item.name} />
+                <ItemOption options={item.dropdownMenu} title={item.name} />
               : (
                 <Button link href={item.path} buttonStyle="link">{item.name}</Button>
             )}
@@ -71,7 +110,7 @@ const Navbar = () => {
         >
           <div className="w-full flex justify-end">
             <Menu handleClick={handleNav} className="text-crema">
-              <LuX  size={24} />
+              <LuX size={24} />
             </Menu>
           </div>
 
