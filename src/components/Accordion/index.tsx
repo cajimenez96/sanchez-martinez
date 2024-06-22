@@ -4,9 +4,11 @@ import { BiSolidDownArrow, BiSolidRightArrow } from "react-icons/bi";
 interface AccordionProps {
   title: string;
   children: ReactNode;
+  classNameTitle?: string;
+  classNameChildren?: string;
 }
 
-const Accordion: React.FC<AccordionProps> = ({ children, title }) => {
+const Accordion: React.FC<AccordionProps> = ({ children, title, classNameTitle, classNameChildren }) => {
   const [open, setOpen] = useState<boolean>(false);
 
   const toggleSelf = () => {
@@ -15,13 +17,13 @@ const Accordion: React.FC<AccordionProps> = ({ children, title }) => {
 
   return (
     <>
-      <span className="flex items-center gap-2 px-3 text-base w-full text-left hover:text-naranja cursor-pointer" onClick={toggleSelf}>
+      <span className={`flex items-center gap-2 text-base w-full text-left hover:text-naranja cursor-pointer ${classNameTitle}`} onClick={toggleSelf}>
         {title}
         {open ? <BiSolidDownArrow /> : <BiSolidRightArrow /> }
       </span>
       
-      <div className={`cursor-pointer z-50`}>
-        {open && (children)}
+      <div className={`cursor-pointer z-50 ${classNameChildren} duration-150`}>
+        {open && children}
       </div>
     </>
   );

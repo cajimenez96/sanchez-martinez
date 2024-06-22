@@ -36,7 +36,7 @@ const ItemOption: React.FC<ItemOptionProps> = ({options, title}) => {
     <Dropdown placeholder={title}>
       {options.map((option, index) => (
         option.options.length > 0 ? (
-          <Accordion key={index} title={option.name}>
+          <Accordion key={index} title={option.name} classNameTitle="ps-3">
             <ul>
               {option.options.map((e) => (
                 <li className="mt-1 ps-3 hover:text-naranja text-base font-light">
