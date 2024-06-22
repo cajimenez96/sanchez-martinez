@@ -14,7 +14,7 @@ const Accordion: React.FC<AccordionProps> = ({ children, title, classNameTitle, 
   const toggleSelf = () => {
     setOpen(!open);
   };
-
+  
   return (
     <>
       <span className={`flex items-center gap-2 text-base w-full text-left hover:text-naranja cursor-pointer ${classNameTitle}`} onClick={toggleSelf}>

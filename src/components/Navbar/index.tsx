@@ -1,11 +1,10 @@
-import { ReactNode, useState } from "react"
+import React, { ReactNode, useState } from "react"
 import { LogoNav } from "../SvgIcons";
 import { FiArrowRight, FiMenu } from "react-icons/fi";
 import { LuX } from "react-icons/lu";
 import { navbar } from "../../helpers/constants";
 import Button from "../Button";
 import Dropdown from "../Dropdown";
-import { NavbarItemMenu } from "../../helpers/interfaces";
 import { Link, useNavigate } from "react-router-dom";
 import { Navigation } from "../../utils/navigation";
 import Accordion from "../Accordion";

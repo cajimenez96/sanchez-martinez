@@ -49,3 +49,15 @@ export interface NoticeResponse {
   url: string;
   creationDate: string;
 }
+
+
+
+
+///////////////////////////////////////////////////////
+export interface FormData {
+  name: string;
+  lastName: string;
+  email: string;
+  subject: string;
+  message: string;
+}

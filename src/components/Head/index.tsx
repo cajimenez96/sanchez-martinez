@@ -1,6 +1,7 @@
 import { ReactNode, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Title, Meta, HeadProvider } from 'react-head';
+import { DESCRIPTION, KEYWORDS, TITLE } from '../../helpers/constants';
 
 interface HeadProps {
   children: ReactNode;
@@ -15,9 +16,9 @@ const Head: React.FC<HeadProps> = ({children}) => {
   return (
     <>
       <HeadProvider>
-        <Title>{import.meta.env.VITE_SEO_TITLE}</Title>
-        <Meta name="description" content={import.meta.env.VITE_SEO_DESCRIPTON} />
-        <Meta name="keywords" content={import.meta.env.VITE_SEO_KEYWORDS} />
+        <Title>{TITLE}</Title>
+        <Meta name="description" content={DESCRIPTION} />
+        <Meta name="keywords" content={KEYWORDS} />
       </HeadProvider>
       {children}
     </>
