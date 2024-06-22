@@ -1,5 +1,10 @@
 import { Navigation } from "../utils/navigation";
-import { Hero, HeroCarousel, NavbarItem, NoticeResponse, SectionTitles, Service } from "./interfaces";
+import { Hero, HeroCarousel, NavbarItem, NoticeResponse, SectionTitles } from "./interfaces";
+
+export const API_URL = import.meta.env.VITE_API_URL;
+export const TITLE = import.meta.env.VITE_SEO_TITLE;
+export const DESCRIPTION = import.meta.env.VITE_SEO_DESCRIPTON;
+export const KEYWORDS = import.meta.env.VITE_SEO_KEYWORDS;
 
 //SECTIONS
 export const sectionTitles: SectionTitles = {
@@ -33,7 +38,7 @@ export const navbar: NavbarItem[] = [
         options: [
           {name: "Familia y sucesiones", path: '/servicio', id: 4},
           {name: "Acciones de consumo", path: '/servicio', id: 0},
-          {name: "Daños y perjuicios", path: '/servicio', id: 3},
+          {name: "Daños y prejuicios", path: '/servicio', id: 3},
           {name: "Laboral", path: '/servicio', id: 2},
           {name: "Penal", path: '/servicio', id: 1}
         ]
@@ -57,7 +62,7 @@ export const heroCarousel: HeroCarousel[] = [
     title: "Abogados Asociados",
     description: "Asesoramos en diferentes áreas, el servicio en beneficio de nuestros clientes se extiende al derecho penal, laboral, daños, acciones de consumo, familia y sucesiones.",
     button: "Consultar ahora",
-    path: Navigation.contact,
+    path: "/contacto",
   },
   {
     id: 2,
@@ -110,7 +115,7 @@ export const services = [
     description: [
       {
         title: "Consultas",
-        description: "Evacuamos consultas respecto de todo tipo de perjuicios relacionados con contratos de consumo; Tarjeta de crédito, planes de ahorro, operaciones Bancarias, etc."
+        description: "Evacuamos consultas respecto de todo tipo de prejuicios relacionados con contratos de consumo; Tarjeta de crédito, planes de ahorro, operaciones Bancarias, etc."
       },
       {
         title: "Asesoramiento preventivo y defensivo",
@@ -193,7 +198,7 @@ export const services = [
   },
   {
     id: 3,
-    title: "Abogados de daños y perjuicios",
+    title: "Abogados de daños y prejuicios",
     description: [
       {
         title: "Asesoramiento",
@@ -207,7 +212,7 @@ export const services = [
     ],
     button: {
       text: "Consultar ahora",
-      path: "/contacto"
+      path: "/contacto/"
     }
   },
   {
@@ -255,7 +260,7 @@ export const footer = {
   servicios: [
     {name: "Familia y sucesiones", path: '/servicio', id: 4},
     {name: "Acciones de consumo", path: '/servicio', id: 0},
-    {name: "Daños y perjuicios", path: '/servicio', id: 3},
+    {name: "Daños y prejuicios", path: '/servicio', id: 3},
     {name: "Laboral", path: '/servicio', id: 2},
     {name: "Penal", path: '/servicio', id: 1}
   ],
@@ -280,36 +285,58 @@ export const footer = {
 //CONTACT
 export const contact = {
   nombre: { 
+    id: '0',
     label: "Nombre",
+    name: "name",
     inputType: "text",
     placeholder: "Tú nombre",
+    pattern:"^[A-Za-z0-9 ]{3,20}$",
+    required:true,
+    error:"Debe ingresar un nombre entre 3 y 20 caracteres"
   },
   apellido: {
+    id: '1',
     label: "Apellido",
+    name: "lastName",
     inputType: "text",
     placeholder: "Tú apellido",
+    pattern:"^[A-Za-z0-9 ]{3,20}$",
+    required:true,
+    error:"Debe ingresar un apellido entre 3 y 20 caracteres"
   },
   asunto: {
+    id: '2',
     placeholder: "Seleccione un asunto",
     options: [
-      {label: "Penal", value: "Penal"},
-      {label: "Laboral", value: "Laboral"},
-      {label: "Daños", value: "Daños"},
-      {label: "Acciones de consumo", value: "Acciones de consumo"},
-      {label: "Familia y sucesiones", value: "Familia y sucesiones"},
-      {label: "Acciones de consumo", value: "Acciones de consumo"},
-      {label: "Otras consultas", value: "Otras consultas"},  
-    ]
+      {label: "Acciones de consumo", value: "Acciones de consumo", id: 0},
+      {label: "Penal", value: "Penal", id: 1},
+      {label: "Laboral", value: "Laboral", id: 2},
+      {label: "Daños", value: "Daños", id: 3},
+      {label: "Familia y sucesiones", value: "Familia y sucesiones", id: 4},
+      {label: "Otras consultas", value: "Otras consultas", id: 5},  
+    ],
+    required:true,
+    error:"Debe seleccionar una opción"
   },
   correo: {
+    id: '3',
     label: "Correo electrónico",
+    name: "email",
     inputType: "email",
     placeholder: "Tú correo electrónico",
+    pattern :"^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*$",
+    required:true,
+    error:"Debe ingresar un correo electrónico válido"
   },
   mensaje: {
+    id: '4',
     label: "Mensaje",
+    name: "message",
     inputType: "textarea",
     placeholder: "",
+    pattern:"^[A-Za-z0-9 ]{3,300}$",
+    required:true,
+    error:"Debe ingresar un mensaje válido entre 3 y 300 caracteres."
   }
 }
 

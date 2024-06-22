@@ -7,10 +7,9 @@ import Accordion from '../Accordion';
 interface DropdownProps {
   placeholder: string;
   options: NavbarItemMenu[];
-  onSelect: (option: NavbarItemMenu) => void;
 }
 
-const Dropdown: React.FC<DropdownProps> = ({ options, onSelect, placeholder }) => {
+const Dropdown: React.FC<DropdownProps> = ({ options, placeholder }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -49,11 +48,14 @@ const Dropdown: React.FC<DropdownProps> = ({ options, onSelect, placeholder }) =
           <div className="py-1" role="none">
             {options.map((option, index) => (
               option.options.length > 0 ? (
-                <Accordion title={option.name} elements={option.options} handleSelect={() => onSelect(option)} />
+                <Accordion
+                  title={option.name}
+                  elements={option.options}
+                  key={index}
+                />
               ) : (
               <button
                 key={index}
-                onClick={() => onSelect(option)}
                 className="flex items-center gap-2 px-3 py-2 text-base w-full text-left hover:text-naranja"
                 role="menuitem"
               >

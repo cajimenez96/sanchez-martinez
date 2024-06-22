@@ -1,4 +1,5 @@
-import { services } from "./constants";
+import * as Yup from "yup"
+import { contact, services } from "./constants";
 
 export const standarDate = (fechaISO: string): string  => {
   // Parsear la fecha en formato ISO 8601
@@ -33,9 +34,18 @@ export const standarDate = (fechaISO: string): string  => {
 
 export const getService = (id: number) => {
   return services.find(service => service.id === id);
-}
+};
 
 export const normalizeLink = (path: string, id?: number) => {
   if (id || id >= 0) return `${path}/${id}`;
   return path;
-}
+};
+
+//VALIDATIONS
+export const contactSchema = Yup.object().shape({
+  name: Yup.string().matches(new RegExp(contact.nombre.pattern), contact.nombre.error).required(contact.nombre.error),
+  lastName: Yup.string().matches(new RegExp(contact.apellido.pattern), contact.apellido.error).required(contact.apellido.error),
+  email: Yup.string().email(contact.correo.error).matches(new RegExp(contact.correo.pattern), contact.correo.error).required(contact.correo.error),
+  subject: Yup.string().required(contact.asunto.error),
+  message: Yup.string().matches(new RegExp(contact.mensaje.pattern), contact.mensaje.error).required(contact.mensaje.error),
+});
