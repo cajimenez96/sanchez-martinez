@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { getService } from "../../helpers/helper";
 import Section from "../../components/Section";
 import Heading from "../../components/Heading";
@@ -19,12 +19,16 @@ const Number = ({id}: NumberProps) => {
 }
 
 const Service = () => {
-  const { id } = useParams();
-  
-  const serviceId = parseInt(id);
-
+  const navigate = useNavigate();
+  const { id } = useParams<{id?: string}>();
+  const serviceId = id ? parseInt(id) : 0;
   const service = useMemo(() => getService(serviceId), [serviceId]);
 
+  type Service = typeof service;
+
+  const redirect = (element: Service) => {
+    if (element) navigate(element.button.path + element.id)
+  }
 
   return (
     <div className="w-full flex justify-center">
@@ -46,19 +50,21 @@ const Service = () => {
                   </Text>
                 </div>
               ))}
-            <div className="mt-10 hidden md:flex justify-start">
-              <div>
-                <Button link href={service?.button.path} buttonStyle="outline" className="border-naranja font-medium text-naranja hover:text-crema hover:bg-naranja">
-                  {service?.button.text}
-                </Button>
+              <div className="mt-10 hidden md:flex justify-start">
+                <div>
+                  <Button 
+                    buttonStyle="outline"
+                    className="border-naranja font-medium text-naranja hover:text-crema hover:bg-naranja"
+                    handleClick={() => redirect(service)}>
+                    {service?.button.text}
+                  </Button>
+                </div>
               </div>
-            </div>
-
             </article>
 
             <article className="mt-5 max-w-[500px]">
               {service?.items.map(item => (
-                <div className={`flex gap-3 mt-3`}>
+                <div className={`flex gap-3 mt-3`} key={item.id}>
                   <div>
                     <Number id={item.id} />
                   </div>
@@ -68,12 +74,14 @@ const Service = () => {
                 </div>
               ))}
             </article>
-
           </section>
 
           <div className="mt-10 flex md:hidden justify-start">
             <div>
-              <Button link href={service?.button.path} buttonStyle="outline" className="border-naranja font-medium text-naranja hover:text-crema hover:bg-naranja">
+              <Button
+                buttonStyle="outline"
+                className="border-naranja font-medium text-naranja hover:text-crema hover:bg-naranja"
+                handleClick={() => redirect(service)}>
                 {service?.button.text}
               </Button>
             </div>
