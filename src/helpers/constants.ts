@@ -1,5 +1,10 @@
 import { Navigation } from "../utils/navigation";
-import { Hero, HeroCarousel, NavbarItem, NoticeResponse, SectionTitles, Service } from "./interfaces";
+import { Hero, HeroCarousel, NavbarItem, NoticeResponse, SectionTitles } from "./interfaces";
+
+export const API_URL = import.meta.env.VITE_API_URL;
+export const TITLE = import.meta.env.VITE_SEO_TITLE;
+export const DESCRIPTION = import.meta.env.VITE_SEO_DESCRIPTON;
+export const KEYWORDS = import.meta.env.VITE_SEO_KEYWORDS;
 
 //SECTIONS
 export const sectionTitles: SectionTitles = {
@@ -329,7 +334,7 @@ export const contact = {
     name: "message",
     inputType: "textarea",
     placeholder: "",
-    pattern:"^[A-Za-z0-9 ,.\-_!¡?¿]{3,300}$",
+    pattern:"^[A-Za-z0-9 ]{3,300}$",
     required:true,
     error:"Debe ingresar un mensaje válido entre 3 y 300 caracteres."
   }
