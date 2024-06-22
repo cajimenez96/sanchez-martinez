@@ -1,4 +1,3 @@
-import { ChangeEvent, FormEvent, useState } from "react";
 import Container from "../../components/Container";
 import Input from "../../components/Input";
 import CustomSelect from "../../components/CustomSelect";
@@ -10,19 +9,13 @@ import { useParams } from "react-router-dom";
 //form
 import { useFormik } from 'formik';
 import { contactSchema } from "../../helpers/helper";
+import { FormData } from "../../helpers/interfaces";
+import { sendEmail } from "./require";
 
 interface Option {
   value: string;
   label: string;
   id: number;
-}
-
-interface FormData {
-  name: string;
-  lastName: string;
-  email: string;
-  subject: string;
-  message: string;
 }
 
 const INITIAL_STATE: FormData = {
@@ -45,8 +38,10 @@ const Contact = () => {
   const formik = useFormik<FormData>({
     initialValues: INITIAL_STATE,
     validationSchema: contactSchema,
-    onSubmit: (values) => {
-      console.log(values);
+    onSubmit: async (form: FormData) => {
+      const response = await sendEmail(form);
+      console.log('envio: ', response);
+      
     }
   })
   
