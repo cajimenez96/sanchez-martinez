@@ -38,7 +38,7 @@ export const navbar: NavbarItem[] = [
           {name: "Penal", path: '/servicio', id: 1}
         ]
       },
-      {name: 'Preguntas', path: '', options: []}
+      {name: 'Preguntas', path: '/preguntas', options: []}
     ]
   }
 ];
