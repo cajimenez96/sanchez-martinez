@@ -14,7 +14,7 @@ const Faqs: React.FC = () => {
         Preguntas frecuentes
       </Heading>
 
-      <article className="w-[530px] flex flex-col items-center justify-center gap-5 mt-12">
+      <article className="md:w-[530px] flex flex-col items-center justify-center gap-5 mt-12">
         {faqs.map((faq, index) => (
           <Accordion
           key={index}
