@@ -1,16 +1,15 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, ReactNode } from 'react';
 import { BiSolidDownArrow } from 'react-icons/bi';
 import Button from '../Button';
 import { NavbarItemMenu } from '../../helpers/interfaces';
-import Accordion from '../Accordion';
 
 interface DropdownProps {
   placeholder: string;
-  options: NavbarItemMenu[];
-  onSelect: (option: NavbarItemMenu) => void;
+  options?: NavbarItemMenu[];
+  children?: ReactNode;
 }
 
-const Dropdown: React.FC<DropdownProps> = ({ options, onSelect, placeholder }) => {
+const Dropdown: React.FC<DropdownProps> = ({ options, placeholder, children }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -41,26 +40,27 @@ const Dropdown: React.FC<DropdownProps> = ({ options, onSelect, placeholder }) =
       </div>
       {isOpen && (
         <div
-          className="origin-top-right absolute left-0 mt-2 w-56 rounded-s-xl rounded-e-xl rounded-ss-none bg-blanco shadow-md z-50"
+          className="origin-top-right absolute left-0 w-56 rounded-b-xl bg-blanco shadow-md z-50"
           role="menu"
           aria-orientation="vertical"
           aria-labelledby="menu-button"
         >
-          <div className="py-1" role="none">
-            {options.map((option, index) => (
-              option.options.length > 0 ? (
-                <Accordion title={option.name} elements={option.options} handleSelect={() => onSelect(option)} />
-              ) : (
-              <button
-                key={index}
-                onClick={() => onSelect(option)}
-                className="flex items-center gap-2 px-3 py-2 text-base w-full text-left hover:text-naranja"
-                role="menuitem"
-              >
-                {option.name}
-              </button>
-              )
-            ))}
+          <div role="none">
+            {children ?
+              children
+            : (
+              <ul>
+                {options?.map((option, index) => (
+                  <li
+                    key={index}
+                    className="mb-2 ps-3 hover:text-naranja text-base font-light"
+                    onClick={handleToggle}
+                  >
+                    {option.name}
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
         </div>
       )}
