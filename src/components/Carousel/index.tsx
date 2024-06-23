@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import React, { ReactNode } from "react";
 import Slider from "react-slick";
 import { BiSolidLeftArrow, BiSolidRightArrow } from 'react-icons/bi';
 import "slick-carousel/slick/slick.css";
@@ -12,7 +12,7 @@ interface CustomArrowProps {
   onClick?: () => void;
 }
 
-const NextArrow = ({onClick}: CustomArrowProps) => {
+const NextArrow: React.FC<CustomArrowProps> = ({onClick}) => {
   return (
     <button
       className="hidden md:block absolute -right-4 bottom-[50%] z-50 text-crema"
@@ -23,7 +23,7 @@ const NextArrow = ({onClick}: CustomArrowProps) => {
   );
 }
 
-const PrevArrow = ({onClick}: CustomArrowProps) => {
+const PrevArrow: React.FC<CustomArrowProps> = ({onClick}) => {
   return (
     <button
       className="hidden md:block absolute -left-4 bottom-[50%] z-50 text-crema cursor-pointer"
@@ -34,7 +34,7 @@ const PrevArrow = ({onClick}: CustomArrowProps) => {
   );
 }
 
-const Carousel = ({children}: CarouselProps) => {
+const Carousel: React.FC<CarouselProps> = ({children}) => {
 
   const settings = {
 
@@ -42,7 +42,7 @@ const Carousel = ({children}: CarouselProps) => {
     infinite: true,
     speed: 500,
     slidesToShow: 3,
-    slidesToScroll: 2,
+    slidesToScroll: 3,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     responsive:[
