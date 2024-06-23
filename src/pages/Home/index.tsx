@@ -114,7 +114,10 @@ const Home = () => {
         </Container>
       </section>
 
-      <Modal />
+      <div className="w-full flex justify-center">
+        <Modal />
+      </div>
+
     </>
   )
 }

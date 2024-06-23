@@ -8,7 +8,7 @@ const Modal = () => {
   const [open, setOpen] = useState(true);
 
   return (
-    <div className={`${open ? 'fixed' : 'hidden'} bottom-16 right-[20%] z-50 w-[1024px] mx-auto`}>
+    <div className={`${open ? 'fixed' : 'hidden'} bottom-16 z-50 w-[1024px] mx-auto`}>
       <div className="relative hidden md:flex md:items-center md:justify-center w-full">
           <div className="h-auto md:h-full rounded-lg p-4 fixed inset-x-0 bottom-0 z-50 mx-auto md:relative shadow-lg w-full  border border-naranja flex flex-col items-end bg-oscuro-blur backdrop-blur-xl">
             <button className="text-right cursor-pointer" onClick={() => setOpen(false)}>
