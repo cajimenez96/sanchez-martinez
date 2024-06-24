@@ -9,7 +9,7 @@ interface NoticeCardProps {
 
 const NoticeCard = ({element}: NoticeCardProps) => {
   return (
-    <div className="w-[350px] md:w-[450px] md:mx-10 group cursor-pointer">
+    <div className="w-[350px] md:w-[400px] lg:mx-10 group cursor-pointer">
       <div className="mx-5 flex flex-col gap-5">
         <img src={element.image} alt={element.title} />
 
