@@ -13,7 +13,7 @@ export const sectionTitles: SectionTitles = {
 }
 
 //NAVBAR
-export const navbar: NavbarItem[] = [
+export const navbar = [
   {
     id: 0,
     name: 'Contacto',
@@ -47,6 +47,43 @@ export const navbar: NavbarItem[] = [
     ]
   }
 ];
+
+export const navbarMobile = [
+  {
+    id: 0,
+    name: 'Contacto',
+    path: Navigation.contact,
+    dropdown: false
+  },
+  {
+    id: 1,
+    name: 'Nosotros',
+    path: Navigation.about,
+    dropdown: false
+  },
+  {
+    id: 2,
+    name: 'Servicios',
+    path: '',
+    dropdown: true,
+    dropdownMenu: [
+      {name: "Familia y sucesiones", path: '/servicio', id: 4},
+      {name: "Acciones de consumo", path: '/servicio', id: 0},
+      {name: "Daños y prejuicios", path: '/servicio', id: 3},
+      {name: "Laboral", path: '/servicio', id: 2},
+      {name: "Penal", path: '/servicio', id: 1}
+    ]
+  },
+  {
+    id: 3,
+    name:'Preguntas',
+    path: Navigation.faq,
+    dropdown: false
+  }
+];
+
+
+
 
 export const hero: Hero = {
   title: "Sánchez",
