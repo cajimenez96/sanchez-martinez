@@ -43,7 +43,7 @@ const Home = () => {
 
   return (
     <>
-      <Container className="p-3 py-10 md:py-0 flex flex-col md:flex-row justify-evenly items-center md:items-start gap-y-10 md:gap-0 min-h-[70vh]">
+      <Container className="p-3 py-10 mt-5 md:py-0 flex flex-col md:flex-row justify-evenly items-center md:items-start gap-y-10 md:gap-0 min-h-[70vh]">
 
         <Section className="my-auto md:py-20 flex flex-col items-start leading-[2.8rem] md:leading-none">
           

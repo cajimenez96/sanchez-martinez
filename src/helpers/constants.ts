@@ -1,10 +1,13 @@
 import { Navigation } from "../utils/navigation";
-import { Hero, HeroCarousel, NavbarItem, NoticeResponse, SectionTitles } from "./interfaces";
+import { Hero, HeroCarousel, LinkType, NavbarItem, NoticeResponse, SectionTitles } from "./interfaces";
 
 export const API_URL = import.meta.env.VITE_API_URL;
 export const TITLE = import.meta.env.VITE_SEO_TITLE;
 export const DESCRIPTION = import.meta.env.VITE_SEO_DESCRIPTON;
 export const KEYWORDS = import.meta.env.VITE_SEO_KEYWORDS;
+
+
+//NORMALIZADOS!
 
 //SECTIONS
 export const sectionTitles: SectionTitles = {
@@ -12,8 +15,13 @@ export const sectionTitles: SectionTitles = {
   notice: "Últimas noticias"
 }
 
+const service: LinkType[] = [
+  {id: 0, name: "Acciones de consumo", path: Navigation.service},
+  {id: 1, name: "Penal", path: Navigation.service}
+]
+
 //NAVBAR
-export const navbar = [
+export const navbar: NavbarItem[] = [
   {
     id: 0,
     name: 'Contacto',
@@ -33,22 +41,21 @@ export const navbar = [
     dropdown: true,
     dropdownMenu: [
       {
+        id: 0,
         name: 'Servicios',
         path: '',
-        options: [
-          {name: "Familia y sucesiones", path: '/servicio', id: 4},
-          {name: "Acciones de consumo", path: '/servicio', id: 0},
-          {name: "Daños y prejuicios", path: '/servicio', id: 3},
-          {name: "Laboral", path: '/servicio', id: 2},
-          {name: "Penal", path: '/servicio', id: 1}
-        ]
+        options: service
       },
-      {name: 'Preguntas', path: '/preguntas', options: []}
+      {
+        id: 1,
+        name: 'Preguntas',
+        path: Navigation.faq,
+      }
     ]
   }
 ];
 
-export const navbarMobile = [
+export const navbarMobile: NavbarItem[] = [
   {
     id: 0,
     name: 'Contacto',
@@ -66,13 +73,7 @@ export const navbarMobile = [
     name: 'Servicios',
     path: '',
     dropdown: true,
-    dropdownMenu: [
-      {name: "Familia y sucesiones", path: '/servicio', id: 4},
-      {name: "Acciones de consumo", path: '/servicio', id: 0},
-      {name: "Daños y prejuicios", path: '/servicio', id: 3},
-      {name: "Laboral", path: '/servicio', id: 2},
-      {name: "Penal", path: '/servicio', id: 1}
-    ]
+    dropdownMenu: service
   },
   {
     id: 3,
@@ -81,6 +82,8 @@ export const navbarMobile = [
     dropdown: false
   }
 ];
+
+///////////////////////////////
 
 
 
