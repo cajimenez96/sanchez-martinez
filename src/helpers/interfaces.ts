@@ -9,20 +9,22 @@ export interface LinkType {
   path: string;
 }
 
+//Navbar
 export interface NavbarItem extends LinkType{
   dropdown: boolean;
   dropdownMenu?: NavbarItemMenu[];
 }
 
+export interface NavbarItemMenu extends LinkType {
+  options?: LinkType[];
+}
+//FIN-Navbar
 
 //////////////////////////
 
 
 
 
-export interface NavbarItemMenu extends LinkType {
-  options?: LinkType[];
-}
 
 export interface Hero {
   title: string;
