@@ -3,7 +3,7 @@ import Button from "../../components/Button";
 import Heading from "../../components/Heading";
 import Container from "../../components/Container";
 import { hero, heroCarousel, response, sectionTitles, servicesCards } from "../../helpers/constants";
-import { HeroCarousel, Service } from "../../helpers/interfaces";
+import { HeroCarousel } from "../../helpers/interfaces";
 import Switch from "../../components/Switch";
 import ServiceCard from "../../components/ServiceCard";
 import { images } from "../../utils/images";

@@ -82,36 +82,38 @@ export const navbarMobile: NavbarItem[] = [
     dropdown: false
   }
 ];
+//FIN-NAVBAR
 
-///////////////////////////////
-
-
-
-
+//HERO
 export const hero: Hero = {
   title: "Sánchez",
   title2: "Matínez",
   subtitle: "& Asociados"
 };
 
-
-//HERO
 export const heroCarousel: HeroCarousel[] = [
   {
     id: 1,
     title: "Abogados Asociados",
-    description: "Asesoramos en diferentes áreas, el servicio en beneficio de nuestros clientes se extiende al derecho penal, laboral, daños, acciones de consumo, familia y sucesiones.",
+    description: "Asesoramos en diferentes áreas del derecho. Gerenciamos servicios jurídicos en: Derecho Penal y Acciones de Consumo.",
     button: "Consultar ahora",
-    path: "/contacto",
+    path: Navigation.contact,
   },
   {
     id: 2,
-    title: "Nuestra firma legal",
-    description: "Magna es un grupo de abogados asociados conformado por profesionales especializados en diferentes ramas del derecho, brindamos asesoramiento en materia Penal, civil: (Familia - Sucesiones - Daños - Acciones de consumo, laboral, etc.).",
+    title: "Derecho Penal",
+    description: "Representación Legal, Asesoramiento Jurídico, Investigación, Negociación con Fiscalía, Apelaciones, Defensa en Diversas Áreas, Asistencia a Detenidos, Defensa Especializada.",
     button: "Leer más de nosotros",
-    path: "",
+    path: Navigation.about,
   },
 ];
+//FIN-HERO
+
+///////////////////////////////
+
+
+
+
 
 
 //NUESTROS SERVICIOS
