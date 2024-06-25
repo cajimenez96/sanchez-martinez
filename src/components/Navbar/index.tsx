@@ -116,7 +116,7 @@ const Navbar: React.FC = () => {
 
   return (
     <div className="flex justify-between md:justify-around items-center h-24 px-4 mt-4">
-      <Link to={Navigation.home}>
+      <Link to={Navigation.home} onClick={handleNav}>
         <LogoNav />
       </Link>
 
@@ -143,12 +143,12 @@ const Navbar: React.FC = () => {
       </div>
 
       <Menu handleClick={handleNav} className="text-naranja duration-250">
-        {nav ? <FiMenu size={30} /> : <LuX size={30} />} 
+        {!nav ? <FiMenu size={30} /> : <LuX size={30} />} 
       </Menu>
 
       <div
-        className={`h-auto w-3/4 pb-5 z-50 top-20 md:hidden fixed ease-in-out text-end bg-blanco rounded-s-md shadow-xl
-        ${nav ? 'right-[-100%]' : 'right-0' } duration-500`}
+        className={`h-auto w-3/4 pb-5 z-50 top-20 md:hidden fixed ease-in-out text-end bg-blanco rounded-s-xl shadow-xl
+        ${!nav ? 'right-[-100%]' : 'right-0' } duration-500`}
       >
         <ul className="mb-5 ms-12">
           {navbarMobile.map(item => (

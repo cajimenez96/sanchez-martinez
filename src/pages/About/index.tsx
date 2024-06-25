@@ -3,6 +3,7 @@ import Section from "../../components/Section";
 import Text from "../../components/Text";
 import { about } from "../../helpers/constants";
 import { images } from "../../utils/images";
+import { marcas } from "../../utils/marcas";
 
 interface ContentProps {
   title: string;
@@ -36,9 +37,16 @@ const About = () => {
 
       <Content title={about.firms} text={about.text} />
       <div className="flex flex-wrap justify-center gap-10">
-        <img src={images.firm1} alt={about.title} width={300} />
-        <img src={images.firm1} alt={about.title} width={300} />
-        <img src={images.firm1} alt={about.title} width={300} />
+        {marcas.map((m, index) => (
+          <img
+            key={index}
+            src={m.src}
+            alt={m.name}
+            className="border rounded-md drop-shadow"
+            width={400}
+            height={200}
+          />
+        ))}
       </div>
 
     </div>
