@@ -3,9 +3,9 @@ import { footer } from "../../helpers/constants";
 import { LinkType } from "../../helpers/interfaces";
 import Heading from "../Heading";
 import Section from "../Section";
-import { LogoNav } from "../SvgIcons";
 import { Link } from "react-router-dom";
 import { normalizeLink } from "../../helpers/helper";
+import { images } from "../../utils/images";
 
 interface ListProps {
   title: string;
@@ -107,7 +107,7 @@ const Footer = () => {
       </Section>
       <Section className="mt-3 mb-5 flex flex-wrap justify-center md:justify-between items-center gap-5">
         <div className="order-2 md:order-1">
-          <LogoNav />
+          <img src={images.logo} width={50} alt="Sanchez martinez" />
         </div>
         <p className="font-medium text-center order-1">
           {footer.footer.texto}
