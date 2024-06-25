@@ -1,5 +1,6 @@
+import { images } from "../utils/images";
 import { Navigation } from "../utils/navigation";
-import { Hero, HeroCarousel, LinkType, NavbarItem, NoticeResponse, SectionTitles } from "./interfaces";
+import { Card, Hero, HeroCarousel, LinkType, NavbarItem, NoticeResponse, SectionTitles } from "./interfaces";
 
 export const API_URL = import.meta.env.VITE_API_URL;
 export const TITLE = import.meta.env.VITE_SEO_TITLE;
@@ -94,14 +95,14 @@ export const hero: Hero = {
 export const heroCarousel: HeroCarousel[] = [
   {
     id: 1,
-    title: "Abogados Asociados",
+    name: "Asesoramiento",
     description: "Asesoramos en diferentes áreas del derecho. Gerenciamos servicios jurídicos en: Derecho Penal y Acciones de Consumo.",
     button: "Consultar ahora",
     path: Navigation.contact,
   },
   {
     id: 2,
-    title: "Derecho Penal",
+    name: "Derecho Penal",
     description: "Representación Legal, Asesoramiento Jurídico, Investigación, Negociación con Fiscalía, Apelaciones, Defensa en Diversas Áreas, Asistencia a Detenidos, Defensa Especializada.",
     button: "Leer más de nosotros",
     path: Navigation.about,
@@ -109,46 +110,30 @@ export const heroCarousel: HeroCarousel[] = [
 ];
 //FIN-HERO
 
+//NUESTROS SERVICIOS
+export const servicesCards: Card[] = [
+  {
+    id: 0,
+    name: "Acciones de consumo",
+    description: "Planes de ahorros, estafas virtuales, tarjetas de créditos, operaciones bancarias...",
+    path: Navigation.service,
+    image: images.serviceConsumption,
+  },
+  {
+    id: 1,
+    name: "Penal",
+    description: "Defensa de personas imputadas y querellas...",
+    path: Navigation.service,
+    image: images.servicePenal,
+  }
+];
+//FIN-NUESTROS SERVICIOS
+
 ///////////////////////////////
 
 
 
 
-
-
-//NUESTROS SERVICIOS
-export const servicesCards = [
-  {
-    name: "Penal",
-    description: "Defensa de personas imputadas y querellas...",
-    path: "/servicio",
-    id: 1
-  },
-  {
-    name: "Laboral",
-    description: "Despidos, ART, asesoramiento a empresas...",
-    path: "/servicio",
-    id: 2
-  },
-  {
-    name: "Daños",
-    description: "Accidentes de tránsito, mala praxis...",
-    path: "/servicio",
-    id: 3
-  },
-  {
-    name: "Acciones de consumo",
-    description: "Planes de ahorros, estafas virtuales, tarjetas de créditos, operaciones bancarias...",
-    path: "/servicio",
-    id: 0
-  },
-  {
-    name: "Familia y sucesiones",
-    description: "Divorcios, Alimentos, régimen comunicacional, sucesiones por causa de muerte, testamentos...",
-    path: "/servicio",
-    id: 4
-  },
-];
 
 export const services = [
   {
