@@ -3,15 +3,53 @@ import Button from "../../components/Button";
 import Heading from "../../components/Heading";
 import Container from "../../components/Container";
 import { hero, heroCarousel, response, sectionTitles, servicesCards } from "../../helpers/constants";
-import { HeroCarousel } from "../../helpers/interfaces";
+import { Card as CardElement, HeroCarousel } from "../../helpers/interfaces";
 import Switch from "../../components/Switch";
-import ServiceCard from "../../components/ServiceCard";
-import { images } from "../../utils/images";
+import Card from "../../components/Card";
 import Section from "../../components/Section";
-import NoticeCard from "../../components/NoticeCard";
 import Carousel from "../../components/Carousel";
 import Modal from "../../components/Modal";
 import Text from "../../components/Text";
+import { FaAngleDoubleRight } from "react-icons/fa";
+import { standarDate } from "../../helpers/helper";
+import { images } from "../../utils/images";
+
+interface CardBodyProps {
+  title?: string;
+  text: string;
+  image: string;
+  date?: string;
+  classText?: string;
+}
+
+const CardBody: React.FC<CardBodyProps> = ({
+  title,
+  text,
+  image,
+  date,
+  classText
+}) => {
+  return (
+    <div className="mx-5 flex flex-col gap-5 group">
+        <img src={image} alt={title} />
+
+        <div className="flex justify-between">
+          <div className="flex items-center gap-2 cursor-pointer font-light text-sm text-mapuche group-hover:border-mapuche border-b border-transparent">
+            Leer más
+            <FaAngleDoubleRight />
+          </div>
+          <Text className="font-light text-sm">
+            {date && standarDate(date)}
+          </Text>
+        </div>
+
+        <div className="text-oscuro">
+          <Heading level={5} className={`mb-2 font-bold text-lg md:text-xl ${classText}`}>{title}</Heading>
+          <Text className={`text-base ${classText}`}>{text}</Text>
+        </div>
+      </div>
+  );
+}
 
 const Home = () => {
   const [selectedValue, setSelectedValue] = useState<number>(1);
@@ -21,12 +59,13 @@ const Home = () => {
   }
 
   const handleSelect = () => {
-    const data = heroCarousel.find((element: HeroCarousel) => element.id === selectedValue)
+    const data = heroCarousel.find((element: HeroCarousel) => element.id === selectedValue);
+
     return (
       <div className="min-h-[300px] flex flex-col h-full justify-between items-center md:items-start">
         <div>
           <Heading level={4} className="mb-5 whitespace-break-spaces font-bold text-lg md:text-4xl">
-            {data?.title}
+            {data?.name}
             </Heading>
             <Text className="font-normal text-base leading-7">
               {data?.description}
@@ -75,15 +114,25 @@ const Home = () => {
             {sectionTitles.service}
           </Heading>
 
-          <article className="flex gap-20 mt-10 md:mt-14">
+          <article className="flex flex-wrap gap-20 mt-10 md:mt-14">
             
-            <div className="flex flex-col justify-between gap-5 md:gap-0">
-              {servicesCards.map((element: Service, index: number) => (
-                <ServiceCard service={element} key={index}/>
+            <div className="w-full flex flex-wrap justify-center gap-5 md:gap-0">
+              {servicesCards.map((service: CardElement) => (
+                <Card
+                  className="py-3 border-[2px] border-oscuro rounded-xl"
+                  key={service.id}
+                 >
+                  <CardBody
+                    title={service.name}
+                    text={service.description}
+                    image={service.image}
+                    classText="text-oscuro"
+                  />
+                 </Card>
                 ))}
             </div>
 
-            <div className="max-w-md max-h-[850px] hidden md:block">
+            <div className="hidden md:block">
               <img src={images.service} alt="Servicios" />
             </div>
 
@@ -107,7 +156,13 @@ const Home = () => {
           <div className="w-[90%]">
             <Carousel>
               {response.map((notice) => (
-                <NoticeCard element={notice} key={notice.id} />
+                <Card key={notice.id}>
+                  <CardBody
+                    text={notice.description}
+                    image={notice.image}
+                    date={notice.creationDate}
+                  />
+                </Card>
               ))}
             </Carousel>
           </div>
