@@ -20,25 +20,29 @@ export interface NavbarItemMenu extends LinkType {
 }
 //FIN-Navbar
 
-//////////////////////////
-
-
-
-
-
+//Hero
 export interface Hero {
   title: string;
   title2: string;
   subtitle: string;
 }
 
-export interface HeroCarousel {
-  id: number
-  title: string;
+export interface HeroCarousel extends LinkType {
   description: string;
   button: string;
-  path: string;
 }
+//FIN-Hero
+
+//Card
+export interface Card extends LinkType {
+  description: string;
+  image: string;
+}
+//FIN-Card
+
+//////////////////////////
+
+
 
 export interface NoticeResponse {
   id: number;
