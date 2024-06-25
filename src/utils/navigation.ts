@@ -1,8 +1,8 @@
-interface Navvigation {
+interface Navigation {
   [key: string]: string;
 }
 
-export const Navigation: Navvigation = {
+export const Navigation: Navigation = {
   home: '/',
   contact: '/contacto',
   service: '/servicio',
