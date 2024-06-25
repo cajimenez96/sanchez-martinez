@@ -2,23 +2,29 @@ export interface SectionTitles {
   [key: string]: string;
 }
 
+//NORMALIZADOS!
 export interface LinkType {
-  name: string;
-  path: string;
-  id?: number;
-}
-
-export interface NavbarItem {
   id: number;
   name: string;
   path: string;
+}
+
+//Navbar
+export interface NavbarItem extends LinkType{
   dropdown: boolean;
   dropdownMenu?: NavbarItemMenu[];
 }
 
 export interface NavbarItemMenu extends LinkType {
-  options: LinkType[];
+  options?: LinkType[];
 }
+//FIN-Navbar
+
+//////////////////////////
+
+
+
+
 
 export interface Hero {
   title: string;
@@ -31,12 +37,6 @@ export interface HeroCarousel {
   title: string;
   description: string;
   button: string;
-  path: string;
-}
-
-export interface Service {
-  name: string;
-  description: string;
   path: string;
 }
 
