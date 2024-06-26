@@ -88,7 +88,7 @@ const Footer = () => {
               </Contact>
 
               <Contact>
-                <a href="#">{footer.contacto.ubicacion}</a>
+                <a href="#" className="text-naranja">{footer.contacto.ubicacion}</a>
               </Contact>
             
           </div>
@@ -110,7 +110,7 @@ const Footer = () => {
         <div className="order-2 md:order-1">
           <img src={images.logo} width={50} alt="Sanchez martinez" />
         </div>
-        <p className="font-medium text-center order-1">
+        <p className="w-[98%] font-medium text-center order-1">
           {footer.footer.texto}
         </p>
       </Section>

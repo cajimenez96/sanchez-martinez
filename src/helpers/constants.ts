@@ -17,8 +17,8 @@ export const sectionTitles: SectionTitles = {
 }
 
 const service: LinkType[] = [
-  {id: 0, name: "Acciones de consumo", path: Navigation.service},
-  {id: 1, name: "Penal", path: Navigation.service}
+  {id: 1, name: "Penal", path: Navigation.service},
+  {id: 0, name: "Acciones de consumo", path: Navigation.service}
 ]
 
 //NAVBAR
@@ -32,7 +32,7 @@ export const navbar: NavbarItem[] = [
   {
     id: 1,
     name: 'Nosotros',
-    path: '/nosotros',
+    path: Navigation.about,
     dropdown: false
   },
   {
