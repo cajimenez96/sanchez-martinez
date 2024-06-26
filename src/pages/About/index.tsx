@@ -33,7 +33,7 @@ const Content: React.FC<ContentProps> = ({title, children, className}) => {
 const Card: React.FC<CardProps> = ({image, title, classNameImage}) => {
   return (
     <div>
-      <img src={image} alt={title} width={300} className={`mb-2 p-1 grayscale border rounded-lg ${classNameImage}`} />
+      <img src={image} alt={title} width={300} className={`mb-2 p-1 border rounded-lg ${classNameImage}`} />
       <Text className="text-oscuro">{title}</Text>
     </div>
   )
@@ -52,7 +52,7 @@ const About = () => {
 
       <div className="flex flex-wrap justify-center gap-5">
         {about.firms.map((firm, index) => (
-          <Card title={firm.name} image={firm.image} key={index} />
+          <Card title={firm.name} image={firm.image} classNameImage="grayscale" key={index} />
         ))}
       </div>
       
