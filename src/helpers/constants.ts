@@ -357,7 +357,7 @@ export const contact = {
     label: "Mensaje",
     name: "message",
     inputType: "textarea",
-    placeholder: "",
+    placeholder: "Tu mensaje",
     pattern:"^[A-Za-z0-9 ]{3,300}$",
     required:true,
     error:"Debe ingresar un mensaje válido entre 3 y 300 caracteres."

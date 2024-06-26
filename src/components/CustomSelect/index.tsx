@@ -1,8 +1,6 @@
-// src/components/CustomSelect.tsx
 import React, { useState } from 'react';
-import Select, { DropdownIndicatorProps, GroupBase, components } from 'react-select';
+import Select from 'react-select';
 import { BiSolidRightArrow } from 'react-icons/bi';
-import { JSX } from 'react/jsx-runtime';
 
 interface Option {
   value: string;
@@ -21,11 +19,11 @@ interface CustomSelectProps {
   error?: string;
 }
 
-const DropdownIndicator = (props: JSX.IntrinsicAttributes & DropdownIndicatorProps<unknown, boolean, GroupBase<unknown>>) => {
+const DropdownIndicator = () => {
   return (
-    <components.DropdownIndicator {...props} className="border-none">
-      <BiSolidRightArrow />
-    </components.DropdownIndicator>
+    <div className="me-2 border-none">
+      <BiSolidRightArrow className="text-oscuro"/>
+    </div>
   );
 };
 
@@ -61,8 +59,18 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
         defaultValue={option}
         components={{ DropdownIndicator }}
         className="text-oscuro"
+        classNames={{
+          indicatorSeparator: () => 'hidden',
+        }}
+        styles={{
+          control: (baseStyles) => ({
+            ...baseStyles,
+            borderColor: 'var(--color-oscuro)',
+            borderRadius: 12,
+            color: 'var(--color-oscuro)'
+          }),
+        }}
         onChange={onChanges}
-        isClearable
       />
       {hasError && (<p className="text-blanco">{error}</p>)}
     </div>
