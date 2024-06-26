@@ -46,9 +46,10 @@ const Footer = () => {
   return (
     <div className="w-full md:w-3/4 mx-auto">
       <Section className="mx-5 md:mx-20 mb-0 py-4 border-t-2 border-b-2 border-mapuche text-sm">
-        <div className="flex flex-wrap md:flex-nowrap justify-between">
 
-          <div className="flex w-[2048px]">
+        <div className="flex justify-around flex-wrap md:flex-nowrap gap-10">
+
+          <div className="w-full md:w-[39%] flex justify-between">
             <ListSection
               title="Recursos"
               items={footer.recursos}
@@ -62,9 +63,9 @@ const Footer = () => {
           </div>
 
 
-          <div className="w-full border border-mapuche my-5 md:hidden"/>
+          <div className="w-full md:w-[30%] border border-mapuche my-5 md:hidden"/>
         
-          <div className="w-full order-4 md:order-3">
+          <div className="w-full md:w-[30%] order-4 md:order-3">
             <Heading level={6} className="mb-4 uppercase text-oscuro font-medium">
               Contacto
             </Heading>
@@ -93,7 +94,7 @@ const Footer = () => {
           </div>
 
 
-          <div className="w-full order-3 md:order-4 mb-5 md:mb-0">
+          <div className="w-full md:w-[30%] order-3 md:order-4 mb-5 md:mb-0">
             <Heading level={6} className="mb-4 uppercase text-oscuro font-medium">
               Sánchez Martínez & Asociados
             </Heading>
