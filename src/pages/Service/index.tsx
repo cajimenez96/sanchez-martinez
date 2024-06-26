@@ -37,6 +37,17 @@ const Service = () => {
           <Heading level={4} className="font-extrabold text-3xl text-oscuro">
             {service?.title}
           </Heading>
+          <div className="mt-10">
+            <Text className="text-naranja">
+              Brindado por:
+            </Text>
+            <img 
+              src={service?.image}
+              alt={service?.title}
+              width={300}
+              className="grayscale"
+            />
+          </div>
           <section className="mx-0 mt-10 flex flex-wrap justify-between">
             <article className="w-full md:w-1/2">
               {service?.description.map((element, index) => (
@@ -44,7 +55,7 @@ const Service = () => {
                   <Heading level={6} className="font-bold text-base text-naranja">
                     {element.title}
                   </Heading>
-                  
+
                   <Text className="mt-1 text-oscuro">
                     {element.description}
                   </Text>
@@ -52,7 +63,7 @@ const Service = () => {
               ))}
               <div className="mt-10 hidden md:flex justify-start">
                 <div>
-                  <Button 
+                  <Button
                     buttonStyle="outline"
                     className="border-naranja font-medium text-naranja hover:text-crema hover:bg-naranja"
                     handleClick={() => redirect(service)}>

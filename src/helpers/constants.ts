@@ -140,6 +140,7 @@ export const services = [
   {
     id: 0,
     title: "Abogados de consumo",
+    image: Marcas.Plex,
     description: [
       {
         title: "Consultas",
@@ -171,12 +172,13 @@ export const services = [
     ],
     button: {
       text: "Consultar ahora",
-      path: "/contacto/"
+      path: Navigation.contact+"/"
     }
   },
   {
     id: 1,
     title: "Abogados penalistas",
+    image: Marcas.Defensores,
     description: [
       {
         title: "Derechos y garantías",
@@ -193,84 +195,7 @@ export const services = [
     ],
     button: {
       text: "Consultar ahora",
-      path: "/contacto/"
-    }
-  },
-  {
-    id: 2,
-    title: "Abogados laborales",
-    description: [
-      {
-        title: "Derecho laboral",
-        description: "Nos especializamos en Derecho Laboral, además de contar con amplia experiencia en la materia y con muchos casos de éxito que nos diferencian."
-      },
-      {
-        title: "Asesoramiento y asistencia",
-        description: "Brindamos asesoramiento y asistencia legal para trabajadores, representándolos y defendiendo sus derechos en todas las instancias administrativas o judiciales."
-      }
-    ],
-    items: [
-      { id: 1, description: "Entrevistas y asesoramientos virtuales y presenciales." },
-      { id: 2, description: "Asesoramiento y representación judicial y extrajudicial a trabajadores y pymes en el área del derecho laboral." },
-      { id: 3, description: "Abonos mensuales para empresas y/o emprendedores." },
-      { id: 4, description: "Asesoramiento y representación de trabajadores en el área de: sanciones disciplinarias, trabajo no registrado ('en negro')." },
-      { id: 5, description: "Pago de diferencias salariales. Despidos c/o sin causa. Indemnizaciones." },
-      { id: 6, description: "Asesoramiento y representación en el área de Riesgos de trabajo. Accidentes de trabajo." },
-      { id: 7, description: "Enfermedad profesional." },
-      { id: 8, description: "Trámites administrativos en la Superintendencia de Riesgos del Trabajo." }
-    ],
-    button: {
-      text: "Consultar ahora",
-      path: "/contacto/"
-    }
-  },
-  {
-    id: 3,
-    title: "Abogados de daños y prejuicios",
-    description: [
-      {
-        title: "Asesoramiento",
-        description: "Te asesoramos para que puedas cobrar la mejor indemnización posible por daños materiales y/o lesiones en siniestros que sufriste en el menor tiempo posible. No importa si sos peatón, ciclista, pasajero, motociclista o conductor. Si sufriste un accidente, tienes derecho a una compensación económica por parte del causante del daño y de su compañía de seguro. Contamos con un equipo de especialistas en accidentes de tránsito con años de experiencia, listos para ayudarte."
-      }
-    ],
-    items: [
-      { id: 1, description: "Asesoramiento en daños por accidentes de tránsito." },
-      { id: 2, description: "Mala praxis profesional." },
-      { id: 3, description: "Daños derivados de incumplimiento contractual." }
-    ],
-    button: {
-      text: "Consultar ahora",
-      path: "/contacto/"
-    }
-  },
-  {
-    id: 4,
-    title: "Abogados de Familia y sucesiones",
-    description: [
-      {
-        title: "Pasión y vocación",
-        description: "Los abogados y abogadas que ejercemos el derecho de familia en el estudio, los hacemos con pasión y con vocación, podemos y debemos ayudar a rescatar y reparar vínculos, donde lo primordial sean los niños niñas y adolescentes, atrapados en una familia en conflicto, los que serán personas del mañana."
-      },
-      {
-        title: "Simple y asequible",
-        description: "Tambien ofrecemos la posibilidad de Tramitar tu sucesión, de forma sencilla, económica, profesional y con todas las garantías legales."
-      }
-    ],
-    items: [
-      { id: 1, description: "Divorcios" },
-      { id: 2, description: "División de Sociedad Conyugal" },
-      { id: 3, description: "Cese de Alimentos" },
-      { id: 4, description: "Alimentos" },
-      { id: 5, description: "Régimen comunicacional" },
-      { id: 6, description: "Sucesiones" },
-      { id: 7, description: "Testamientos" },
-      { id: 8, description: "Cesión de Derechos hereditarios" },
-      { id: 9, description: "Adquisición y venta de bienes en sucesiones en trámite" }
-
-    ],
-    button: {
-      text: "Consultar ahora",
-      path: "/contacto/"
+      path: Navigation.contact+"/"
     }
   }
 ]
