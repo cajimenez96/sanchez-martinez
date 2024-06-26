@@ -1,4 +1,5 @@
 import { images } from "../utils/images";
+import { Marcas } from "../utils/marcas";
 import { Navigation } from "../utils/navigation";
 import { Card, Hero, HeroCarousel, LinkType, NavbarItem, NoticeResponse, SectionTitles } from "./interfaces";
 
@@ -366,10 +367,16 @@ export const contact = {
 
 //NOSOTROS
 export const about = {
-  title: "Acerca de nuestra firma",
-  description: "Magna es un grupo de abogados asociados conformado por profesionales especializados en diferentes ramas del derecho, brindamos asesoramiento en materia Penal, civil: (Familia - Sucesiones - Daños - Acciones de consumo, laboral, etc.).",
-  firms: "Nuestras firmas",
-  text: "Nuestro equipo está conformado con profesionales especializados en diferentes áreas."
+  title: "Sánchez Martínez & Asociados ",
+  description: "gerencia dos grandes servicios jurídicos.",
+  firms: [
+    {name: "PLEX Abogados Asociados", image: Marcas.Plex, url: ""},
+    {name: "Defensorespenales.com.ar", image: Marcas.Defensores, url: ""}
+  ],
+  title2: "Ambos servicios se encuentran\n bajo el gerenciamiento de:",
+  profile: "Dr. José Emanuel Sánchez Martínez",
+  profileImage: images.profile,
+  profileText: "Soy José, creo firmemente que debemos reivindicar el prestigio y la importancia del rol del abogado en la sociedad a través de un esfuerzo perseverante y un ejercicio profesional que sea sinónimo de transparencia y dedicación, así también como actores del sistema Judicial, tenemos que embanderar protagonismo, inspirar a otros, crear y adaptarse a los cambios, ser garantes de juicios justos; como abogados. \n\nLa justicia, sobre todo penal, está en un estado terminal de credibilidad y confianza frente a la sociedad. Se observa un déficit de compromiso judicial al no plasmar en sus sentencias de manera igualitaria los principios del nuevo Código Procesal Penal que alberga un novedoso sistema “Acusatorio Adversarial”. Ante ello, como abogado defensor, trabajo a diario en representación de mis clientes para que el estado operativice el conjunto de principios y garantías contenidos en la Constitución Nacional y Provincial, Tratados Internacionales, que constituyen un verdadero límite en la función del MPF a la hora de acusar, como así también para los jueces a la hora de absolver o condenar, para evitar impunidad. Abogado Penalista (Universidad Nacional de Tucumán). Procurador (Universidad Nacional de Tucumán) Diez (10) años de trayectoria."
 }
 
 export const faqs = [
