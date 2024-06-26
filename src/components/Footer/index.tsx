@@ -95,7 +95,7 @@ const Footer = () => {
 
           <div className="w-full order-3 md:order-4 mb-5 md:mb-0">
             <Heading level={6} className="mb-4 uppercase text-oscuro font-medium">
-              Magna
+              Sánchez Martínez & Asociados
             </Heading>
               
             <span className="font-light">

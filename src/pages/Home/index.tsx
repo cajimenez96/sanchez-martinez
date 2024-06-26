@@ -110,7 +110,7 @@ const Home = () => {
 
       <Section className="flex justify-center mx-5 md:mx-0">
         <div className="md:mt-10">
-          <Heading level={4} className="font-semibold md:font-black text-oscuro text-xl md:text-[36px]">
+          <Heading level={4} className="font-semibold md:font-black text-oscuro text-xl md:text-[36px] text-center">
             {sectionTitles.service}
           </Heading>
 

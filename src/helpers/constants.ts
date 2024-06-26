@@ -279,20 +279,17 @@ export const services = [
 //FOOTER
 export const footer = {
   recursos: [
-    {name: "Contacto", path: '/contacto'},
+    {name: "Contacto", path: Navigation.contact},
     {name: "Noticias", path: '/'},
-    {name: "Nosotros", path: '/nosotros'},
-    {name: "Inicio", path: '/'}
+    {name: "Nosotros", path: Navigation.about},
+    {name: "Inicio", path: Navigation.home}
   ],
   servicios: [
-    {name: "Familia y sucesiones", path: '/servicio', id: 4},
-    {name: "Acciones de consumo", path: '/servicio', id: 0},
-    {name: "Daños y prejuicios", path: '/servicio', id: 3},
-    {name: "Laboral", path: '/servicio', id: 2},
-    {name: "Penal", path: '/servicio', id: 1}
+    {name: "Acciones de consumo", path: Navigation.service, id: 0},
+    {name: "Penal", path: Navigation.service, id: 1}
   ],
   magna: {
-    descripcion: "Magna es un grupo de abogados asociados conformado por profesionales especializados en diferentes áreas del derecho, brindamos asesoramiento en materia Penal, civil: (Familia - Sucesiones - Daños - Acciones de consumo, laboral, etc.)"
+    descripcion: "Contamos con las capacidades y conocimientos en el medio necesarios para ayudarle a resolver incluso las situaciones más complejas que estes enfrentando. Desde que abrimos nuestras puertas en el año 2013 nos enorgullece decir que cada año tenemos una lista más grande de clientes satisfechos nuevos y habituales."
   },
   contacto: {
     correo: "hola@magnastudio.com.ar",
@@ -305,7 +302,7 @@ export const footer = {
     ubicacion: "Ver ubicación exacta"
   },
   footer: {
-    texto: "© 2024 Magna abogados asociados. Todos los derechos reservados."
+    texto: "© 2024 Sánchez Martínez & Asociados. Todos los derechos reservados."
   }
 };
 
