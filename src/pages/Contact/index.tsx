@@ -49,7 +49,7 @@ const Contact = () => {
   return (
     <div className="md:mt-10">
       <Container className={`flex justify-center items-center min-h-[70vh] py-10`}>
-        <Section className="mx-5 md:mx-0 md:w-2/5 rounded-xl py-10 px-5 bg-blanco">
+        <Section className="mx-5 md:mx-0 w-full lg:w-2/5 rounded-xl py-10 px-5 bg-blanco">
           <form onSubmit={formik.handleSubmit}>
             <div className="text-center">
               <Heading level={5} className="font-semibold text-2xl md:text-4xl text-oscuro">Formulario de contacto</Heading>
@@ -112,7 +112,7 @@ const Contact = () => {
 
               <div className="w-full flex justify-center items-center">
                 <div className="w-2/5">
-                  <Button buttonStyle="outline" className="text-oscuro border-oscuro" type="submit">
+                  <Button buttonStyle="outline" type="submit">
                     Enviar
                   </Button>
                 </div>

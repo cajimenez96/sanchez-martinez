@@ -17,7 +17,8 @@ export default {
       'crema': 'var(--color-crema)',
       'mapuche': 'var(--color-mapuche)',
       'blanco': 'var(--color-blanco)',
-      'oscuro-blur': 'var(--color-oscuro-blur)'
+      'oscuro-blur': 'var(--color-oscuro-blur)',
+      'alert': 'var(--color-alert)'
     },
     extend: {},
   },
