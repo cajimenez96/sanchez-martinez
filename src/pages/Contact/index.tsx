@@ -135,7 +135,7 @@ const Contact = () => {
           </form>
         </Section>
       </Container>
-      <div className="fixed w-1/3 top-5 right-5 z-50 duration-150">
+      <div className="fixed w-full md:w-1/2 lg:w-1/3 top-5 right-0 md:right-5 z-50 duration-150">
         <Alert visible={showAlert} title="Éxito" message="Tu mensaje ha sido enviado exitosamente." />
       </div>
     </div>
