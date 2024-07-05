@@ -121,8 +121,9 @@ const Navbar: React.FC = () => {
 
   return (
     <div className="w-full p-3 sticky top-0 z-50 flex justify-between md:justify-around items-center bg-blanco">
-      <Link to={Navigation.home}>
-        <img src={images.logo} width={70} alt="Sanchez martinez" />
+
+      <Link to={Navigation.home} className="my-2">
+        <img src={images.logo} width={200} alt="Sanchez martinez" />
       </Link>
 
       <ul className="hidden md:flex">
