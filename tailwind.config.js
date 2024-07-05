@@ -18,6 +18,7 @@ export default {
       'mapuche': 'var(--color-mapuche)',
       'blanco': 'var(--color-blanco)',
       'oscuro-blur': 'var(--color-oscuro-blur)',
+      'blanco-blur': 'var(--color-blanco-blur)',
       'alert': 'var(--color-alert)'
     },
     extend: {},

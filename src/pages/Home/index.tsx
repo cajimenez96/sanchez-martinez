@@ -2,7 +2,7 @@ import { useState } from "react";
 import Button from "../../components/Button";
 import Heading from "../../components/Heading";
 import Container from "../../components/Container";
-import { hero, heroCarousel, response, sectionTitles, servicesCards } from "../../helpers/constants";
+import { hero, heroCarousel, PHONE, response, sectionTitles, servicesCards } from "../../helpers/constants";
 import { Card as CardElement, HeroCarousel } from "../../helpers/interfaces";
 import Switch from "../../components/Switch";
 import Card from "../../components/Card";
@@ -13,6 +13,7 @@ import Text from "../../components/Text";
 import { FaAngleDoubleRight } from "react-icons/fa";
 import { standarDate } from "../../helpers/helper";
 import { images } from "../../utils/images";
+import Whatsapp from "../../components/Whatsapp";
 
 interface CardBodyProps {
   title?: string;
@@ -116,7 +117,7 @@ const Home = () => {
 
           <article className="flex flex-wrap gap-20 mt-10 md:mt-14">
             
-            <div className="w-full flex flex-wrap justify-center gap-5 md:gap-0">
+            <div className="w-full flex flex-wrap justify-center gap-5 lg:gap-0">
               {servicesCards.map((service: CardElement) => (
                 <Card
                   className="py-3 border-[2px] border-oscuro rounded-xl"
@@ -171,6 +172,10 @@ const Home = () => {
 
       <div className="w-full flex justify-center">
         <Modal />
+      </div>
+
+      <div className="w-full flex justify-end">
+        <Whatsapp tel={PHONE} />
       </div>
 
     </>

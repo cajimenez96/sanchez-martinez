@@ -7,6 +7,7 @@ export const API_URL = import.meta.env.VITE_API_URL;
 export const TITLE = import.meta.env.VITE_SEO_TITLE;
 export const DESCRIPTION = import.meta.env.VITE_SEO_DESCRIPTON;
 export const KEYWORDS = import.meta.env.VITE_SEO_KEYWORDS;
+export const PHONE = 5493815796741;
 
 
 //NORMALIZADOS!
