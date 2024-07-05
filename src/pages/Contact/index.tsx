@@ -11,6 +11,8 @@ import { FormData } from "../../helpers/interfaces";
 import { sendEmail } from "./require";
 import Section from "../../components/Section";
 import Text from "../../components/Text";
+import Alert from "../../components/Alert";
+import { useEffect, useState } from "react";
 
 interface Option {
   value: string;
@@ -28,6 +30,7 @@ const INITIAL_STATE: FormData = {
 
 const Contact = () => {
   const { id } = useParams<{ id: string }>();
+  const [showAlert, setShowAlert] = useState<boolean>(false);
 
   const numericId = id ? parseInt(id, 10) : null;
 
@@ -40,10 +43,21 @@ const Contact = () => {
     validationSchema: contactSchema,
     onSubmit: async (form: FormData) => {
       const response = await sendEmail(form);
+      setShowAlert(!showAlert)
       console.log('envio: ', response);
       
     }
-  })
+  });
+
+  useEffect(() => {
+    if (showAlert) {
+      const timer = setTimeout(() => {
+        setShowAlert(false);
+      }, 3000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [showAlert]);
   
   
   return (
@@ -110,9 +124,9 @@ const Contact = () => {
                 hasError={formik.touched.message}
               />
 
-              <div className="w-full flex justify-center items-center">
+              <div className="w-full flex flex-col justify-center items-center">
                 <div className="w-2/5">
-                  <Button buttonStyle="outline" type="submit">
+                  <Button buttonStyle="outline" className="text-oscuro" type="submit">
                     Enviar
                   </Button>
                 </div>
@@ -121,6 +135,9 @@ const Contact = () => {
           </form>
         </Section>
       </Container>
+      <div className="fixed w-1/3 top-5 right-5 z-50 duration-150">
+        <Alert visible={showAlert} title="Éxito" message="Tu mensaje ha sido enviado exitosamente." />
+      </div>
     </div>
   )
 }
