@@ -87,11 +87,11 @@ const Home = () => {
 
         <Section className="my-auto md:py-20 flex flex-col items-start leading-[2.8rem] md:leading-none">
           
-          <Heading level={1} className="font-black text-[40px] md:text-[82px] md:tracking-[8px]">
+          <Heading level={1} className="font-black text-[40px] md:text-[82px] md:tracking-[8px] uppercase">
             {hero.title}
           </Heading>
 
-          <Heading level={1} className="font-black text-[40px] md:text-[82px] md:tracking-[8px]">
+          <Heading level={1} className="font-black text-[40px] md:text-[82px] md:tracking-[8px] uppercase">
             {hero.title2}
           </Heading>
           

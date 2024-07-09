@@ -89,8 +89,8 @@ export const navbarMobile: NavbarItem[] = [
 
 //HERO
 export const hero: Hero = {
-  title: "Sánchez",
-  title2: "Matínez",
+  title: "Sanchez",
+  title2: "Matinez",
   subtitle: "& Asociados"
 };
 
