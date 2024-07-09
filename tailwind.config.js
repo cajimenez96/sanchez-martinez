@@ -19,7 +19,9 @@ export default {
       'blanco': 'var(--color-blanco)',
       'oscuro-blur': 'var(--color-oscuro-blur)',
       'blanco-blur': 'var(--color-blanco-blur)',
-      'alert': 'var(--color-alert)'
+      'error': 'var(--color-error)',
+      'warning': 'var(--color-warning)',
+      'success': 'var(--color-success)'
     },
     extend: {},
   },
