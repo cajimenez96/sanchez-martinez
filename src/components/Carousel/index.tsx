@@ -28,9 +28,15 @@ const Carousel: React.FC<CarouselProps> = ({children, elements}) => {
           slidesPerView: 1
         },
         768: {
+          slidesPerView: 2
+        },
+        968: {
           slidesPerView: 3
         },
         1024: {
+          slidesPerView: 2
+        },
+        1440: {
           slidesPerView: 4
         }
       }}
@@ -44,7 +50,7 @@ const Carousel: React.FC<CarouselProps> = ({children, elements}) => {
       {children}
       {elements?.map((e, index) => (
         <SwiperSlide key={index} onClick={() => selectCard(e)}>
-          <Card className="h-96 overflow-hidden mx-auto">
+          <Card className="w-full h-96 overflow-hidden mx-auto">
             <CardBody
               text={e.content}
               image={e.front}

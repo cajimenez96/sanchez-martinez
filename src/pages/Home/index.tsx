@@ -94,7 +94,7 @@ const Home = () => {
             <div className="w-full flex flex-wrap justify-center gap-5 lg:gap-0">
               {servicesCards.map((service: CardElement) => (
                 <Card
-                  className="py-3 border-[2px] border-oscuro rounded-xl"
+                  className="py-3 h-auto w-full md:w-[40%] lg:w-[30%] xl:w-[25%] border-[2px] border-oscuro rounded-xl"
                   handleClick={() => navigate(Navigation.service+'/'+service.id)}
                   key={service.id}
                 >
