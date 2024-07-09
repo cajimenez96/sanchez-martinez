@@ -8,6 +8,8 @@ import Service from './pages/Service';
 import About from './pages/About';
 import Head from './components/Head';
 import Faqs from './pages/Faqs';
+import Whatsapp from './components/Whatsapp';
+import { PHONE } from './helpers/constants';
 
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
         <Route path={`${Navigation.service}/:id`} element={<Service />} />
         <Route path={Navigation.faq} element={<Faqs />} />
       </Router>
+      <Whatsapp tel={PHONE} />
       <Footer />
     </Head>
   )
