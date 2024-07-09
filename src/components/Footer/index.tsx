@@ -106,11 +106,11 @@ const Footer = () => {
 
         </div>
       </Section>
-      <Section className="mt-3 mb-5 flex flex-wrap justify-center md:justify-between items-center gap-5">
-        <div className="order-2 md:order-1">
-          <img src={images.logo} width={50} alt="Sanchez martinez" />
+      <Section className="mt-3 mb-5 flex flex-col md:flex-row justify-between items-center gap-5">
+        <div className="">
+          <img src={images.logo} width={150} alt="Sanchez martinez" />
         </div>
-        <p className="w-[98%] font-medium text-center order-1">
+        <p className="font-medium text-center order-1">
           {footer.footer.texto}
         </p>
       </Section>

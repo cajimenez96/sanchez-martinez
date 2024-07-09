@@ -220,7 +220,7 @@ export const footer = {
   },
   contacto: {
     correo: "hola@magnastudio.com.ar",
-    telefono: "+54 9 3815 79-6741",
+    telefono: "+54 9 381 579-6741",
     direccion: {
       ciudad: "Tucumán",
       localidad: "San Miguel de Tucumán",
