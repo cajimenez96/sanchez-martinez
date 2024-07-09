@@ -23,7 +23,7 @@ const Posts = () => {
   }
 
   return (
-    <Section className="mx-auto grid grid-cols-3">
+    <Section className="mx-auto grid md:grid-cols-3">
       {posts.map((post: IPost) => (
         <div className="h-96 w-[380px] hover:w-[385px] mx-auto mb-10 p-1 border-4 rounded-md border-oscuro-blur hover:border-oscuro duration-150 overflow-hidden shadow-lg cursor-pointer" key={post._id} onClick={() => handleClick(post)}>
           <div>
