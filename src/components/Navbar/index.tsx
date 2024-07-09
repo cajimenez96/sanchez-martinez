@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from "react";
+import React, { ReactNode, useEffect, useRef, useState } from "react";
 import { FiArrowRight, FiMenu } from "react-icons/fi";
 import { LuX } from "react-icons/lu";
 import { navbar, navbarMobile } from "../../helpers/constants";
@@ -10,7 +10,7 @@ import Accordion from "../Accordion";
 import Text from "../Text";
 import { normalizeLink } from "../../helpers/helper";
 import { images } from "../../utils/images";
-import { LinkType, NavbarItem, NavbarItemMenu } from "../../helpers/interfaces";
+import { NavbarItem, NavbarItemMenu } from "../../helpers/interfaces";
 
 interface MenuProps {
   children: ReactNode;
@@ -114,13 +114,26 @@ const ItemMobile: React.FC<ItemMobile> = ({item, handleClick}) => {
 
 const Navbar: React.FC = () => {
   const [nav, setNav] = useState(false);
-  
-  const handleNav = () => {
-    setNav(!nav);
+
+  const navbarRef = useRef<HTMLElement>(null);
+
+  const handleClickOutside = (event: MouseEvent) => {
+    if (navbarRef.current && !navbarRef.current.contains(event.target as Node)) {
+      setNav(false);
+    }
   };
+  
+  const handleNav = () => setNav(!nav);
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   return (
-    <div className="w-full p-3 sticky top-0 z-50 flex justify-between md:justify-around items-center bg-blanco">
+    <nav className="w-full p-3 sticky top-0 z-50 flex justify-between md:justify-around items-center bg-blanco" ref={navbarRef}>
 
       <Link to={Navigation.home} className="my-2">
         <img src={images.logo} width={200} alt="Sanchez martinez" />
@@ -169,7 +182,7 @@ const Navbar: React.FC = () => {
           </Button>
         </div>
       </div>
-    </div>
+    </nav>
   )
 }
 
