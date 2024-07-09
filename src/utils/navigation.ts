@@ -7,5 +7,6 @@ export const Navigation: Navigation = {
   contact: '/contacto',
   service: '/servicio',
   about: '/nosotros',
-  faq: '/preguntas'
+  faq: '/preguntas',
+  post: '/posts'
 }

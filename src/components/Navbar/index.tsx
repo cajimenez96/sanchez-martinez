@@ -142,7 +142,7 @@ const Navbar: React.FC = () => {
       </ul>
 
       <div className="w-44 hidden md:block">
-        <Button buttonStyle="switch">
+        <Button buttonStyle="switch" link href={Navigation.post}>
           Noticias
           <FiArrowRight />
         </Button>
@@ -163,7 +163,7 @@ const Navbar: React.FC = () => {
         </ul>
 
         <div className="ms-12 me-2">
-          <Button buttonStyle="switch">
+          <Button buttonStyle="switch" link href={Navigation.post}>
             Noticias
             <FiArrowRight />
           </Button>
