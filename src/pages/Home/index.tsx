@@ -14,8 +14,10 @@ import { images } from "../../utils/images";
 import { Navigation } from "../../utils/navigation";
 import { IPost } from "../../api/Post";
 import { getAllPosts } from "../Posts/require";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
   const [selectedValue, setSelectedValue] = useState<number>(1);
   const [allPosts, setAllPosts] = useState<IPost[]>([]);
 
@@ -93,16 +95,17 @@ const Home = () => {
               {servicesCards.map((service: CardElement) => (
                 <Card
                   className="py-3 border-[2px] border-oscuro rounded-xl"
+                  handleClick={() => navigate(Navigation.service+'/'+service.id)}
                   key={service.id}
-                 >
+                >
                   <CardBody
                     title={service.name}
                     text={service.description}
                     image={service.image}
                     classText="text-oscuro"
                   />
-                 </Card>
-                ))}
+                </Card>
+              ))}
             </div>
 
             <div className="hidden md:block">
