@@ -44,8 +44,6 @@ const Contact = () => {
     onSubmit: async (form: FormData) => {
       const response = await sendEmail(form);
       setShowAlert(!showAlert)
-      console.log('envio: ', response);
-      
     }
   });
 
@@ -135,7 +133,7 @@ const Contact = () => {
           </form>
         </Section>
       </Container>
-      <div className="fixed w-full md:w-1/2 lg:w-1/3 top-5 right-0 md:right-5 z-50 duration-150">
+      <div className={`w-full lg:w-1/4 ${showAlert && 'fixed'} top-5 right-0 z-50 duration-150`}>
         <Alert visible={showAlert} title="Éxito" message="Tu mensaje ha sido enviado exitosamente." />
       </div>
     </div>

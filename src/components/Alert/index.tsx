@@ -25,7 +25,7 @@ const Alert: React.FC<IAlert> = ({
   }
 
   return (
-    <div className={`w-full border-l-4 p-4 transition-opacity ${visible ? 'opacity-100' : 'opacity-0'} ${setTypeAlert()} duration-500`} role="alert">
+    <div className={`w-full border-l-4 p-4 transition-opacity ${visible ? 'opacity-100' : 'opacity-0'} ${setTypeAlert()} duration-150`} role="alert">
       <p className="font-bold">{title}</p>
       <p>{message}</p>
       <div>
