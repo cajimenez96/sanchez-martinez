@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "../../components/Button";
 import Heading from "../../components/Heading";
 import Container from "../../components/Container";
 import { hero, heroCarousel, response, sectionTitles, servicesCards } from "../../helpers/constants";
 import { Card as CardElement, HeroCarousel } from "../../helpers/interfaces";
 import Switch from "../../components/Switch";
-import Card from "../../components/Card";
+import Card, { CardBody } from "../../components/Card";
 import Section from "../../components/Section";
 import Carousel from "../../components/Carousel";
 import Modal from "../../components/Modal";
@@ -13,46 +13,21 @@ import Text from "../../components/Text";
 import { FaAngleDoubleRight } from "react-icons/fa";
 import { standarDate } from "../../helpers/helper";
 import { images } from "../../utils/images";
-
-interface CardBodyProps {
-  title?: string;
-  text: string;
-  image: string;
-  date?: string;
-  classText?: string;
-}
-
-const CardBody: React.FC<CardBodyProps> = ({
-  title,
-  text,
-  image,
-  date,
-  classText
-}) => {
-  return (
-    <div className="mx-5 flex flex-col gap-5 group">
-        <img src={image} alt={title} />
-
-        <div className="flex justify-between">
-          <div className="flex items-center gap-2 cursor-pointer font-light text-sm text-mapuche group-hover:border-mapuche border-b border-transparent">
-            Leer más
-            <FaAngleDoubleRight />
-          </div>
-          <Text className="font-light text-sm">
-            {date && standarDate(date)}
-          </Text>
-        </div>
-
-        <div className="text-oscuro">
-          <Heading level={5} className={`mb-2 font-bold text-lg md:text-xl ${classText}`}>{title}</Heading>
-          <Text className={`text-base ${classText}`}>{text}</Text>
-        </div>
-      </div>
-  );
-}
+import { Navigation } from "../../utils/navigation";
+import { IPost } from "../../api/Post";
+import { getAllPosts } from "../Posts/require";
 
 const Home = () => {
   const [selectedValue, setSelectedValue] = useState<number>(1);
+  const [allPosts, setAllPosts] = useState<IPost[]>([]);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const data = await getAllPosts();
+      setAllPosts(data);
+    };
+    fetchPosts();
+  }, []);
 
   const handleCheckboxChange = (value: number) => {
     setSelectedValue(value);
@@ -148,23 +123,13 @@ const Home = () => {
           </Heading>
 
           <div className="w-64 my-8">
-            <Button buttonStyle="outline">
+            <Button buttonStyle="outline" link href={Navigation.post}>
               Ver todas las noticias
             </Button>
           </div>
 
           <div className="w-[90%]">
-            <Carousel>
-              {response.map((notice) => (
-                <Card key={notice.id}>
-                  <CardBody
-                    text={notice.description}
-                    image={notice.image}
-                    date={notice.creationDate}
-                  />
-                </Card>
-              ))}
-            </Carousel>
+            <Carousel elements={allPosts} />
           </div>
         </Container>
       </section>

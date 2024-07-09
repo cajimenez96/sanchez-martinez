@@ -1,89 +1,52 @@
 import React, { ReactNode } from "react";
-import Slider from "react-slick";
-import { BiSolidLeftArrow, BiSolidRightArrow } from 'react-icons/bi';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import Card, { CardBody } from "../Card";
+import { IPost } from "../../api/Post";
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 interface CarouselProps {
-  children: ReactNode;
+  children?: ReactNode;
+  elements?: IPost[];
 }
 
-interface CustomArrowProps {
-  onClick?: () => void;
-}
+const Carousel: React.FC<CarouselProps> = ({children, elements}) => {
 
-const NextArrow: React.FC<CustomArrowProps> = ({onClick}) => {
   return (
-    <button
-      className="hidden md:block absolute -right-4 bottom-[50%] z-50 text-crema"
-      onClick={onClick}
-    >
-      <BiSolidRightArrow size={30} />
-    </button>
-  );
-}
-
-const PrevArrow: React.FC<CustomArrowProps> = ({onClick}) => {
-  return (
-    <button
-      className="hidden md:block absolute -left-4 bottom-[50%] z-50 text-crema cursor-pointer"
-      onClick={onClick}
-    >
-      <BiSolidLeftArrow size={30} />
-    </button>
-  );
-}
-
-const Carousel: React.FC<CarouselProps> = ({children}) => {
-
-  const settings = {
-
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 3,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
-    responsive:[
-      {
-        breakpoint: 480,
-        settings: {
-          rows: 2,
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          speed: 500,
-          infinite: true,
-          dots: true,
-          appendDots: (dots: any) => (
-            <ul style={{display: "flex", justifyContent: "center", gap: 20, position: 'absolute', top: '-35px', height: 25}}>
-              {dots}
-            </ul>
-          ),
-          customPaging: () => (
-            <li
-              style={{
-                color: 'var(--color-crema)',
-                width: 10,
-                height: 10,
-                backgroundColor: "var(--color-crema)",
-                borderRadius: 10,
-                transition: "all 0.3s ease"
-              }}
-            >
-            </li>
-          )
+    <Swiper
+      breakpoints={{
+        425: {
+          slidesPerView: 1
+        },
+        768: {
+          slidesPerView: 3
+        },
+        1024: {
+          slidesPerView: 4
         }
-      }
-    ]
-  };
-
-  return (
-    <div className="flex flex-col items-center justify-center mt-5">
-      <Slider {...settings} className="w-full md:px-5">
-        {children}
-      </Slider>
-    </div>
+      }}
+      autoplay={{
+        delay: 0,
+        disableOnInteraction: false,
+      }}
+      modules={[Navigation]}
+      navigation={true}
+    >
+      {children}
+      {elements?.map((e, index) => (
+        <SwiperSlide key={index}>
+          <Card className="h-96 overflow-hidden mx-auto">
+            <CardBody
+              text={e.content}
+              image={e.front}
+              date={e.updatedAt.toString()}
+            />
+          </Card>
+        </SwiperSlide>
+      ))}
+    </Swiper>
   );
 }
 
