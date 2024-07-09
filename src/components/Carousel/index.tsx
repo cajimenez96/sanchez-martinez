@@ -1,11 +1,13 @@
 import React, { ReactNode } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
+import { Navigation as navigate } from '../../utils/navigation';
 import Card, { CardBody } from "../Card";
 import { IPost } from "../../api/Post";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import { useNavigate } from "react-router-dom";
 
 interface CarouselProps {
   children?: ReactNode;
@@ -13,6 +15,11 @@ interface CarouselProps {
 }
 
 const Carousel: React.FC<CarouselProps> = ({children, elements}) => {
+  const navigation = useNavigate();
+
+  const selectCard = (post: IPost) => {
+    navigation(navigate.post+'/'+post._id);  
+  }
 
   return (
     <Swiper
@@ -36,7 +43,7 @@ const Carousel: React.FC<CarouselProps> = ({children, elements}) => {
     >
       {children}
       {elements?.map((e, index) => (
-        <SwiperSlide key={index}>
+        <SwiperSlide key={index} onClick={() => selectCard(e)}>
           <Card className="h-96 overflow-hidden mx-auto">
             <CardBody
               text={e.content}
