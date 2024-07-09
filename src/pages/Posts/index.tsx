@@ -26,7 +26,7 @@ const Posts = () => {
               {post.location}, {post.category}
             </p>
           </div>
-          <div className="mt-2 max-h-auto whitespace-break-spaces text-ellipsis">
+          <div className="mt-2 line-clamp-4">
             <p>{post.content}</p>
           </div>
         </div>
