@@ -11,6 +11,7 @@ import Faqs from './pages/Faqs';
 import Whatsapp from './components/Whatsapp';
 import { PHONE } from './helpers/constants';
 import Posts from './pages/Posts';
+import Post from './pages/Post';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path={`${Navigation.service}/:id`} element={<Service />} />
         <Route path={Navigation.faq} element={<Faqs />} />
         <Route path={Navigation.post} element={<Posts />} />
+        <Route path={`${Navigation.post}/:id`} element={<Post />} />
       </Router>
       <Whatsapp tel={PHONE} />
       <Footer />
