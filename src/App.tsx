@@ -26,7 +26,9 @@ function App() {
         <Route path={Navigation.post} element={<Posts />} />
         <Route path={`${Navigation.post}/:id`} element={<Post />} />
       </Router>
-      <Whatsapp tel={PHONE} />
+      <div className="w-auto m-5 fixed right-0 bottom-0 flex justify-end">
+        <Whatsapp tel={PHONE} />
+      </div>
       <Footer />
     </Head>
   )

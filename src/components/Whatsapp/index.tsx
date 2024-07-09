@@ -11,7 +11,7 @@ const Whatsapp: React.FC<IWhatsapp> = ({tel}) => {
   };
 
   return (
-    <div className="fixed bottom-4 left-[95%] z-50 w-full mx-auto" onClick={handleClick}>
+    <div onClick={handleClick}>
       <div className="w-16 p-2 rounded-xl flex justify-center items-center bg-blanco-blur shadow-md cursor-pointer">
         <img src={images.whatsapp} alt="Whatsapp" width={50} />
       </div>
