@@ -24,7 +24,7 @@ const Accordion: React.FC<AccordionProps> = ({ children, title, classNameTitle, 
       </span>
       
       <div className={`cursor-pointer z-50 ${classNameChildren} duration-150`}>
-        {open && (<Reveal>{children}</Reveal>)}
+        {open && children}
       </div>
     </>
   );
