@@ -1,6 +1,5 @@
 import { ReactNode, useState } from "react";
 import { BiSolidDownArrow, BiSolidRightArrow } from "react-icons/bi";
-import Reveal from "../Reveal";
 
 interface AccordionProps {
   title: string;

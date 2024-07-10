@@ -219,7 +219,7 @@ export const footer = {
     descripcion: "Contamos con las capacidades y conocimientos en el medio necesarios para ayudarle a resolver incluso las situaciones más complejas que estes enfrentando. Desde que abrimos nuestras puertas en el año 2013 nos enorgullece decir que cada año tenemos una lista más grande de clientes satisfechos nuevos y habituales."
   },
   contacto: {
-    correo: "hola@magnastudio.com.ar",
+    correo: "consultas@defensorespenales.com",
     telefono: "+54 9 381 579-6741",
     direccion: {
       ciudad: "Tucumán",
