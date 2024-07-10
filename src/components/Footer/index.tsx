@@ -90,7 +90,7 @@ const Footer = () => {
                 </Contact>
 
                 <Contact>
-                  <a href="#" className="text-naranja">{footer.contacto.ubicacion}</a>
+                  <a href="https://maps.app.goo.gl/aTpseSqxtuZDUJEo6" target="_blank" className="text-naranja">{footer.contacto.ubicacion}</a>
                 </Contact>
               
             </div>
