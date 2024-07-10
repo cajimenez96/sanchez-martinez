@@ -3,9 +3,10 @@ import { useAnimation, useInView, motion } from "framer-motion";
 
 interface IReveal {
   children: ReactNode;
+  className?: string;
 }
 
-const Reveal: React.FC<IReveal> = ({ children }) => {
+const Reveal: React.FC<IReveal> = ({ children, className }) => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: false })
   const mainControls = useAnimation()
@@ -22,7 +23,7 @@ const Reveal: React.FC<IReveal> = ({ children }) => {
 
 
   return (
-    <div ref={ref} className="relative overflow-hidden w-fit">
+    <div ref={ref} className={`relative overflow-hidden w-fit ${className}`}>
       <motion.div
         variants={{
           hidden: { opacity: 0, y: 75 },

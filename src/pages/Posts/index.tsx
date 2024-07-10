@@ -5,6 +5,7 @@ import { getAllPosts } from "./require";
 import { IPost } from "../../api/Post";
 import { useNavigate } from "react-router-dom";
 import { Navigation } from "../../utils/navigation";
+import Motion from "../../components/Motion";
 
 const Posts = () => {
   const navigation = useNavigate();
@@ -23,7 +24,7 @@ const Posts = () => {
   }
 
   return (
-    <Section className="mx-auto grid md:grid-cols-3">
+    <Motion className="mx-auto mt-10 grid md:grid-cols-3">
       {posts.map((post: IPost) => (
         <div className="h-96 w-[380px] hover:w-[385px] mx-auto mb-10 p-1 border-4 rounded-md border-oscuro-blur hover:border-oscuro duration-150 overflow-hidden shadow-lg cursor-pointer" key={post._id} onClick={() => handleClick(post)}>
           <div>
@@ -38,7 +39,7 @@ const Posts = () => {
           </div>
         </div>
       ))}
-    </Section>
+    </Motion>
   )
 }
 

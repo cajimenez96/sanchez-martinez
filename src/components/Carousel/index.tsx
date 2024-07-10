@@ -8,6 +8,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { useNavigate } from "react-router-dom";
+import Motion from "../Motion";
 
 interface CarouselProps {
   children?: ReactNode;
@@ -50,13 +51,15 @@ const Carousel: React.FC<CarouselProps> = ({children, elements}) => {
       {children}
       {elements?.map((e, index) => (
         <SwiperSlide key={index} onClick={() => selectCard(e)}>
-          <Card className="w-full h-96 overflow-hidden mx-auto">
-            <CardBody
-              text={e.content}
-              image={e.front}
-              date={e.updatedAt.toString()}
-            />
-          </Card>
+          <Motion>
+            <Card className="w-full h-96 overflow-hidden mx-auto">
+              <CardBody
+                text={e.content}
+                image={e.front}
+                date={e.updatedAt.toString()}
+              />
+            </Card>
+          </Motion>
         </SwiperSlide>
       ))}
     </Swiper>

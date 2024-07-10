@@ -13,6 +13,7 @@ import Section from "../../components/Section";
 import Text from "../../components/Text";
 import Alert from "../../components/Alert";
 import { useEffect, useState } from "react";
+import Motion from "../../components/Motion";
 
 interface Option {
   value: string;
@@ -62,6 +63,7 @@ const Contact = () => {
     <div className="md:mt-10">
       <Container className={`flex justify-center items-center min-h-[70vh] py-10`}>
         <Section className="mx-5 md:mx-0 w-full lg:w-2/5 rounded-xl py-10 px-5 bg-blanco">
+        <Motion>
           <form onSubmit={formik.handleSubmit}>
             <div className="text-center">
               <Heading level={5} className="font-semibold text-2xl md:text-4xl text-oscuro">Formulario de contacto</Heading>
@@ -131,6 +133,7 @@ const Contact = () => {
               </div>
             </div>
           </form>
+        </Motion>
         </Section>
       </Container>
       <div className={`w-full lg:w-1/4 ${showAlert && 'fixed'} top-5 right-0 z-50 duration-150`}>

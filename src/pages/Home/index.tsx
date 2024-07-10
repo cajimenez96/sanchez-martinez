@@ -15,6 +15,8 @@ import { Navigation } from "../../utils/navigation";
 import { IPost } from "../../api/Post";
 import { getAllPosts } from "../Posts/require";
 import { useNavigate } from "react-router-dom";
+import Reveal from "../../components/Reveal";
+import Motion from "../../components/Motion";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -38,14 +40,14 @@ const Home = () => {
 
     return (
       <div className="min-h-[300px] flex flex-col h-full justify-between items-center md:items-start">
-        <div>
+        <Reveal>
           <Heading level={4} className="mb-5 whitespace-break-spaces font-bold text-lg md:text-4xl">
             {data?.name}
             </Heading>
             <Text className="font-normal text-base leading-7">
               {data?.description}
             </Text>
-        </div>
+        </Reveal>
         <div className="w-[250px]">
           <Button link href={data?.path} buttonStyle="outline">
             {data?.button}
@@ -59,22 +61,23 @@ const Home = () => {
     <>
       <Container className="p-3 py-10 mt-5 md:py-0 flex flex-col md:flex-row justify-evenly items-center md:items-start gap-y-10 md:gap-0 min-h-[70vh]">
 
-        <Section className="my-auto md:py-20 flex flex-col items-start leading-[2.8rem] md:leading-none">
-          
-          <Heading level={1} className="font-black text-[40px] md:text-[82px] md:tracking-[8px] uppercase">
-            {hero.title}
-          </Heading>
+        <Motion>
+          <Section className="my-auto md:py-20 flex flex-col items-start leading-[2.8rem] md:leading-none">
+            
+            <Heading level={1} className="font-black text-[40px] md:text-[82px] md:tracking-[8px] uppercase">
+              {hero.title}
+            </Heading>
 
-          <Heading level={1} className="font-black text-[40px] md:text-[82px] md:tracking-[8px] uppercase">
-            {hero.title2}
-          </Heading>
-          
-          <Heading level={3} className="text-mapuche font-medium text-3xl md:text-7xl">
-            {hero.subtitle}
-          </Heading>
+            <Heading level={1} className="font-black text-[40px] md:text-[82px] md:tracking-[8px] uppercase">
+              {hero.title2}
+            </Heading>
+            
+            <Heading level={3} className="text-mapuche font-medium text-3xl md:text-7xl">
+              {hero.subtitle}
+            </Heading>
 
-        </Section>
-
+          </Section>
+        </Motion>
         <Section className="w-3/4 md:max-w-[500px] mx-10 my-auto flex flex-col items-center md:items-start">
           <div className="w-full mt-5">
             <Switch selectedValue={selectedValue} handleClick={handleCheckboxChange} />
@@ -91,7 +94,7 @@ const Home = () => {
 
           <article className="flex flex-wrap gap-20 mt-10 md:mt-14">
             
-            <div className="w-full flex flex-wrap justify-center gap-5 lg:gap-0">
+            <Motion className="w-full flex flex-wrap justify-center gap-5 lg:gap-0">
               {servicesCards.map((service: CardElement) => (
                 <Card
                   className="py-3 h-auto w-full md:w-[40%] lg:w-[30%] xl:w-[25%] border-[2px] border-oscuro rounded-xl"
@@ -106,11 +109,11 @@ const Home = () => {
                   />
                 </Card>
               ))}
-            </div>
+            </Motion>
 
-            <div className="hidden md:block">
+            <Motion className="hidden md:block">
               <img src={images.service} alt="Servicios" />
-            </div>
+            </Motion>
 
           </article>
         </div>
@@ -119,17 +122,21 @@ const Home = () => {
       <section>
         <Container className="py-10 flex flex-col items-center">
 
-          <Heading level={4} className="font-semibold md:font-black text-crema text-xl md:text-4xl">
-            {sectionTitles.notice}
-          </Heading>
+          <Reveal>
+            <div className="flex flex-col items-center">
+              <Heading level={4} className="font-semibold md:font-black text-crema text-xl md:text-4xl">
+                {sectionTitles.notice}
+              </Heading>
 
-          <div className="w-64 my-8">
-            <Button buttonStyle="outline" link href={Navigation.post}>
-              Ver todas las noticias
-            </Button>
-          </div>
+              <div className="w-64 my-8 text-center">
+                <Button buttonStyle="outline" link href={Navigation.post}>
+                  Ver todas las noticias
+                </Button>
+              </div>
+            </div>
+          </Reveal>
 
-          <div className="w-[90%]">
+          <div className="w-[90%] mx-auto">
             <Carousel elements={allPosts} />
           </div>
         </Container>

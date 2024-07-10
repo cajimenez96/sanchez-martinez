@@ -5,6 +5,8 @@ import Section from "../../components/Section";
 import Heading from "../../components/Heading";
 import Text from "../../components/Text";
 import Button from "../../components/Button";
+import Reveal from "../../components/Reveal";
+import Motion from "../../components/Motion";
 
 interface NumberProps {
   id: number;
@@ -34,22 +36,28 @@ const Service = () => {
     <div className="w-full flex justify-center">
       <Section className="w-full md:w-4/5 min-h-[70vh] flex justify-center">
         <Section className="w-full">
-          <Heading level={4} className="font-extrabold text-3xl text-oscuro">
-            {service?.title}
-          </Heading>
+          <Reveal>
+            <Heading level={4} className="font-extrabold text-3xl text-oscuro">
+              {service?.title}
+            </Heading>
+          </Reveal>
           <div className="mt-10">
-            <Text className="text-naranja">
-              Brindado por:
-            </Text>
-            <img 
-              src={service?.image}
-              alt={service?.title}
-              width={300}
-              className="grayscale"
-            />
+            <Reveal>
+              <Text className="text-naranja">
+                Brindado por:
+              </Text>
+            </Reveal>
+            <Motion>
+              <img 
+                src={service?.image}
+                alt={service?.title}
+                width={300}
+                className="grayscale"
+              />
+            </Motion>
           </div>
           <section className="mx-0 mt-10 flex flex-wrap justify-between">
-            <article className="w-full md:w-1/2">
+            <Reveal className="w-full md:w-1/2">
               {service?.description.map((element, index) => (
                 <div className="mt-5" key={index}>
                   <Heading level={6} className="font-bold text-base text-naranja">
@@ -62,18 +70,18 @@ const Service = () => {
                 </div>
               ))}
               <div className="mt-10 hidden md:flex justify-start">
-                <div>
+                <Motion>
                   <Button
                     buttonStyle="outline"
                     className="border-naranja font-medium text-naranja hover:text-crema hover:bg-naranja"
                     handleClick={() => redirect(service)}>
                     {service?.button.text}
                   </Button>
-                </div>
+                </Motion>
               </div>
-            </article>
+            </Reveal>
 
-            <article className="mt-5 max-w-[500px]">
+            <Motion className="mt-5 max-w-[500px]">
               {service?.items.map(item => (
                 <div className={`flex gap-3 mt-3`} key={item.id}>
                   <div>
@@ -84,7 +92,7 @@ const Service = () => {
                   </div>
                 </div>
               ))}
-            </article>
+            </Motion>
           </section>
 
           <div className="mt-10 flex md:hidden justify-start">

@@ -7,6 +7,8 @@ import Text from "../../components/Text";
 import Heading from "../../components/Heading";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { FaRegUser } from "react-icons/fa";
+import Motion from "../../components/Motion";
+import Reveal from "../../components/Reveal";
 
 const INITIAL_STATE = {
   _id: "",
@@ -52,16 +54,18 @@ const Post: React.FC = () => {
   return (
     <Section className="mx-auto pt-10 px-5 grid grid-cols-1 md:grid-cols-2 gap-20 content-center">
       <div>
-        <img src={post.front} />
-        <div>
+        <Motion>
+          <img src={post.front} />
+        </Motion>
+        <Reveal>
           <Text className="mt-5 text-oscuro text-xl uppercase">{formatDate(post.createdAt)}</Text>
           <Text className="mt-10 text-oscuro">FUENTE:
             <Link to={post.source} className="hover:text-naranja line-clamp-2"> {post.source}</Link>
           </Text>
-        </div>
+        </Reveal>
       </div>
       <div className="flex flex-col items-center">
-        <div>
+        <Reveal>
           <Heading level={5} className="flex items-center gap-2 mt-1 uppercase text-oscuro text-xl">
             <FaArrowRightLong />
             {post.location}, {post.category}
@@ -83,7 +87,7 @@ const Post: React.FC = () => {
               <Text className="uppercase text-naranja">{post.author}</Text>
             </div>
           </div>
-        </div>
+        </Reveal>
       </div>
     </Section>
   )

@@ -3,18 +3,22 @@ import Section from '../../components/Section';
 import Heading from '../../components/Heading';
 import Accordion from '../../components/Accordion';
 import { faqs } from '../../helpers/constants';
+import Reveal from '../../components/Reveal';
+import Motion from '../../components/Motion';
 
 const Faqs: React.FC = () => {
   return (
     <Section className="flex flex-col items-center min-h-[75vh]">
-      <Heading 
-        level={5}
-        className="w-full text-center font-semibold md:font-extrabold text-xl md:text-3xl text-oscuro"
-      >
-        Preguntas frecuentes
-      </Heading>
+      <Reveal>
+        <Heading 
+          level={5}
+          className="w-full text-center font-semibold md:font-extrabold text-xl md:text-3xl text-oscuro"
+        >
+          Preguntas frecuentes
+        </Heading>
+      </Reveal>
 
-      <article className="md:w-[530px] flex flex-col items-center justify-center gap-5 mt-12">
+      <Motion className="md:w-[530px] flex flex-col items-center justify-center gap-5 mt-12">
         {faqs.map((faq, index) => (
           <Accordion
           key={index}
@@ -25,7 +29,7 @@ const Faqs: React.FC = () => {
           {faq.description}
         </Accordion>
         ))}
-      </article>
+      </Motion>
     </Section>
   )
 }

@@ -4,6 +4,7 @@ import { LinkType } from "../../helpers/interfaces";
 import Heading from "../Heading";
 import Section from "../Section";
 import { Link } from "react-router-dom";
+import Reveal from "../Reveal";
 import { normalizeLink } from "../../helpers/helper";
 import { images } from "../../utils/images";
 
@@ -45,75 +46,78 @@ const Contact = ({children, title}: ContactProps) => {
 const Footer = () => {
   return (
     <div className="w-full md:w-3/4 mx-auto">
-      <Section className="mx-5 md:mx-20 mb-0 py-4 border-t-2 border-b-2 border-mapuche text-sm">
+      <Reveal>
+        <Section className="mx-5 md:mx-20 mb-0 py-4 border-t-2 border-b-2 border-mapuche text-sm">
 
-        <div className="flex justify-around flex-wrap md:flex-nowrap gap-10">
+          <div className="flex justify-around flex-wrap md:flex-nowrap gap-10">
 
-          <div className="w-full md:w-[39%] flex justify-between">
-            <ListSection
-              title="Recursos"
-              items={footer.recursos}
-              linkPath={(element) => normalizeLink(element.path)}
-            />
-            <ListSection
-              title="Servicios"
-              items={footer.servicios}
-              linkPath={(element) => normalizeLink(element.path, element.id)}
-            />
-          </div>
-
-
-          <div className="w-full md:w-[30%] border border-mapuche my-5 md:hidden"/>
-        
-          <div className="w-full md:w-[30%] order-4 md:order-3">
-            <Heading level={6} className="mb-4 uppercase text-oscuro font-medium">
-              Contacto
-            </Heading>
-            
-              <Contact title="Correo:">
-                <a href={`mailto:${footer.contacto.correo}`} className="font-medium">{footer.contacto.correo}</a>
-              </Contact>
+            <div className="w-full md:w-[39%] flex justify-between">
+              <ListSection
+                title="Recursos"
+                items={footer.recursos}
+                linkPath={(element) => normalizeLink(element.path)}
+              />
+              <ListSection
+                title="Servicios"
+                items={footer.servicios}
+                linkPath={(element) => normalizeLink(element.path, element.id)}
+              />
+            </div>
 
 
-              <Contact title="Teléfono:">
-              <a href={`tel:${footer.contacto.telefono}`} className="font-medium">{footer.contacto.telefono}</a>
-              </Contact>
-
-              <Contact title="Dirección:">
-                <p className="font-medium whitespace-pre">
-                  {footer.contacto.direccion.ciudad},<br/>
-                  {footer.contacto.direccion.localidad},<br/>
-                  {footer.contacto.direccion.calle}
-                </p>
-              </Contact>
-
-              <Contact>
-                <a href="#" className="text-naranja">{footer.contacto.ubicacion}</a>
-              </Contact>
-            
-          </div>
-
-
-          <div className="w-full md:w-[30%] order-3 md:order-4 mb-5 md:mb-0">
-            <Heading level={6} className="mb-4 uppercase text-oscuro font-medium">
-              Sánchez Martínez & Asociados
-            </Heading>
+            <div className="w-full md:w-[30%] border border-mapuche my-5 md:hidden"/>
+          
+            <div className="w-full md:w-[30%] order-4 md:order-3">
+              <Heading level={6} className="mb-4 uppercase text-oscuro font-medium">
+                Contacto
+              </Heading>
               
-            <span className="font-light">
-              {footer.magna.descripcion}
-            </span>
-          </div>
+                <Contact title="Correo:">
+                  <a href={`mailto:${footer.contacto.correo}`} className="font-medium">{footer.contacto.correo}</a>
+                </Contact>
 
-        </div>
-      </Section>
-      <Section className="mt-3 mb-5 flex flex-col md:flex-row justify-between items-center gap-5">
-        <div className="">
-          <img src={images.logo} width={150} alt="Sanchez martinez" />
-        </div>
-        <p className="font-medium text-center order-1">
-          {footer.footer.texto}
-        </p>
-      </Section>
+
+                <Contact title="Teléfono:">
+                <a href={`tel:${footer.contacto.telefono}`} className="font-medium">{footer.contacto.telefono}</a>
+                </Contact>
+
+                <Contact title="Dirección:">
+                  <p className="font-medium whitespace-pre">
+                    {footer.contacto.direccion.ciudad},<br/>
+                    {footer.contacto.direccion.localidad},<br/>
+                    {footer.contacto.direccion.calle}
+                  </p>
+                </Contact>
+
+                <Contact>
+                  <a href="#" className="text-naranja">{footer.contacto.ubicacion}</a>
+                </Contact>
+              
+            </div>
+
+
+            <div className="w-full md:w-[30%] order-3 md:order-4 mb-5 md:mb-0">
+              <Heading level={6} className="mb-4 uppercase text-oscuro font-medium">
+                Sánchez Martínez & Asociados
+              </Heading>
+                
+              <span className="font-light">
+                {footer.magna.descripcion}
+              </span>
+            </div>
+
+          </div>
+        </Section>
+        <Section className="mt-3 mb-5 flex flex-col md:flex-row justify-between items-center gap-5">
+          <div className="">
+            <img src={images.logo} width={150} alt="Sanchez martinez" />
+          </div>
+          <p className="font-medium text-center order-1">
+            {footer.footer.texto}
+          </p>
+        </Section>
+
+      </Reveal>
     </div>
   )
 }
