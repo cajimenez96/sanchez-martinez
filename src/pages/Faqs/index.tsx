@@ -2,7 +2,7 @@ import React from 'react';
 import Section from '../../components/Section';
 import Heading from '../../components/Heading';
 import Accordion from '../../components/Accordion';
-import { faqs } from '../../helpers/constants';
+import { faqs } from './Faqs.data';
 import Reveal from '../../components/Reveal';
 import Motion from '../../components/Motion';
 
