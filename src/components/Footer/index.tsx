@@ -45,7 +45,7 @@ const Contact = ({children, title}: ContactProps) => {
 
 const Footer = () => {
   return (
-    <div className="w-full md:w-3/4 mx-auto">
+    <div className="w-full mx-auto">
       <Reveal>
         <Section className="mx-5 md:mx-20 mb-0 py-4 border-t-2 border-b-2 border-mapuche text-sm">
 
