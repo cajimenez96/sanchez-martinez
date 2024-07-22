@@ -22,7 +22,7 @@ const Accordion: React.FC<AccordionProps> = ({ children, title, classNameTitle, 
         {open ? <BiSolidDownArrow /> : <BiSolidRightArrow /> }
       </span>
       
-      <div className={`cursor-pointer z-50 ${classNameChildren} duration-150`}>
+      <div className={`cursor-pointer z-50 w-full ${classNameChildren} duration-150`}>
         {open && children}
       </div>
     </>

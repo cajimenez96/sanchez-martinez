@@ -1,18 +1,14 @@
 export const faqs = [
   {
-    title: "¿Debo pagar consulta antes del asesoramiento?",
-    description: "Sanchez Martinez & Asoc. es un grupo de abogados asociados conformado por profesionales especializados en diferentes ramas del derecho, brindamos asesoramiento en materia Penal, civil: (Familia - Sucesiones - Daños - Acciones de consumo, laboral, etc.)."
-  },
-  {
     title: "¿Existen formas de pago?",
-    description: "Sanchez Martinez & Asoc. es un grupo de abogados asociados conformado por profesionales especializados en diferentes ramas del derecho, brindamos asesoramiento en materia Penal, civil: (Familia - Sucesiones - Daños - Acciones de consumo, laboral, etc.)."
+    description: "Si. Tenemos opciones de financiación."
   },
   {
     title: "¿El estudio asesorara todo tipo de consultas?", 
-    description: "Sanchez Martinez & Asoc. es un grupo de abogados asociados conformado por profesionales especializados en diferentes ramas del derecho, brindamos asesoramiento en materia Penal, civil: (Familia - Sucesiones - Daños - Acciones de consumo, laboral, etc.)."
+    description: "Si. Tenemos un equipo especializado en diferentes áreas."
   },
   {
     title: "¿Cuáles Son Los horarios de atención?",
-    description: "Sanchez Martinez & Asoc. es un grupo de abogados asociados conformado por profesionales especializados en diferentes ramas del derecho, brindamos asesoramiento en materia Penal, civil: (Familia - Sucesiones - Daños - Acciones de consumo, laboral, etc.)."
+    description: "Lunes a viernes: de 8:00 a 12.00 y de 16:00 a 20:00 hs.\n\nSábado: de 8: 00 a 13.00 (Solo Penal)"
   }
 ];

@@ -1,5 +1,4 @@
 import { ReactNode } from "react";
-import { footer } from "../../helpers/constants";
 import { LinkType } from "../../helpers/interfaces";
 import Heading from "../Heading";
 import Section from "../Section";
@@ -7,6 +6,7 @@ import { Link } from "react-router-dom";
 import Reveal from "../Reveal";
 import { normalizeLink } from "../../helpers/helper";
 import { images } from "../../utils/images";
+import { footer } from "./Footer.data";
 
 interface ListProps {
   title: string;

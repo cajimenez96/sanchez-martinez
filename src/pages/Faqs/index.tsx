@@ -24,7 +24,7 @@ const Faqs: React.FC = () => {
           key={index}
           title={faq.title}
           classNameTitle="text-naranja hover:text-oscuro justify-between px-0"
-          classNameChildren="text-oscuro"
+          classNameChildren="text-oscuro whitespace-pre"
         >
           {faq.description}
         </Accordion>
