@@ -1,7 +1,6 @@
 import React, { ReactNode, useEffect, useRef, useState } from "react";
 import { FiArrowRight, FiMenu } from "react-icons/fi";
 import { LuX } from "react-icons/lu";
-import { navbar, navbarMobile } from "../../helpers/constants";
 import Button from "../Button";
 import Dropdown from "../Dropdown";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -11,6 +10,7 @@ import Text from "../Text";
 import { normalizeLink } from "../../helpers/helper";
 import { images } from "../../utils/images";
 import { NavbarItem, NavbarItemMenu } from "../../helpers/interfaces";
+import { navbar, navbarMobile } from "./Navbar.data";
 
 interface MenuProps {
   children: ReactNode;
@@ -133,10 +133,10 @@ const Navbar: React.FC = () => {
   }, []);
 
   return (
-    <nav className="w-full p-3 sticky top-0 z-50 flex justify-between md:justify-around items-center bg-blanco" ref={navbarRef}>
+    <nav className="w-full sticky top-0 z-50 flex justify-between md:justify-around items-center bg-blanco" ref={navbarRef}>
 
       <Link to={Navigation.home} className="my-2">
-        <img src={images.logo} width={200} alt="Sanchez martinez" />
+        <img src={images.logo} alt="Sanchez martinez" className="w-32 lg:w-48" />
       </Link>
 
       <ul className="hidden md:flex">
