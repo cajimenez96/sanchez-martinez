@@ -17,16 +17,20 @@ import { getAllPosts } from "../Posts/require";
 import { useNavigate } from "react-router-dom";
 import Reveal from "../../components/Reveal";
 import Motion from "../../components/Motion";
+import Spinner from "../../components/Spinner";
 
 const Home = () => {
   const navigate = useNavigate();
   const [selectedValue, setSelectedValue] = useState<number>(1);
   const [allPosts, setAllPosts] = useState<IPost[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
+    setLoading(true);
     const fetchPosts = async () => {
       const data = await getAllPosts();
       setAllPosts(data);
+      setLoading(false);
     };
     fetchPosts();
   }, []);
@@ -138,7 +142,11 @@ const Home = () => {
           </Reveal>
 
           <div className="w-[90%] mx-auto">
-            <Carousel elements={allPosts} />
+          {loading ? (
+            <Spinner />
+            ) : (
+              <Carousel elements={allPosts} />
+            )}
           </div>
         </Container>
       </section>
