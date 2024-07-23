@@ -6,14 +6,12 @@ interface CustomProps{
   level?: 1 | 2 | 3 | 4 | 5 | 6;
 }
 
-type HeadingProps = React.HTMLAttributes<HTMLHeadingElement> & CustomProps
-
-const Heading = ({children, className, level = 1, ...rest}: HeadingProps ) => {
+const Heading = ({children, className, level = 1}: CustomProps ) => {
 
   const Tag = `h${level}` as keyof JSX.IntrinsicElements;
 
   return (
-    <Tag className={`text-crema ${className}`} {...rest}>
+    <Tag className={`text-crema ${className}`}>
       {children}
     </Tag>
   )

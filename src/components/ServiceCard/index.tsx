@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import { Service } from "../../helpers/interfaces";
 import Button from "../Button";
 import Heading from "../Heading";
 import Text from "../Text";
@@ -7,7 +6,7 @@ import { FaAngleDoubleRight } from "react-icons/fa";
 import { normalizeLink } from "../../helpers/helper";
 
 interface ServiceCardProps {
-  service: Service;
+  service: any;
 }
 
 const ServiceCard = ({service}: ServiceCardProps) => {

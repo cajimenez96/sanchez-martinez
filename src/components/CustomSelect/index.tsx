@@ -43,12 +43,6 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
 
   const [option, setOption] = useState<Option | undefined>(newValue)
   
-
-  const onChanges = (option?: Option) => {
-    setOption(option)
-    handleChange(option);
- }
-  
   return (
     <div className="mb-4">
       <label className="text-base text-crema">{label}</label>
@@ -70,7 +64,10 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
             color: 'var(--color-oscuro)'
           }),
         }}
-        onChange={onChanges}
+        onChange={() => {
+          setOption(option)
+          handleChange(option);
+       }}
       />
       {hasError && (<p className="text-blanco">{error}</p>)}
     </div>

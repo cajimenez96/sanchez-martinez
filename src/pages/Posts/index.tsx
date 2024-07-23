@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
-import Section from "../../components/Section";
 import { getAllPosts } from "./require";
 import { IPost } from "../../api/Post";
 import { useNavigate } from "react-router-dom";

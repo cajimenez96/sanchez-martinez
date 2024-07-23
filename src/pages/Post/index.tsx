@@ -44,7 +44,7 @@ const Post: React.FC = () => {
   useEffect(() => {
     const fetchPost = async () => {
       const res = await getPost(id ?? "");
-      setPost(res);
+      res && setPost(res);
     }
 
     fetchPost();
@@ -55,12 +55,12 @@ const Post: React.FC = () => {
     <Section className="mx-auto pt-10 px-5 grid grid-cols-1 md:grid-cols-2 gap-20 content-center">
       <div>
         <Motion>
-          <img src={post.front} />
+          <img src={post?.front} />
         </Motion>
         <Reveal>
-          <Text className="mt-5 text-oscuro text-xl uppercase">{formatDate(post.createdAt)}</Text>
+          <Text className="mt-5 text-oscuro text-xl uppercase">{formatDate(post?.createdAt)}</Text>
           <Text className="mt-10 text-oscuro">FUENTE:
-            <Link to={post.source} className="hover:text-naranja line-clamp-2"> {post.source}</Link>
+            <Link to={post?.source} className="hover:text-naranja line-clamp-2"> {post?.source}</Link>
           </Text>
         </Reveal>
       </div>
@@ -68,13 +68,13 @@ const Post: React.FC = () => {
         <Reveal>
           <Heading level={5} className="flex items-center gap-2 mt-1 uppercase text-oscuro text-xl">
             <FaArrowRightLong />
-            {post.location}, {post.category}
+            {post?.location}, {post?.category}
           </Heading>
 
           <div className="mt-10 mb-12 max-w-xl">
-            <Heading level={5} className="text-oscuro text-2xl">{post.title}</Heading>
+            <Heading level={5} className="text-oscuro text-2xl">{post?.title}</Heading>
             <Text className="mt-10 text-oscuro whitespace-pre-wrap">
-              {post.content}
+              {post?.content}
             </Text>
           </div>
 
@@ -84,7 +84,7 @@ const Post: React.FC = () => {
             </div>
             <div>
               <Text className="text-naranja">Autor de redacción:</Text>
-              <Text className="uppercase text-naranja">{post.author}</Text>
+              <Text className="uppercase text-naranja">{post?.author}</Text>
             </div>
           </div>
         </Reveal>

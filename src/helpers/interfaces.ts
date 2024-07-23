@@ -4,7 +4,7 @@ export interface SectionTitles {
 
 //NORMALIZADOS!
 export interface LinkType {
-  id: number;
+  id?: number;
   name: string;
   path: string;
 }
