@@ -9,12 +9,4 @@ const Axios = axios.create({
   }
 });
 
-Axios.interceptors.response.use(
-  (response) => response,
-  (error) => {
-    return Promise.reject(error);
-  }
-);
-
-
 export default Axios;

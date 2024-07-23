@@ -53,6 +53,7 @@ const Button: React.FC<ButtonProps> = ({
       className={`w-full rounded-xl ${className} ${handleStyle(buttonStyle, disabled)} duration-200`}
       onClick={handleClick}
       type={type}
+      disabled={disabled}
     >
       {link ? (
         <Link to={(href as never) as string}>

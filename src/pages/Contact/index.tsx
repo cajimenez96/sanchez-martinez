@@ -14,6 +14,7 @@ import Text from "../../components/Text";
 import Alert from "../../components/Alert";
 import { useEffect, useState } from "react";
 import Motion from "../../components/Motion";
+import Spinner from "../../components/Spinner";
 
 interface Option {
   value: string;
@@ -31,7 +32,10 @@ const INITIAL_STATE: FormData = {
 
 const Contact = () => {
   const { id } = useParams<{ id: string }>();
+  const [loading, setLoading] = useState<boolean>(false);
   const [showAlert, setShowAlert] = useState<boolean>(false);
+  const [alertType, setAlertType] = useState<"warning" | "success" | "error">("warning");
+  const [stateAlert, setStateAlert] = useState({title: '', message: ''});
 
   const numericId = id ? parseInt(id, 10) : null;
 
@@ -43,8 +47,26 @@ const Contact = () => {
     initialValues: INITIAL_STATE,
     validationSchema: contactSchema,
     onSubmit: async (form: FormData) => {
-      const response = await sendEmail(form);
-      setShowAlert(!showAlert)
+      setLoading(true);
+      await sendEmail(form)
+      .then((res) => {
+        setAlertType('success');
+        setStateAlert({
+          title: 'Éxito!',
+          message: res.message
+        });
+      })
+      .catch(() => {
+        setAlertType('error');
+        setStateAlert({
+          title: 'Error!',
+          message: "No se pudo enviar su mensaje, por favor intenta más tarde."
+        })
+      })
+      .finally(() => {
+        setShowAlert(!showAlert);
+        setLoading(false);
+      })
     }
   });
 
@@ -57,8 +79,8 @@ const Contact = () => {
       return () => clearTimeout(timer);
     }
   }, [showAlert]);
-  
-  
+
+
   return (
     <div className="md:mt-10">
       <Container className={`flex justify-center items-center min-h-[70vh] py-10`}>
@@ -103,7 +125,7 @@ const Contact = () => {
                 hasError={formik.touched.email}
                 placeholder={contact.correo.placeholder}
               />
-              
+
               <CustomSelect
                 value={numericId}
                 options={contact.asunto.options}
@@ -126,8 +148,10 @@ const Contact = () => {
 
               <div className="w-full flex flex-col justify-center items-center">
                 <div className="w-2/5">
-                  <Button buttonStyle="outline" className="text-oscuro" type="submit">
-                    Enviar
+                  <Button buttonStyle="outline" className="text-oscuro" type="submit" disabled={loading}>
+                    {loading ? (
+                      <Spinner />
+                    ) : 'Enviar'}
                   </Button>
                 </div>
               </div>
@@ -137,7 +161,7 @@ const Contact = () => {
         </Section>
       </Container>
       <div className={`w-full lg:w-1/4 ${showAlert && 'fixed'} top-5 right-0 z-50 duration-150`}>
-        <Alert visible={showAlert} title="Éxito" message="Tu mensaje ha sido enviado exitosamente." />
+        <Alert visible={showAlert} type={alertType} title={stateAlert.title} message={stateAlert.message} />
       </div>
     </div>
   )

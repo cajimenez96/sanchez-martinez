@@ -24,3 +24,8 @@
   color: var(--color-oscuro);
   background-color: var(--color-mapuche);
 }
+
+.disabled {
+  cursor: none;
+  border: 1px solid var(--color-crema);
+}
