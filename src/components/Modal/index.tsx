@@ -3,9 +3,14 @@ import Heading from "../Heading";
 import Button from "../Button";
 import { MdOutlineClose } from "react-icons/md";
 import { Navigation } from "../../utils/navigation";
+import { PHONE } from "../../helpers/constants";
 
 const Modal = () => {
   const [open, setOpen] = useState(true);
+
+  const openWhatsapp = (tel: number) => {
+    window.open(`https://wa.me/${tel}?text=Hola, me gustaría hacer una consulta!`, '_blank')
+  };
 
   return (
     <div className={`${open ? 'fixed' : 'hidden'} bottom-4 z-50 w-3/4 mx-auto`}>
@@ -37,7 +42,7 @@ const Modal = () => {
                   </Button>
                 </div>
                 <div>
-                  <Button buttonStyle="outline" className="text-sm border-naranja">
+                  <Button buttonStyle="outline" className="text-sm border-naranja" handleClick={() => openWhatsapp(PHONE)}>
                     Escríbenos por WhatsApp
                   </Button>
                 </div>
