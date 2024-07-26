@@ -1,4 +1,5 @@
-import {Routes as Router, Route} from 'react-router-dom'
+import { useEffect } from 'react';
+import {Routes as Router, Route, useLocation} from 'react-router-dom'
 import Navbar from "./components/Navbar";
 import Home from './pages/Home';
 import Footer from './components/Footer';
@@ -12,8 +13,19 @@ import Whatsapp from './components/Whatsapp';
 import { PHONE } from './helpers/constants';
 import Posts from './pages/Posts';
 import Post from './pages/Post';
+import { initGA, logPageView } from './utils/analytics';
 
 function App() {
+  const location = useLocation()
+
+  useEffect(() => {
+    initGA();
+  }, []);
+  
+  useEffect(() => {
+    logPageView();
+  }, [location]);
+
   return (
     <Head>
       <Navbar />
