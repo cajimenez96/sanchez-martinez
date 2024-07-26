@@ -27,7 +27,7 @@ export const CardBody: React.FC<CardBodyProps> = ({
 }) => {
   return (
     <div className="mx-5 flex flex-col gap-5 group">
-        <img src={image} alt={title} />
+        <img src={image} alt={title} className="h-[190px]" />
 
         <div className="flex justify-between">
           <div className="flex items-center gap-2 cursor-pointer font-light text-sm text-mapuche group-hover:border-mapuche border-b border-transparent">

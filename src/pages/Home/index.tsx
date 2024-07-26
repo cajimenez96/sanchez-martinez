@@ -68,15 +68,15 @@ const Home = () => {
         <Motion>
           <Section className="my-auto md:py-20 flex flex-col items-start leading-[2.8rem] md:leading-none">
             
-            <Heading level={1} className="font-black text-[40px] md:text-[82px] md:tracking-[8px] uppercase">
+            <Heading level={1} className="font-black text-5xl md:text-[82px] md:tracking-[8px] uppercase">
               {hero.title}
             </Heading>
 
-            <Heading level={1} className="font-black text-[40px] md:text-[82px] md:tracking-[8px] uppercase">
+            <Heading level={1} className="font-black text-5xl md:text-[82px] md:tracking-[8px] uppercase">
               {hero.title2}
             </Heading>
             
-            <Heading level={3} className="text-mapuche font-medium text-3xl md:text-7xl">
+            <Heading level={3} className="text-mapuche font-medium text-4xl md:text-7xl">
               {hero.subtitle}
             </Heading>
 
