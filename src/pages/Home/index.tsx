@@ -97,7 +97,7 @@ const Home = () => {
             {sectionTitles.service}
           </Heading>
 
-          <article className="flex flex-wrap gap-20 mt-10 md:mt-14">
+          <article className="flex flex-wrap justify-center gap-20 mt-10 md:mt-14 mx-auto">
             
             <Motion className="w-full flex flex-wrap justify-center gap-5 lg:gap-0">
               {servicesCards.map((service: CardElement) => (
