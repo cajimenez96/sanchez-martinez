@@ -68,15 +68,15 @@ const Home = () => {
         <Motion>
           <Section className="my-auto md:py-20 flex flex-col items-start leading-[2.8rem] md:leading-none">
             
-            <Heading level={1} className="font-black text-[40px] md:text-[82px] md:tracking-[8px] uppercase">
+            <Heading level={1} className="font-black text-5xl md:text-[82px] md:tracking-[8px] uppercase">
               {hero.title}
             </Heading>
 
-            <Heading level={1} className="font-black text-[40px] md:text-[82px] md:tracking-[8px] uppercase">
+            <Heading level={1} className="font-black text-5xl md:text-[82px] md:tracking-[8px] uppercase">
               {hero.title2}
             </Heading>
             
-            <Heading level={3} className="text-mapuche font-medium text-3xl md:text-7xl">
+            <Heading level={3} className="text-mapuche font-medium text-4xl md:text-7xl">
               {hero.subtitle}
             </Heading>
 
@@ -97,7 +97,7 @@ const Home = () => {
             {sectionTitles.service}
           </Heading>
 
-          <article className="flex flex-wrap gap-20 mt-10 md:mt-14">
+          <article className="flex flex-wrap justify-center gap-20 mt-10 md:mt-14 mx-auto">
             
             <Motion className="w-full flex flex-wrap justify-center gap-5 lg:gap-0">
               {servicesCards.map((service: CardElement) => (

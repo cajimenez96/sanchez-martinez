@@ -36,10 +36,7 @@ export const getService = (id: number) => {
   return services.find(service => service.id === id);
 };
 
-export const normalizeLink = (path: string, id?: number) => {
-  if (id && id >= 0) return `${path}/${id}`;
-  return path;
-};
+export const normalizeLink = (path: string, id?: number) => `${path}/${id}`
 
 //VALIDATIONS
 export const contactSchema = Yup.object().shape({

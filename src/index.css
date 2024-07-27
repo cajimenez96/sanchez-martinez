@@ -33,3 +33,7 @@ li.slick-active > li {
   width: 30px !important;
   background-color: var(--color-mapuche) !important;
 }
+
+.swiper-button-prev, .swiper-button-next {
+  color: var(--color-mapuche);
+}
