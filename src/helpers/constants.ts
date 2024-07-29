@@ -21,7 +21,7 @@ export const sectionTitles: SectionTitles = {
 //HERO
 export const hero: Hero = {
   title: "Sanchez",
-  title2: "Matinez",
+  title2: "Martinez",
   subtitle: "& Asociados"
 };
 
