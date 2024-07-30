@@ -19,6 +19,7 @@ const Head: React.FC<HeadProps> = ({children}) => {
         <Title>{TITLE}</Title>
         <Meta name="description" content={DESCRIPTION} />
         <Meta name="keywords" content={KEYWORDS} />
+        <Meta name="author" content="Marketing Integration" />
       </HeadProvider>
       {children}
     </>
