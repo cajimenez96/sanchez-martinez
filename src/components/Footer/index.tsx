@@ -4,14 +4,12 @@ import Heading from "../Heading";
 import Section from "../Section";
 import { Link } from "react-router-dom";
 import Reveal from "../Reveal";
-import { normalizeLink } from "../../helpers/helper";
 import { images } from "../../utils/images";
 import { footer } from "./Footer.data";
 
 interface ListProps {
   title: string;
   items: LinkType[];
-  linkPath: (value: LinkType) => string;
 }
 
 interface ContactProps {
@@ -19,13 +17,13 @@ interface ContactProps {
   children: ReactNode;
 }
 
-const ListSection = ({ title, items, linkPath }: ListProps) => (
+const ListSection = ({ title, items }: ListProps) => (
   <div className="flex flex-col w-full">
     <Heading level={6} className="mb-4 uppercase text-sm text-oscuro font-medium">{title}</Heading>
     <ul>
       {items.map((element, index) => (
         <li className="mb-3 font-medium text-sm" key={index}>
-          <Link to={linkPath(element)}>
+          <Link to={`${element.path}${element.id !== undefined && (element.id >= 0) ? `/${element.id}` : ''}`}>
             {element.name}
           </Link>
         </li>
@@ -55,12 +53,10 @@ const Footer = () => {
               <ListSection
                 title="Recursos"
                 items={footer.recursos}
-                linkPath={(element) => normalizeLink(element.path)}
               />
               <ListSection
                 title="Servicios"
                 items={footer.servicios}
-                linkPath={(element) => normalizeLink(element.path, element.id)}
               />
             </div>
 

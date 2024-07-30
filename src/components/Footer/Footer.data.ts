@@ -3,7 +3,7 @@ import { Navigation } from "../../utils/navigation";
 export const footer = {
   recursos: [
     {name: "Contacto", path: Navigation.contact},
-    {name: "Noticias", path: '/'},
+    {name: "Noticias", path: Navigation.post},
     {name: "Nosotros", path: Navigation.about},
     {name: "Inicio", path: Navigation.home}
   ],
